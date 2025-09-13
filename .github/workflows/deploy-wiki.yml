@@ -1,0 +1,38 @@
+name: Deploy Gollum Wiki to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # ou master, selon ta branche par défaut
+      - 'wiki/**'  # si tu veux surveiller le répertoire wiki
+  workflow_dispatch: # permet de lancer manuellement
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Cloner ton dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Installer Ruby
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1   # ou 3.0 si 3.1 casse
+
+      # 3. Installer gollum-site
+      - name: Install gollum-site
+        run: gem install gollum-site
+
+      # 4. Générer le site statique
+      - name: Generate site
+        run: gollum-site generate
+
+      # 5. Déployer sur gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
