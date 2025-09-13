@@ -2,5 +2,5 @@ site_name: Wiki
 theme:
   name: material
 nav:
-  - Home: home.md
+  - Home: index.md
 
