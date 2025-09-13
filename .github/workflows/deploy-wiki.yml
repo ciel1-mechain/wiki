@@ -20,7 +20,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1   # ou 3.0 si 3.1 casse
+          ruby-version: 2.7
 
       # 3. Installer gollum-site
       - name: Install gollum-site
