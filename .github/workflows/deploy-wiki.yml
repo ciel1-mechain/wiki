@@ -29,6 +29,10 @@ jobs:
       # 4. Générer le site statique
       - name: Generate site
         run: gollum-site generate
+      - name: Add index.html redirect
+        run: |
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=Home.html"></head><body><p>Redirecting to <a href="Home.html">Home</a>...</p></body></html>' > _site/index.html
+
 
       # 5. Déployer sur gh-pages
       - name: Deploy to GitHub Pages
