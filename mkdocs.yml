@@ -1,6 +1,43 @@
 site_name: Wiki
+
 theme:
   name: material
+  palette:
+    # Mode clair
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode sombre
+    # Mode sombre
+    - scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode clair
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #- navigation.instant       # Navigation fluide (SPA-like)
+    - navigation.sections      # Menu latéral avec sections
+    - navigation.expand        # Menu déplié par défaut
+    #- search.suggest           # Suggestions dans la recherche
+    - search.highlight         # Mise en avant dans les résultats
+    - content.code.copy        # Bouton "copier" sur blocs de code
+    - content.tabs.link        # Onglets de contenu synchronisés
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ton-user
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ton-user
+
 nav:
   - Home: index.md
 
