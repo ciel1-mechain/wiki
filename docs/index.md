@@ -6,7 +6,7 @@ hide:
 
 # Accueil
 
-## Langages de programmation
+## DevOps
    - :material-language-python: [Guide Python](devops/python.md)
    - :material-language-cpp: [Guide C](devops/c.md)
    - :material-web: [HTML/CSS/JS](devops/web.md)
