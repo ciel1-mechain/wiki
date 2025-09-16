@@ -23,7 +23,7 @@ jobs:
       # 3. Installer MkDocs + Material
       - name: Install dependencies
         run: |
-          pip install mkdocs mkdocs-material
+          pip install mkdocs-material[imaging]
 
       # 4. Construire le site statique
       - name: Build site

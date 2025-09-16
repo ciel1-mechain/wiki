@@ -1,8 +1,24 @@
 site_name: Wiki
+site_url: https://USERNAME.github.io/REPO/
+use_directory_urls: false
+extra_css: [extra.css]
+generator: falsec
+nav:
+    - Home: index.md
+    - Python : python.md
+    - C : c.md
+    - Réseaux TCP/IP : reseaux.md
+    - Interfaces et Protocoles de Communication : interfaces.md
+    - Windows : windows.md
+    - GNU/Linux : gnu_linux.md
 
 theme:
   name: material
+  icon:
+    logo: material/home
+  language: fr
   palette:
+    
     # Mode clair
     - scheme: default
       primary: blue grey
@@ -21,23 +37,73 @@ theme:
     text: "Roboto"
     code: "Fira Code"
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    #- navigation.instant       # Navigation fluide (SPA-like)
-    - navigation.sections      # Menu latéral avec sections
-    - navigation.expand        # Menu déplié par défaut
-    #- search.suggest           # Suggestions dans la recherche
-    - search.highlight         # Mise en avant dans les résultats
-    - content.code.copy        # Bouton "copier" sur blocs de code
-    - content.tabs.link        # Onglets de contenu synchronisés
+      #- navigation.instant
+      - navigation.tabs 
+      - navigation.tabs.sticky
+      - navigation.top
+      #- header.autohide
+      - content.code.annotate 
+      - content.code.copy
+      - navigation.prune
+      - toc.follow
+      - navigation.sections
+      - navigation.expand
+      - content.icons
+markdown_extensions:
+    - meta
+    - abbr
+    - admonition
+    - pymdownx.details
+    - def_list
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    - pymdownx.snippets
+    - pymdownx.details
+    - attr_list
+    - md_in_html
+    - pymdownx.arithmatex:
+          generic: true
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/ton-user
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/ton-user
+    - pymdownx.superfences:
+        custom_fences:
+           - name: mermaid
+             class: mermaid
+             format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    
+    - pymdownx.tasklist:
+        custom_checkbox: false
+        clickable_checkbox: true
+    - pymdownx.inlinehilite
+    - pymdownx.superfences
+    - pymdownx.keys
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.arithmatex:
+        generic: true
 
-nav:
-  - Home: index.md
+extra_javascript:
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    #- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    - javascripts/mathjax.js
+
+
+
+
+  
 
