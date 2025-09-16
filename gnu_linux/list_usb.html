@@ -641,15 +641,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#carte-8-relais-usb-usb-relay08" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟧 Carte 8 relais USB (USB-RELAY08)
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -659,24 +650,6 @@
   <a href="#5-regles-udev-pour-noms-stables" class="md-nav__link">
     <span class="md-ellipsis">
       5. Règles udev pour noms stables
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-resume-et-bonnes-pratiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Résumé et bonnes pratiques
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-notes-supplementaires" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Notes supplémentaires
     </span>
   </a>
   
@@ -785,23 +758,6 @@
 <ul>
 <li><code>/dev/ttyACM0</code> (CDC ACM)</li>
 </ul>
-<h3 id="carte-8-relais-usb-usb-relay08">🟧 Carte 8 relais USB (USB-RELAY08)</h3>
-<ul>
-<li>Vue par <code>lsusb</code> :</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ID 16c0:05df USB-Relay-8
-</span></code></pre></div>
-<ul>
-<li>⚠️ Particularité : n’apparaît <strong>pas comme port série</strong> (<code>ttyUSB</code> ou <code>ttyACM</code>).  </li>
-<li>Reconnu comme <strong>HID USB</strong> (Human Interface Device).  </li>
-<li>Pour contrôler cette carte :  </li>
-<li>Utiliser une bibliothèque comme <code>hidapi</code> ou <code>libusb</code>.  </li>
-<li>Accéder directement via <code>/dev/hidrawX</code>.</li>
-</ul>
-<p>Exemple pour identifier le périphérique HID :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ls<span class="w"> </span>/dev/hidraw*
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>udevadm<span class="w"> </span>info<span class="w"> </span>-q<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>/dev/hidraw2
-</span></code></pre></div>
 <hr />
 <h2 id="5-regles-udev-pour-noms-stables">5. Règles <code>udev</code> pour noms stables</h2>
 <ul>
@@ -813,45 +769,47 @@
 <p>Trouver Vendor ID et Product ID :</p>
 </li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>lsusb
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>lsusb
 </span></code></pre></div>
 <p>Sortie :</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ID 2341:0043 Arduino SA Uno R3
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ID 2341:0043 Arduino SA Uno R3
 </span></code></pre></div>
 <ol>
 <li>Créer la règle <code>udev</code> :</li>
 </ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/udev/rules.d/99-arduino.rules
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/udev/rules.d/99-arduino.rules
 </span></code></pre></div>
 <p>Contenu :</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>SUBSYSTEM==&quot;tty&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}==&quot;0043&quot;, SYMLINK+=&quot;arduino_uno&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>SUBSYSTEM==&quot;tty&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}==&quot;0043&quot;, SYMLINK+=&quot;arduino_uno&quot;
 </span></code></pre></div>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>Pourquoi 99 comme numéro en préfixe ?</p>
+<ul>
+<li>
+<p>udev lit les fichiers de règles dans l’ordre alphabétique.</p>
+</li>
+<li>
+<p>Les fichiers numérotés sont donc lus dans l’ordre croissant.</p>
+</li>
+<li>
+<p>En mettant 99-, tu t’assures que cette règle est lue après toutes les autres règles système (comme celles de 10- ou 50- pour les périphériques génériques).</p>
+</li>
+<li>
+<p>C’est pratique pour écraser ou compléter les règles existantes pour un périphérique spécifique (ici Arduino).</p>
+</li>
+</ul>
+</div>
 <ol>
 <li>Recharger les règles :</li>
 </ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sudo<span class="w"> </span>udevadm<span class="w"> </span>trigger
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>udevadm<span class="w"> </span>trigger
 </span></code></pre></div>
 <ul>
 <li>Ton Arduino est maintenant accessible via <code>/dev/arduino_uno</code>.</li>
 </ul>
 <hr />
-<h2 id="6-resume-et-bonnes-pratiques">6. Résumé et bonnes pratiques</h2>
-<ul>
-<li><strong><code>ttyS*</code></strong> = ports série matériels (RS-232).  </li>
-<li><strong><code>ttyUSB*</code></strong> = convertisseurs USB↔UART (Arduino clones, modules USB-série).  </li>
-<li><strong><code>ttyACM*</code></strong> = périphériques CDC ACM (Arduino officiel, micro:bit, STM32).  </li>
-<li><strong>HID ou clés USB non série</strong> → <code>/dev/hidraw*</code> ou <code>/dev/sdX</code>.  </li>
-<li>Pour identifier un périphérique : <code>dmesg -w</code>, <code>lsusb</code>, <code>udevadm</code>.  </li>
-<li>Pour nom stable : créer une règle <code>udev</code> basée sur Vendor ID / Product ID.</li>
-</ul>
-<hr />
-<h2 id="7-notes-supplementaires">7. Notes supplémentaires</h2>
-<ul>
-<li>Les cartes comme <strong>USB-RELAY08</strong> ne sont pas des ports série mais des périphériques HID.  </li>
-<li>L’accès direct via <code>/dev/hidrawX</code> ou via une bibliothèque spécifique est nécessaire pour les contrôler.  </li>
-<li>Toujours vérifier <code>dmesg</code> lors du branchement pour savoir quel device est créé.</li>
-</ul>
 
 
 
