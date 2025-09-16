@@ -87,26 +87,6 @@ udevadm info -q all -n /dev/ttyUSB0
 
 - `/dev/ttyACM0` (CDC ACM)
 
-### 🟧 Carte 8 relais USB (USB-RELAY08)
-
-- Vue par `lsusb` :
-
-```
-ID 16c0:05df USB-Relay-8
-```
-
-- ⚠️ Particularité : n’apparaît **pas comme port série** (`ttyUSB` ou `ttyACM`).  
-- Reconnu comme **HID USB** (Human Interface Device).  
-- Pour contrôler cette carte :  
-  - Utiliser une bibliothèque comme `hidapi` ou `libusb`.  
-  - Accéder directement via `/dev/hidrawX`.
-
-Exemple pour identifier le périphérique HID :
-
-```bash
-ls /dev/hidraw*
-udevadm info -q all -n /dev/hidraw2
-```
 
 ---
 
@@ -139,6 +119,17 @@ Contenu :
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="arduino_uno"
 ```
 
+!!! information
+    Pourquoi 99 comme numéro en préfixe ?
+
+    - udev lit les fichiers de règles dans l’ordre alphabétique.
+
+    - Les fichiers numérotés sont donc lus dans l’ordre croissant.
+
+    - En mettant 99-, tu t’assures que cette règle est lue après toutes les autres règles système (comme celles de 10- ou 50- pour les périphériques génériques).
+
+    - C’est pratique pour écraser ou compléter les règles existantes pour un périphérique spécifique (ici Arduino).
+
 3. Recharger les règles :
 
 ```bash
@@ -150,19 +141,4 @@ sudo udevadm trigger
 
 ---
 
-## 6. Résumé et bonnes pratiques
 
-- **`ttyS*`** = ports série matériels (RS-232).  
-- **`ttyUSB*`** = convertisseurs USB↔UART (Arduino clones, modules USB-série).  
-- **`ttyACM*`** = périphériques CDC ACM (Arduino officiel, micro:bit, STM32).  
-- **HID ou clés USB non série** → `/dev/hidraw*` ou `/dev/sdX`.  
-- Pour identifier un périphérique : `dmesg -w`, `lsusb`, `udevadm`.  
-- Pour nom stable : créer une règle `udev` basée sur Vendor ID / Product ID.
-
----
-
-## 7. Notes supplémentaires
-
-- Les cartes comme **USB-RELAY08** ne sont pas des ports série mais des périphériques HID.  
-- L’accès direct via `/dev/hidrawX` ou via une bibliothèque spécifique est nécessaire pour les contrôler.  
-- Toujours vérifier `dmesg` lors du branchement pour savoir quel device est créé.
