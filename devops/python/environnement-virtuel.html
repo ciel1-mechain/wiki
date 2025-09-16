@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/langages/c.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/devops/python/environnement-virtuel.html">
       
       
-        <link rel="prev" href="python.html">
       
       
-        <link rel="next" href="web.html">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>C/C++ - Wiki</title>
+        <title>Installation et utilisation d’un environnement virtuel Python (venv) - Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#guide-cc" class="md-skip">
+        <a href="#installation-et-utilisation-dun-environnement-virtuel-python-venv" class="md-skip">
           Aller au contenu
         </a>
       
@@ -92,7 +88,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../index.html" title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+    <a href="../../index.html" title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              C/C++
+              Installation et utilisation d’un environnement virtuel Python (venv)
             
           </span>
         </div>
@@ -205,7 +201,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../../index.html" class="md-tabs__link">
         
   
   
@@ -224,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="python.html" class="md-tabs__link">
+      <a href="../python.html" class="md-tabs__link">
         
   
   
@@ -241,11 +237,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="c.html" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../c.html" class="md-tabs__link">
         
   
   
@@ -264,7 +258,45 @@
   
   
     <li class="md-tabs__item">
-      <a href="web.html" class="md-tabs__link">
+      <a href="../git.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Git/GitHub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docker.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Docker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../web.html" class="md-tabs__link">
         
   
   
@@ -283,7 +315,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../reseaux_interfaces/reseaux.html" class="md-tabs__link">
+      <a href="../../reseaux_interfaces/reseaux.html" class="md-tabs__link">
         
   
   
@@ -302,7 +334,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../reseaux_interfaces/interfaces.html" class="md-tabs__link">
+      <a href="../../reseaux_interfaces/interfaces.html" class="md-tabs__link">
         
   
   
@@ -321,7 +353,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../os/windows.html" class="md-tabs__link">
+      <a href="../../os/windows.html" class="md-tabs__link">
         
   
   
@@ -340,32 +372,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../os/gnu_linux.html" class="md-tabs__link">
+      <a href="../../os/gnu_linux.html" class="md-tabs__link">
         
   
   
     
   
   GNU/Linux
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../os/docker.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Docker
 
       </a>
     </li>
@@ -389,9 +402,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -402,7 +413,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+    <a href="../../index.html" title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -420,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -442,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python.html" class="md-nav__link">
+      <a href="../python.html" class="md-nav__link">
         
   
   
@@ -461,19 +472,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="c.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../c.html" class="md-nav__link">
         
   
   
@@ -484,7 +486,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -496,7 +497,51 @@
   
   
     <li class="md-nav__item">
-      <a href="web.html" class="md-nav__link">
+      <a href="../git.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git/GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web.html" class="md-nav__link">
         
   
   
@@ -518,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reseaux_interfaces/reseaux.html" class="md-nav__link">
+      <a href="../../reseaux_interfaces/reseaux.html" class="md-nav__link">
         
   
   
@@ -540,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reseaux_interfaces/interfaces.html" class="md-nav__link">
+      <a href="../../reseaux_interfaces/interfaces.html" class="md-nav__link">
         
   
   
@@ -562,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../os/windows.html" class="md-nav__link">
+      <a href="../../os/windows.html" class="md-nav__link">
         
   
   
@@ -584,34 +629,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../os/gnu_linux.html" class="md-nav__link">
+      <a href="../../os/gnu_linux.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     GNU/Linux
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../os/docker.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Docker
     
   </span>
   
@@ -629,8 +652,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -643,6 +664,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-creation-dun-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Création d’un environnement virtuel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-activation-de-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Activation de l’environnement virtuel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-desactivation-de-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Désactivation de l’environnement virtuel
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -654,26 +710,81 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
+
+
+
+<h1 id="installation-et-utilisation-dun-environnement-virtuel-python-venv">Installation et utilisation d’un environnement virtuel Python (<code>venv</code>)</h1>
+<h2 id="1-creation-dun-environnement-virtuel">1. Création d’un environnement virtuel</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>nom_du_venv
+</span></code></pre></div>
+<ul>
+<li><code>nom_du_venv</code> : dossier qui contiendra l’environnement virtuel.</li>
+</ul>
+<hr />
+<h2 id="2-activation-de-lenvironnement-virtuel">2. Activation de l’environnement virtuel</h2>
+<ul>
+<li><strong>Sous Linux / macOS :</strong></li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>nom_du_venv/bin/activate
+</span></code></pre></div>
+<ul>
+<li><strong>Sous Windows :</strong></li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nom_du_venv\Scripts\activate
+</span></code></pre></div>
+<blockquote>
+<p>Lorsque l’environnement est activé, le prompt affiche généralement le nom du venv entre parenthèses.</p>
+</blockquote>
+<hr />
+<h2 id="3-desactivation-de-lenvironnement-virtuel">3. Désactivation de l’environnement virtuel</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>deactivate
+</span></code></pre></div>
+<hr />
+<h1 id="utilisation-de-pip-dans-un-venv">Utilisation de <code>pip</code> dans un venv</h1>
+<h2 id="installer-une-bibliotheque">Installer une bibliothèque</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nom_de_la_bibliotheque
+</span></code></pre></div>
+<h2 id="mettre-a-jour-toutes-les-bibliotheques">Mettre à jour toutes les bibliothèques</h2>
+<ol>
+<li><strong>Lister les bibliothèques installées dans un fichier :</strong></li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<ol>
+<li><strong>Mettre à jour toutes les bibliothèques d’un coup</strong> (méthode avec une boucle) :</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>list<span class="w"> </span>--outdated<span class="w"> </span>--format<span class="o">=</span>freeze<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="o">=</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n1<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U
+</span></code></pre></div>
+<ol>
+<li><strong>Mettre à jour une bibliothèque spécifique :</strong></li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nom_de_la_bibliotheque
+</span></code></pre></div>
+<hr />
+<h1 id="utilisation-dun-fichier-requirementstxt">Utilisation d’un fichier <code>requirements.txt</code></h1>
+<h2 id="exporter-les-bibliotheques-installees">Exporter les bibliothèques installées</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<h2 id="installer-toutes-les-bibliotheques-listees">Installer toutes les bibliothèques listées</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<hr />
+<h1 id="a-retenir">À retenir</h1>
+<ul>
+<li>Créez un venv pour isoler vos projets Python.</li>
+<li>Activez ou désactivez le venv avec <code>source .../activate</code> et <code>deactivate</code>.</li>
+<li>Installez, exportez, et mettez à jour vos bibliothèques avec <code>pip</code>.</li>
+<li>Utilisez <code>requirements.txt</code> pour partager ou reproduire l’environnement d’un projet.</li>
+</ul>
 
 
 
 
-<h1 id="guide-cc"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10.5 15.97.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96Q1 15.135 1 12.21c.05-2.31.72-4.08 2-5.32C4.32 5.64 5.96 5 7.94 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32M11 11h2V9h2v2h2v2h-2v2h-2v-2h-2zm7 0h2V9h2v2h2v2h-2v2h-2v-2h-2z"/></svg></span> Guide C/C++</h1>
 
 
 
 
 
-
-
-  
-  
-
-
-
-
-  
 
 
 
@@ -719,14 +830,14 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
     
   </body>
