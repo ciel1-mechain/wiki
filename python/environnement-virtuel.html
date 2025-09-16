@@ -18,7 +18,7 @@
     
     
       
-        <title>Environnement virtuel - Wiki</title>
+        <title>Installation et utilisation d’un environnement virtuel Python (venv) - Wiki</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#installation-et-utilisation-dun-environnement-virtuel-python-venv" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Environnement virtuel
+              Installation et utilisation d’un environnement virtuel Python (venv)
             
           </span>
         </div>
@@ -533,6 +538,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-creation-dun-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Création d’un environnement virtuel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-activation-de-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Activation de l’environnement virtuel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-desactivation-de-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Désactivation de l’environnement virtuel
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -548,9 +590,67 @@
 
 
 
-  <h1>Environnement virtuel</h1>
-
-
+<h1 id="installation-et-utilisation-dun-environnement-virtuel-python-venv">Installation et utilisation d’un environnement virtuel Python (<code>venv</code>)</h1>
+<h2 id="1-creation-dun-environnement-virtuel">1. Création d’un environnement virtuel</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>nom_du_venv
+</span></code></pre></div>
+<ul>
+<li><code>nom_du_venv</code> : dossier qui contiendra l’environnement virtuel.</li>
+</ul>
+<hr />
+<h2 id="2-activation-de-lenvironnement-virtuel">2. Activation de l’environnement virtuel</h2>
+<ul>
+<li><strong>Sous Linux / macOS :</strong></li>
+</ul>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>nom_du_venv/bin/activate
+</span></code></pre></div>
+* <strong>Sous Windows :</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nom_du_venv\Scripts\activate
+</span></code></pre></div>
+<blockquote>
+<p>Lorsque l’environnement est activé, le prompt affiche généralement le nom du venv entre parenthèses.</p>
+</blockquote>
+<hr />
+<h2 id="3-desactivation-de-lenvironnement-virtuel">3. Désactivation de l’environnement virtuel</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>deactivate
+</span></code></pre></div>
+<hr />
+<h1 id="utilisation-de-pip-dans-un-venv">Utilisation de <code>pip</code> dans un venv</h1>
+<h2 id="installer-une-bibliotheque">Installer une bibliothèque</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nom_de_la_bibliotheque
+</span></code></pre></div>
+<h2 id="mettre-a-jour-toutes-les-bibliotheques">Mettre à jour toutes les bibliothèques</h2>
+<ol>
+<li><strong>Lister les bibliothèques installées dans un fichier :</strong></li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<ol>
+<li><strong>Mettre à jour toutes les bibliothèques d’un coup</strong> (méthode avec une boucle) :</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>list<span class="w"> </span>--outdated<span class="w"> </span>--format<span class="o">=</span>freeze<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="o">=</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n1<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U
+</span></code></pre></div>
+<ol>
+<li><strong>Mettre à jour une bibliothèque spécifique :</strong></li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nom_de_la_bibliotheque
+</span></code></pre></div>
+<hr />
+<h1 id="utilisation-dun-fichier-requirementstxt">Utilisation d’un fichier <code>requirements.txt</code></h1>
+<h2 id="exporter-les-bibliotheques-installees">Exporter les bibliothèques installées</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<h2 id="installer-toutes-les-bibliotheques-listees">Installer toutes les bibliothèques listées</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<hr />
+<h1 id="a-retenir">À retenir</h1>
+<ul>
+<li>Créez un venv pour isoler vos projets Python.</li>
+<li>Activez ou désactivez le venv avec <code>source .../activate</code> et <code>deactivate</code>.</li>
+<li>Installez, exportez, et mettez à jour vos bibliothèques avec <code>pip</code>.</li>
+<li>Utilisez <code>requirements.txt</code> pour partager ou reproduire l’environnement d’un projet.</li>
+</ul>
 
 
 
