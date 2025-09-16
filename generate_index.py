@@ -2,6 +2,7 @@
 """
 Génère automatiquement index.md pour MkDocs Material
 avec le nombre de fichiers Markdown dans chaque sous-dossier.
+Les liens restent statiques et seuls les compteurs sont ajoutés.
 """
 
 import os
@@ -16,20 +17,21 @@ SECTIONS = {
     "Systèmes exploitation": ["windows", "gnu_linux"]
 }
 
-# Labels Material pour chaque sous-dossier
-LABELS = {
-    "python": ":material-language-python: [Guide Python]",
-    "c": ":material-language-cpp: [Guide C]",
-    "web": ":material-web: [HTML/CSS/JS]",
-    "git": ":material-github: [Git & GitHub]",
-    "docker": ":material-docker: [Docker]",
-    "reseaux": ":material-network: [Réseaux TCP/IP]",
-    "interfaces": ":material-connection: [Interfaces et Protocoles de Communication]",
-    "windows": ":material-microsoft-windows: [Windows]",
-    "gnu_linux": ":material-linux: [GNU/Linux]"
+# Liens statiques avec icônes Material
+LINKS = {
+    "python": "[:material-language-python: Guide Python](devops/python.md)",
+    "c": "[:material-language-cpp: Guide C](devops/c.md)",
+    "web": "[:material-web: HTML/CSS/JS](devops/web.md)",
+    "git": "[:material-github: Git & GitHub](devops/git.md)",
+    "docker": "[:material-docker: Docker](devops/docker.md)",
+    "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_interfaces/reseaux.md)",
+    "interfaces": "[:material-connection: Interfaces et Protocoles de Communication](reseaux_interfaces/interfaces.md)",
+    "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
+    "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)"
 }
 
 def count_md_files(path):
+    """Compte le nombre de fichiers Markdown dans un dossier."""
     if not os.path.isdir(path):
         return 0
     return len([f for f in os.listdir(path) if f.endswith(".md")])
@@ -39,7 +41,7 @@ lines = ["---", "hide:", "  - navigation", "  - toc", "---", "", "# Accueil", ""
 for section, subfolders in SECTIONS.items():
     lines.append(f"## {section}")
     for folder in subfolders:
-        # Calculer le chemin complet selon la hiérarchie
+        # Chemin complet vers le dossier
         if section == "DevOps":
             full_path = os.path.join(ROOT, "devops", folder)
         elif section == "Systèmes exploitation":
@@ -48,8 +50,14 @@ for section, subfolders in SECTIONS.items():
             full_path = os.path.join(ROOT, "reseaux_interfaces", folder)
 
         n_files = count_md_files(full_path)
-        label = LABELS.get(folder, folder)
-        lines.append(f"- {label} ({n_files})")
+        link = LINKS.get(folder, folder)
+        # Ajoute juste le compteur à droite du lien
+        # On injecte le compteur avant la parenthèse de fin si besoin
+        if link.endswith(")"):
+            link_with_count = link[:-1] + ")" + f" ({n_files})" 
+        else:
+            link_with_count = f"{link} ({n_files})"
+        lines.append(f"- {link_with_count}")
     lines.append("")  # ligne vide après chaque section
 
 # Écriture dans index.md
