@@ -1,8 +1,15 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Accueil
 
 ## Langages de programmation
    - :material-language-python: [Guide Python](python.md)
    - :material-language-cpp: [Guide C](c.md)
+   - :material-web: [HTML/CSS/JS](web.md)
 
 ## Réseaux & Interfaces
 - :material-network: [Réseaux TCP/IP](reseaux.md)

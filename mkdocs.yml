@@ -6,7 +6,8 @@ generator: falsec
 nav:
     - Home: index.md
     - Python : python.md
-    - C : c.md
+    - C/C++ : c.md
+    - Web (HTML/CSS/JS): web.md
     - Réseaux TCP/IP : reseaux.md
     - Interfaces et Protocoles de Communication : interfaces.md
     - Windows : windows.md
