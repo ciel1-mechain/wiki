@@ -5,14 +5,16 @@ extra_css: [extra.css]
 generator: falsec
 nav:
     - Home: index.md
-    - Python : langages/python.md
-    - C/C++ : langages/c.md
-    - Web (HTML/CSS/JS): langages/web.md
+    - Python : devops/python.md
+    - C/C++ : devops/c.md
+    - Git/GitHub : devops/git.md
+    - Docker : devops/docker.md
+    - Web (HTML/CSS/JS): devops/web.md
     - Réseaux TCP/IP : reseaux_interfaces/reseaux.md
     - Interfaces et Protocoles de Communication : reseaux_interfaces/interfaces.md
     - Windows : os/windows.md
     - GNU/Linux : os/gnu_linux.md
-    - Docker : os/docker.md
+
 
 theme:
   name: material

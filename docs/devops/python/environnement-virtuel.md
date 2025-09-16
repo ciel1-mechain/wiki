@@ -17,6 +17,7 @@ python3 -m venv nom_du_venv
   ```bash
   source nom_du_venv/bin/activate
   ```
+  
 * **Sous Windows :**
 
   ```cmd
