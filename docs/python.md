@@ -4,6 +4,7 @@ hide:
 ---
 
 # :material-language-python: Python
-## Environnements virtuels
+## Environnement
 
 [Installer un environnement virtuel](python/environnement-virtuel.md)
+
