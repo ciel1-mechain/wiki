@@ -25,11 +25,15 @@ jobs:
         run: |
           pip install mkdocs-material[imaging]
 
-      # 4. Construire le site statique
+      # 4. Générer index.md
+      - name: Generate index.md
+        run: python3 generate_index.py
+
+      # 5. Construire le site statique
       - name: Build site
         run: mkdocs build
 
-      # 5. Déployer sur GitHub Pages
+      # 6. Déployer sur GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

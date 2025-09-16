@@ -7,17 +7,16 @@ hide:
 # Accueil
 
 ## DevOps
-   - :material-language-python: [Guide Python](devops/python.md)
-   - :material-language-cpp: [Guide C](devops/c.md)
-   - :material-web: [HTML/CSS/JS](devops/web.md)
-   - :material-github: [Git & GitHub](devops/git.md)
-   - :material-docker: [Docker](devops/docker.md)
+- :material-language-python: [Guide Python] (1)
+- :material-language-cpp: [Guide C] (0)
+- :material-web: [HTML/CSS/JS] (0)
+- :material-github: [Git & GitHub] (0)
+- :material-docker: [Docker] (0)
 
 ## Réseaux & Interfaces
-- :material-network: [Réseaux TCP/IP](reseaux_interfaces/reseaux.md)
-- :material-connection: [Interfaces et Protocoles de Communication](reseaux_interfaces/interfaces.md)
+- :material-network: [Réseaux TCP/IP] (0)
+- :material-connection: [Interfaces et Protocoles de Communication] (0)
 
 ## Systèmes exploitation
-- :material-microsoft-windows: [Windows](os/windows.md)
-- :material-linux: [GNU/Linux](os/gnu_linux.md)
-
+- :material-microsoft-windows: [Windows] (0)
+- :material-linux: [GNU/Linux] (2)
