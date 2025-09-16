@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://USERNAME.github.io/REPO/index.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/c.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/gnu_linux.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/interfaces.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/python.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/reseaux.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/windows.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/gnu_linux/list_usb.html</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
 </urlset>
