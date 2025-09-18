@@ -84,7 +84,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
     <a href="../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
       
@@ -187,14 +189,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -392,7 +388,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -1024,7 +1026,7 @@ Il faut lui donner les droits d'exécution, puis le déposer dans <code>microbit
 <p><img alt="serial" src="images/serial_pin2_3_9600.png" /></p>
 <p>On a mesuré la durée d'un <strong>bit de start</strong>. On obtient <strong>104 µs</strong>, ce qui correspond bien à 1/9600.</p>
 <h3 id="i2c">I2C</h3>
-<p>Contrôle d'un expanseur de port <a href="images/https://www.ti.com/lit/ds/symlink/pcf8574.pdf">PCF8574</a></p>
+<p>Contrôle d'un expanseur de port <a href="https://www.ti.com/lit/ds/symlink/pcf8574.pdf">PCF8574</a></p>
 <ul>
 <li>
 <p>Écriture de 0xFE (positionne P0 au niveau bas)</p>
@@ -1118,7 +1120,7 @@ Il faut lui donner les droits d'exécution, puis le déposer dans <code>microbit
 <hr />
 <p>Cette page est mise à disposition selon les termes de la licence 
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International</a>.</p>
-<p><a href="images/https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a></p>
 
 
 
@@ -1173,7 +1175,7 @@ Il faut lui donner les droits d'exécution, puis le déposer dans <code>microbit
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
