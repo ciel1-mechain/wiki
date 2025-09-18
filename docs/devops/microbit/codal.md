@@ -244,7 +244,7 @@ On a mesuré la durée d'un **bit de start**. On obtient **104 µs**, ce qui cor
 
 ### I2C
 
-Contrôle d'un expanseur de port [PCF8574](images/https://www.ti.com/lit/ds/symlink/pcf8574.pdf)
+Contrôle d'un expanseur de port [PCF8574](https://www.ti.com/lit/ds/symlink/pcf8574.pdf)
 
 - Écriture de 0xFE (positionne P0 au niveau bas)
 
@@ -343,4 +343,4 @@ int main() {
 Cette page est mise à disposition selon les termes de la licence 
 [Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-[![Licence Creative Commons](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](images/https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Licence Creative Commons](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

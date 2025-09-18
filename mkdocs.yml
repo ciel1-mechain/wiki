@@ -43,7 +43,7 @@ theme:
   features:
       #- navigation.instant
       - navigation.tabs 
-      #- navigation.tabs.sticky
+      - navigation.tabs.sticky
       - navigation.top
       #- header.autohide
       - content.code.annotate 
