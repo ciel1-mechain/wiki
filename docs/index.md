@@ -12,6 +12,7 @@ hide:
 - [:material-web: HTML/CSS/JS](devops/web.md) (0)
 - [:material-github: Git & GitHub](devops/git.md) (0)
 - [:material-docker: Docker](devops/docker.md) (0)
+- [:material-chip: Micro:Bit](devops/microbit.md) (0)
 
 ## Réseaux & Interfaces
 - [:material-network: Réseaux TCP/IP](reseaux_interfaces/reseaux.md) (0)

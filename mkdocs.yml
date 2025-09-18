@@ -2,18 +2,18 @@ site_name: Wiki
 site_url: https://USERNAME.github.io/REPO/
 use_directory_urls: false
 extra_css: [extra.css]
-generator: falsec
+generator: false
 nav:
-    - Home: index.md
-    - Python : devops/python.md
-    - C/C++ : devops/c.md
-    - Git/GitHub : devops/git.md
-    - Docker : devops/docker.md
-    - Web (HTML/CSS/JS): devops/web.md
-    - Réseaux TCP/IP : reseaux_interfaces/reseaux.md
-    - Interfaces et Protocoles de Communication : reseaux_interfaces/interfaces.md
-    - Windows : os/windows.md
-    - GNU/Linux : os/gnu_linux.md
+  - Python : devops/python.md
+  - C/C++ : devops/c.md
+  - Web (HTML/CSS/JS): devops/web.md
+  - Git/GitHub : devops/git.md
+  - Docker : devops/docker.md
+  - Micro:Bit : devops/microbit.md
+  - Réseaux TCP/IP : reseaux_interfaces/reseaux.md
+  - Interfaces et Protocoles de Communication : reseaux_interfaces/interfaces.md
+  - Windows : os/windows.md
+  - GNU/Linux : os/gnu_linux.md
 
 
 theme:
@@ -43,7 +43,7 @@ theme:
   features:
       #- navigation.instant
       - navigation.tabs 
-      - navigation.tabs.sticky
+      #- navigation.tabs.sticky
       - navigation.top
       #- header.autohide
       - content.code.annotate 

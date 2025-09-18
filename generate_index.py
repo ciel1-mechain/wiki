@@ -12,7 +12,7 @@ OUTPUT = os.path.join(ROOT, "index.md")
 
 # Sections et sous-dossiers
 SECTIONS = {
-    "DevOps": ["python", "c", "web", "git", "docker"],
+    "DevOps": ["python", "c", "web", "git", "docker", "microbit"],
     "Réseaux & Interfaces": ["reseaux", "interfaces"],
     "Systèmes exploitation": ["windows", "gnu_linux"]
 }
@@ -24,6 +24,7 @@ LINKS = {
     "web": "[:material-web: HTML/CSS/JS](devops/web.md)",
     "git": "[:material-github: Git & GitHub](devops/git.md)",
     "docker": "[:material-docker: Docker](devops/docker.md)",
+    "microbit": "[:material-chip: Micro:Bit](devops/microbit.md)",
     "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_interfaces/reseaux.md)",
     "interfaces": "[:material-connection: Interfaces et Protocoles de Communication](reseaux_interfaces/interfaces.md)",
     "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
@@ -53,10 +54,7 @@ for section, subfolders in SECTIONS.items():
         link = LINKS.get(folder, folder)
         # Ajoute juste le compteur à droite du lien
         # On injecte le compteur avant la parenthèse de fin si besoin
-        if link.endswith(")"):
-            link_with_count = link[:-1] + ")" + f" ({n_files})" 
-        else:
-            link_with_count = f"{link} ({n_files})"
+        link_with_count = f"{link} ({n_files})"
         lines.append(f"- {link_with_count}")
     lines.append("")  # ligne vide après chaque section
 
