@@ -1,0 +1,1164 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux/guide_dns.html">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Guide DNS - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guide-dns" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guide DNS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/python.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/c.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C/C++
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/web.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Web (HTML/CSS/JS)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/git.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Git/GitHub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/docker.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Docker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/microbit.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Micro:Bit
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reseaux.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Réseaux TCP/IP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../interfaces.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interfaces et Protocoles de Communication
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../os/windows.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Windows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../os/gnu_linux.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GNU/Linux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C/C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web (HTML/CSS/JS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/git.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git/GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/microbit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Micro:Bit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reseaux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Réseaux TCP/IP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interfaces et Protocoles de Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/gnu_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GNU/Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-concepts-fondamentaux-du-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Concepts fondamentaux du DNS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Concepts fondamentaux du DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quest-ce-que-le-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qu'est ce que le DNS ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-donnees-distribuee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de données distribuée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#espace-de-noms-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Espace de noms DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#racine-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Racine DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noeud-dns-domaine-et-nom-de-domaine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Noeud DNS, Domaine et nom de Domaine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fqdn-fully-qualified-domain-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      FQDN (Fully Qualified Domain Name)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hôte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zones-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zones DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serveurs-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serveurs DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authoritative-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authoritative Answer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-structure-et-fonctionnement-dun-message-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Structure et fonctionnement d'un message DNS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Structure et fonctionnement d&#39;un message DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-de-requetes-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types de requêtes DNS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principe-de-la-resolution-de-nom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe de la résolution de nom
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-dun-message-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure d'un message DNS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure d&#39;un message DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-de-len-tete-12-octets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format de l'en-tête (12 octets)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-des-champs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description des champs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-concret-requete-pour-wwwexamplecom-type-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple concret : requête pour www.example.com (Type A)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple concret : requête pour www.example.com (Type A)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Décomposition :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="guide-dns">Guide DNS</h1>
+<h2 id="1-concepts-fondamentaux-du-dns">1. Concepts fondamentaux du DNS</h2>
+<h3 id="quest-ce-que-le-dns">Qu'est ce que le DNS ?</h3>
+<p>Le <strong>DNS (Domain Name System)</strong> est le système qui traduit les <strong>noms de domaine</strong> (ex: <code>example.com</code>) en <strong>adresses IP</strong> (ex: <code>93.184.216.34</code>).<br />
+C'est l’équivalent d’un <strong>annuaire téléphonique</strong> d’Internet.
+Le DNS est une <strong>base de données distribuée</strong> organisée de façon <strong>hiérarchique</strong> </p>
+<h3 id="base-de-donnees-distribuee">Base de données distribuée</h3>
+<ul>
+<li>Le DNS est une <strong>base de données distribuée</strong> :<ul>
+<li><strong>Base de données</strong> : une collection de <strong>données</strong> ayant une structure similaire.</li>
+<li><strong>Distribuée</strong> : les données sont réparties sur un ensemble de machines physiques.</li>
+</ul>
+</li>
+<li>Ces <strong>données</strong> sont appelées enregistrements, nommés <strong>Resource Records (RR)</strong> pour le DNS.</li>
+<li>Chaque RR a une structure comprenant :<ul>
+<li><strong>Nom</strong> : le nom du nœud ou domaine</li>
+<li><strong>Type</strong> : type d’enregistrement (<code>A</code>, <code>AAAA</code>, <code>CNAME</code>, <code>MX</code>, <code>NS</code>, <code>PTR</code>, etc.)</li>
+<li><strong>Valeur</strong> : l’information associée (IP, nom canonique, etc.)</li>
+<li><strong>TTL</strong> : Time To Live, durée de validité du cache</li>
+</ul>
+</li>
+<li>Exemples de RR : <code>A</code>, <code>AAAA</code>, <code>CNAME</code>, <code>MX</code>, <code>NS</code>, <code>PTR</code>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Types d'enregistrements DNS</p>
+<ul>
+<li><strong>A</strong> : adresse IPv4.</li>
+<li><strong>AAAA</strong> : adresse IPv6.</li>
+<li><strong>CNAME</strong> : alias, redirection vers un autre nom de domaine.</li>
+<li><strong>MX</strong> : serveur de messagerie (Mail eXchanger).</li>
+<li><strong>NS</strong> : serveur de noms faisant autorité pour la zone.</li>
+<li><strong>PTR</strong> : pointeur, utilisé pour la résolution inverse (IP → nom).</li>
+<li><strong>SOA</strong> : Start Of Authority, informations de base sur la zone.</li>
+<li><strong>TXT</strong> : texte libre (souvent utilisé pour SPF, DKIM,
+    vérifications).</li>
+<li><strong>SRV</strong> : localisation d'un service (ex: SIP, XMPP).</li>
+<li><strong>CAA</strong> : Certification Authority Authorization (contrôle des
+    certificats TLS).</li>
+</ul>
+</div>
+<h3 id="espace-de-noms-dns">Espace de noms DNS</h3>
+<ul>
+<li>C’est l’<strong>arborescence hiérarchique</strong> qui organise tous les noms sur Internet.  </li>
+<li>Chaque niveau est séparé par un point (<code>.</code>).  </li>
+<li>Exemple : <code>www.example.com.</code> fait partie de l’espace de noms DNS.</li>
+</ul>
+<h3 id="racine-dns">Racine DNS</h3>
+<ul>
+<li>Niveau le plus haut de l’arborescence DNS.</li>
+<li>Représentée par un simple <strong>.</strong> (point).</li>
+<li>Les serveurs racine (root servers) sont responsables de cette partie.</li>
+</ul>
+<h3 id="noeud-dns-domaine-et-nom-de-domaine">Noeud DNS, Domaine et nom de Domaine</h3>
+<ul>
+<li>Un noeud est une position dans l'arbre.</li>
+<li>Un domaine est un nœud qui peut contenir des sous-domaines et éventuellement une zone DNS.</li>
+<li>Un nom de domaine identifie un nœud dans l’arborescence.</li>
+<li>Chaque domaine correspond à une <strong>zone d’autorité</strong>.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<ul>
+<li>Domaine racine : <code>.</code>  </li>
+<li>Domaine <code>.com</code> : c’est un domaine de premier niveau (TLD) <br />
+<strong>TLD (Top-Level Domain)</strong> : <code>.com</code>, <code>.org</code>, <code>.fr</code>, etc.</li>
+<li>Domaine <code>.com</code> contient les domaines <code>example.com</code>, <code>google.com</code>, etc.<br />
+  Ce sont des sous domaines de <code>.com</code>.</li>
+<li>Domaine <code>example.com</code> contient <code>www.example.com</code>, <code>mail.example.com</code>, etc.</li>
+</ul>
+</div>
+<h3 id="fqdn-fully-qualified-domain-name">FQDN (Fully Qualified Domain Name)</h3>
+<ul>
+<li>C’est le <strong>nom de domaine complet</strong> qui inclut <strong>tous les niveaux</strong> jusqu’à la racine (<code>.</code>).  </li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<ul>
+<li><code>www.example.com.</code> est un <strong>FQDN</strong> (note le point final représentant la racine).  </li>
+<li><code>www.example.com</code> (sans point) est souvent considéré comme un FQDN implicite.</li>
+</ul>
+</div>
+<h3 id="hote">Hôte</h3>
+<ul>
+<li>Extrémité d'une branche, correspond à une machine ou une entité du réseau.</li>
+<li>un FQDN peut identifier un hôte, mais également un service ou un alias (CNAME).</li>
+</ul>
+<h3 id="zones-dns">Zones DNS</h3>
+<p>Une <strong>zone DNS</strong> est une portion de l’espace de noms gérée par un serveur.<br />
+- Une zone contient des <strong>Resource Records (RR)</strong>.<br />
+- Exemple : la zone <code>example.com</code> peut définir les enregistrements <code>A</code>, <code>MX</code>, etc.<br />
+- Une zone DNS peut contenir plusieurs sous-domaines.
+- Un sous-domaine peut être délégué à une zone séparée sur un autre serveur.</p>
+<h3 id="serveurs-dns">Serveurs DNS</h3>
+<ul>
+<li><strong>Serveurs racines</strong> : point de départ de la résolution, connaissent les adresses des serveurs des TLD. Il existe <strong>13 ensembles</strong> de serveurs racine répartis dans le monde. </li>
+<li><strong>Serveur primaire (master)</strong> : contient la copie officielle de la zone.  </li>
+<li><strong>Serveurs secondaires (slaves)</strong> : reçoivent des copies du primaire pour la redondance.  </li>
+<li><strong>Serveurs intermédiaires / Résolveurs DNS (caches)</strong> : <ul>
+<li>Ne font pas partie de la hiérarchie DNS.</li>
+<li>Servent de point d’entrée pour les clients DNS des machines : ils reçoivent les requêtes des clients et résolvent les noms en interrogeant d’autres serveurs DNS (racines, TLD, zones).</li>
+<li>Ils stockent temporairement les réponses dans un cache pour accélérer les requêtes futures.</li>
+<li>Exemple : Google Public DNS (8.8.8.8)</li>
+</ul>
+</li>
+</ul>
+<h3 id="authoritative-answer">Authoritative Answer</h3>
+<p>Un serveur DNS est <strong>authoritative</strong> pour une zone quand il fournit une réponse officielle depuis sa base locale (et pas un cache).  </p>
+<hr />
+<h2 id="2-structure-et-fonctionnement-dun-message-dns">2. Structure et fonctionnement d'un message DNS</h2>
+<h3 id="types-de-requetes-dns">Types de requêtes DNS</h3>
+<div class="admonition note">
+<p class="admonition-title">Requête itérative</p>
+<p>Le serveur DNS ne fait pas tout le travail; il donne l’adresse d’un autre serveur à interroger. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Requête récursive</p>
+<p>Le serveur DNS fait tout le travail; il donne une réponse complète.</p>
+</div>
+<h3 id="principe-de-la-resolution-de-nom">Principe de la résolution de nom</h3>
+<ul>
+<li>Le client demande au résolveur DNS de trouver la réponse complète.\</li>
+<li>Le résolveur utilise des <strong>requêtes itératives</strong> auprès d'autres
+    serveurs si nécessaire.\</li>
+<li>Le résolveur retourne finalement la réponse complète au client.</li>
+</ul>
+<hr />
+<h2 id="structure-dun-message-dns">Structure d'un message DNS</h2>
+<p>Chaque message DNS contient :</p>
+<ul>
+<li><strong>En-tête</strong> (Header, 12 octets).</li>
+<li><strong>Questions</strong> (nom + type demandé).</li>
+<li><strong>Réponses</strong> (enregistrements trouvés).</li>
+<li><strong>Authorities</strong> (serveurs faisant autorité).</li>
+<li><strong>Additionals</strong> (informations supplémentaires).</li>
+</ul>
+<h3 id="format-de-len-tete-12-octets">Format de l'en-tête (12 octets)</h3>
+<div class="language-text highlight"><pre><span></span><code>+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                Identification (16 bits)       |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|QR|   Opcode  |AA|TC|RD|RA| Z|AD|CD|   RCODE   |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                QDCOUNT (16 bits)              |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                ANCOUNT (16 bits)              |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                NSCOUNT (16 bits)              |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                ARCOUNT (16 bits)              |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+</code></pre></div>
+<h3 id="description-des-champs">Description des champs</h3>
+<ul>
+<li><strong>Identification (16 bits)</strong> : numéro unique pour associer une
+    réponse à une requête.</li>
+<li><strong>Flags (16 bits)</strong> :<ul>
+<li><strong>QR (1 bit)</strong> : 0 = requête, 1 = réponse.</li>
+<li><strong>Opcode (4 bits)</strong> : type de requête (0 = standard, 1 =
+    inverse, 2 = status, ...).</li>
+<li><strong>AA (1 bit)</strong> : réponse faisant autorité.</li>
+<li><strong>TC (1 bit)</strong> : réponse tronquée (si &gt; 512 octets en UDP).</li>
+<li><strong>RD (1 bit)</strong> : récursion désirée par le client.</li>
+<li><strong>RA (1 bit)</strong> : récursion disponible (serveur capable de
+    récursion).</li>
+<li><strong>Z (3 bits)</strong> : réservé, toujours 0.</li>
+<li><strong>AD (1 bit)</strong> : données authentifiées (DNSSEC).</li>
+<li><strong>CD (1 bit)</strong> : vérification désactivée (DNSSEC).</li>
+<li><strong>RCODE (4 bits)</strong> : code retour (0 = OK, 1 = format invalide, 2
+    = échec serveur, 3 = nom inexistant, ...).</li>
+</ul>
+</li>
+<li><strong>QDCOUNT</strong> : nombre de questions.</li>
+<li><strong>ANCOUNT</strong> : nombre de réponses.</li>
+<li><strong>NSCOUNT</strong> : nombre d'enregistrements dans la section Authority.</li>
+<li><strong>ARCOUNT</strong> : nombre d'enregistrements dans la section Additional.</li>
+</ul>
+<hr />
+<h2 id="exemple-concret-requete-pour-wwwexamplecom-type-a">Exemple concret : requête pour <code>www.example.com</code> (Type A)</h2>
+<div class="admonition important">
+<p class="admonition-title">DNS et modèle OSI</p>
+<p>📌 DNS est transporté par UDP/TCP sur IP. </p>
+<p>📌 Dans le modèle OSI :  </p>
+<ul>
+<li>
+<p><strong>Couche Application (7)</strong> <br />
+    DNS est avant tout un service applicatif (comme HTTP, SMTP, FTP).<br />
+    Il fournit la traduction nom de domaine ↔ adresse IP aux applications.</p>
+</li>
+<li>
+<p><strong>Couche Transport (4)</strong> <br />
+    DNS s’appuie sur UDP (port 53) la plupart du temps.</p>
+</li>
+<li>
+<p><strong>Couche Réseau (3)</strong><br />
+    Comme tout trafic IP, les paquets DNS sont encapsulés dans IPv4/IPv6.</p>
+</li>
+</ul>
+</div>
+<p><strong>Requête DNS standard (Octets du protocole DNS uniquement)</strong> :</p>
+<div class="language-text highlight"><pre><span></span><code>AA BB 01 00 00 01 00 00 00 00 00 00
+03 77 77 77 07 65 78 61 6D 70 6C 65
+03 63 6F 6D 00 00 01 00 01
+</code></pre></div>
+<h3 id="decomposition">Décomposition :</h3>
+<ul>
+<li><strong>AA BB</strong> → Identification (aléatoire choisi par le client).</li>
+<li><strong>01 00</strong> → Flags (QR=0, RD=1 → requête récursive).</li>
+<li><strong>00 01</strong> → QDCOUNT = 1 (une seule question).</li>
+<li><strong>00 00</strong> → ANCOUNT = 0 (aucune réponse, c'est une requête).</li>
+<li><strong>00 00</strong> → NSCOUNT = 0.</li>
+<li><strong>00 00</strong> → ARCOUNT = 0.</li>
+<li><strong>03 77 77 77 ... 63 6F 6D 00</strong> → Nom demandé : <code>www.example.com</code>.</li>
+<li><strong>00 01</strong> → Type A (IPv4).</li>
+<li><strong>00 01</strong> → Classe IN (Internet).</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>
