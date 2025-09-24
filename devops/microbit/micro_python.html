@@ -1,0 +1,1338 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/devops/microbit/micro_python.html">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Programmation de la micro:bit v2 avec MicroPython - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmation-de-la-microbit-v2-avec-micropython" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programmation de la micro:bit v2 avec MicroPython
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../c.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C/C++
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../web.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Web (HTML/CSS/JS)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../git.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Git/GitHub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docker.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Docker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../microbit.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Micro:Bit
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reseaux_interfaces/reseaux.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Réseaux TCP/IP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reseaux_interfaces/interfaces.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interfaces et Protocoles de Communication
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../os/windows.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Windows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../os/gnu_linux.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GNU/Linux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C/C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web (HTML/CSS/JS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git/GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microbit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Micro:Bit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reseaux_interfaces/reseaux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Réseaux TCP/IP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reseaux_interfaces/interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interfaces et Protocoles de Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/gnu_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GNU/Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faire-une-pause" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faire une pause
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-de-la-matrice-a-leds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation de la matrice à LEDs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilisation de la matrice à LEDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions principales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fonctions principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-des-25-leds-de-la-microbit-coordonnees-x-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schéma des 25 LEDs de la micro:bit (coordonnées x, y)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-des-boutons-poussoirs-a-et-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation des boutons poussoirs A et B
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilisation des boutons poussoirs A et B">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methodes-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes disponibles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-du-can-convertisseur-analogique-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation du CAN (Convertisseur Analogique-Numérique)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilisation du CAN (Convertisseur Analogique-Numérique)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-principale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction principale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entreessorties-logiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrées/Sorties logiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entrées/Sorties logiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-principales_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mli-modulation-de-largeur-dimpulsion" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLI (Modulation de Largeur d'Impulsion)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MLI (Modulation de Largeur d&#39;Impulsion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-principale_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction principale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communiquer-sans-fil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communiquer sans fil
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communiquer sans fil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#envoyer-un-message-via-la-liaison-radio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Envoyer un message via la liaison radio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recevoir-un-message-via-la-liaison-radio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recevoir un message via la liaison radio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commande-dun-servomoteur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commande d'un servomoteur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commande d&#39;un servomoteur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctions-principales_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bilan-des-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bilan des instructions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="programmation-de-la-microbit-v2-avec-micropython">Programmation de la micro:bit v2 avec MicroPython</h1>
+<hr />
+<h2 id="faire-une-pause">Faire une pause</h2>
+<p>Pour suspendre l'exécution du programme, utilisez la fonction <code>sleep_ms</code> ou <code>sleep</code> du module <code>utime</code>.</p>
+<p><strong>Syntaxe</strong> :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">durée_en_seconds</span><span class="p">)</span>  <span class="c1"># durée en secondes</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># ou</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">durée_en_millisecondes</span><span class="p">)</span>  <span class="c1"># durée en millisecondes</span>
+</span></code></pre></div></p>
+<p><strong>Exemple</strong> :
+Allumer une LED pendant 1 seconde, puis l'éteindre pendant 500 millisecondes.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test&quot;</span><span class="p">)</span>              <span class="c1"># Envoi d&#39;une chaîne de caractères sur la liaison USB</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>           <span class="c1"># Pause de 1,5 seconde</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>            <span class="c1"># Éteint la matrice</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>        <span class="c1"># Pause de 500 ms</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="utilisation-de-la-matrice-a-leds">Utilisation de la matrice à LEDs</h2>
+<p>La micro:bit dispose d'une matrice de <strong>25 LEDs (5x5)</strong> adressables individuellement.</p>
+<h3 id="fonctions-principales">Fonctions principales</h3>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>display.set_pixel(x, y, n)</code></td>
+<td>Allume la LED en position <code>(x, y)</code> avec une intensité <code>n</code> (0=éteint, 9=max).</td>
+</tr>
+<tr>
+<td><code>display.clear()</code></td>
+<td>Éteint toutes les LEDs.</td>
+</tr>
+<tr>
+<td><code>display.show(icon)</code></td>
+<td>Affiche un icône prédéfini (ex: <code>Image.HEART</code>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Allumer une LED en (2, 2) avec une intensité maximale.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># Allume la LED centrale</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>              <span class="c1"># Pause de 1 seconde</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>             <span class="c1"># Éteint tout</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>              <span class="c1"># Pause de 1 seconde</span>
+</span></code></pre></div></p>
+<p><strong>Remarque</strong> :  </p>
+<ul>
+<li><code>x</code> : Numéro de <strong>colonne</strong> (0 à 4) ou <strong>position dans la ligne</strong>.</li>
+<li><code>y</code> : Numéro de <strong>ligne</strong> (0 à 4) ou <strong>position dans la colonne</strong>.</li>
+</ul>
+<h4 id="schema-des-25-leds-de-la-microbit-coordonnees-x-y">Schéma des 25 LEDs de la micro:bit (coordonnées x, y)</h4>
+<div class="language-text highlight"><pre><span></span><code>0     1     2     3     4
+</code></pre></div>
+<p>+-----+-----+-----+-----+-----+
+0 | 0,0 | 1,0 | 2,0 | 3,0 | 4,0 |
+  +-----+-----+-----+-----+-----+
+1 | 0,1 | 1,1 | 2,1 | 3,1 | 4,1 |
+  +-----+-----+-----+-----+-----+
+2 | 0,2 | 1,2 | 2,2 | 3,2 | 4,2 |
+  +-----+-----+-----+-----+-----+
+3 | 0,3 | 1,3 | 2,3 | 3,3 | 4,3 |
+  +-----+-----+-----+-----+-----+
+4 | 0,4 | 1,4 | 2,4 | 3,4 | 4,4 |
+  +-----+-----+-----+-----+-----+</p>
+<hr />
+<h2 id="utilisation-des-boutons-poussoirs-a-et-b">Utilisation des boutons poussoirs A et B</h2>
+<h3 id="methodes-disponibles">Méthodes disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>button_a.is_pressed()</code></td>
+<td>Retourne <code>True</code> si le bouton A est <strong>enfoncé</strong>.</td>
+</tr>
+<tr>
+<td><code>button_a.was_pressed()</code></td>
+<td>Retourne <code>True</code> si le bouton A a été <strong>pressé une fois</strong> (efface la mémorisation après appel).</td>
+</tr>
+<tr>
+<td><code>button_b.is_pressed()</code></td>
+<td>Idem pour le bouton B.</td>
+</tr>
+<tr>
+<td><code>button_b.was_pressed()</code></td>
+<td>Idem pour le bouton B.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Allumer une LED quand le bouton A est pressé.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># Allume la LED centrale</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>            <span class="c1"># Éteint tout</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>            <span class="c1"># Pause</span>
+</span></code></pre></div></p>
+<p><strong>Exemple avec <code>was_pressed()</code></strong> :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">was_pressed</span><span class="p">():</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># Allume la LED centrale</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="utilisation-du-can-convertisseur-analogique-numerique">Utilisation du CAN (Convertisseur Analogique-Numérique)</h2>
+<p>La micro:bit v2 dispose de <strong>3 entrées analogiques</strong> (P0, P1, P2) pour lire des tensions entre <strong>0 V et 3.3 V</strong>.</p>
+<h3 id="fonction-principale">Fonction principale</h3>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin.read_analog()</code></td>
+<td>Lit la tension sur une broche et retourne une valeur entre <strong>0 et 1023</strong>, où <strong>1023 correspond à une tension proche de 3.3 V</strong> (résolution ≈ 3.22 mV par incrément).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Lire la tension sur la broche <strong>P0</strong> et afficher une barre de LEDs proportionnelle.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">valeur</span> <span class="o">=</span> <span class="n">pin0</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>  <span class="c1"># Lit la tension sur P0 (0-1023)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;U =  </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">valeur</span><span class="o">*</span><span class="mf">3.3</span><span class="o">/</span><span class="mi">1024</span><span class="p">))</span> <span class="c1"># Affiche la valeur de la</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>                                                 <span class="c1"># tension avec 2 chiffres après la virgule</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="entreessorties-logiques">Entrées/Sorties logiques</h2>
+<p>Les broches <strong>P0 à P20</strong> peuvent être configurées en <strong>entrée ou sortie logique</strong> (0 V = <code>False</code>, 3.3 V = <code>True</code>).</p>
+<h3 id="fonctions-principales_1">Fonctions principales</h3>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin.write_digital(value)</code></td>
+<td>Écrit une valeur logique (<code>0</code> ou <code>1</code>) sur une broche.</td>
+</tr>
+<tr>
+<td><code>pin.read_digital()</code></td>
+<td>Lit une valeur logique (<code>0</code> ou <code>1</code>) sur une broche.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Applique une tension sur <strong>P0</strong>.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">pin0</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 3.3 V sur P0</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">pin0</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 0 V sur P0</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>Exemple avec entrée logique</strong> : Lire un bouton poussoir externe sur <strong>P1</strong>.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">if</span> <span class="n">pin1</span><span class="o">.</span><span class="n">read_digital</span><span class="p">():</span>  <span class="c1"># Si le bouton est enfoncé (3.3 V)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ON&quot;</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="mli-modulation-de-largeur-dimpulsion">MLI (Modulation de Largeur d'Impulsion)</h2>
+<p>La MLI permet de <strong>simuler une tension analogique</strong> en faisant varier le rapport cyclique d'un signal carré.</p>
+<h3 id="fonction-principale_1">Fonction principale</h3>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin.write_analog(value)</code></td>
+<td>Génère un signal MLI avec un rapport cyclique de <code>value/1023</code>. <code>value</code> peut varier de 0 à 1023.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Faire varier la luminosité d'une LED externe sur <strong>P0</strong> avec un potentiomètre sur <strong>P1</strong>.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">valeur_pot</span> <span class="o">=</span> <span class="n">pin1</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>  <span class="c1"># Lit le potentiomètre (0-1023)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">pin0</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="n">valeur_pot</span><span class="p">)</span>    <span class="c1"># Applique la MLI sur P0</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="communiquer-sans-fil">Communiquer sans fil</h2>
+<h3 id="envoyer-un-message-via-la-liaison-radio">Envoyer un message via la liaison radio</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">val</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="recevoir-un-message-via-la-liaison-radio">Recevoir un message via la liaison radio</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>  <span class="n">message</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>  <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>  <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="commande-dun-servomoteur">Commande d'un servomoteur</h2>
+<p>Les servomoteurs sont contrôlés par un <strong>signal MLI spécifique</strong> avec une période de <strong>20 ms</strong> et une largeur d'impulsion comprise entre <strong>1 ms (0°)</strong> et <strong>2 ms (180°)</strong>.</p>
+<h3 id="fonctions-principales_2">Fonctions principales</h3>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin.set_analog_period_microseconds(20000)</code></td>
+<td>Définit la période du signal MLI à 20 ms (50 Hz).</td>
+</tr>
+<tr>
+<td><code>pin.write_analog(value)</code></td>
+<td>Envoie une impulsion de durée <code>value</code> (en µs). <code>value</code> doit être compris entre 1000 et 2000 pour couvrir la plage 0°-180°.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Contrôler un servomoteur sur <strong>P0</strong> pour balayer de 0° à 180°.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">utime</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Configuration de la période MLI à 20 ms (50 Hz)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">pin0</span><span class="o">.</span><span class="n">set_analog_period_microseconds</span><span class="p">(</span><span class="mi">20000</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="c1"># Balaye de 0° (1000 µs) à 180° (2000 µs)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        <span class="c1"># Convertit l&#39;angle en durée d&#39;impulsion (1000 µs à 2000 µs)</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        <span class="n">impulsion</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">+</span> <span class="p">(</span><span class="n">angle</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">//</span> <span class="mi">180</span><span class="p">)</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        <span class="n">pin0</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="n">impulsion</span><span class="p">)</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>        <span class="n">utime</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="bilan-des-instructions">Bilan des instructions</h2>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Fonction / Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temporisation</strong></td>
+<td><code>utime.sleep(seconds)</code></td>
+<td>Suspend l'exécution pendant <code>seconds</code> secondes.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>utime.sleep_ms(milliseconds)</code></td>
+<td>Suspend l'exécution pendant <code>milliseconds</code> millisecondes.</td>
+</tr>
+<tr>
+<td><strong>Matrice LED</strong></td>
+<td><code>display.set_pixel(x, y, n)</code></td>
+<td>Allume la LED en <code>(x, y)</code> avec une intensité <code>n</code> (0-9).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>display.clear()</code></td>
+<td>Éteint toutes les LEDs.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>display.show(icon)</code></td>
+<td>Affiche un icône prédéfini.</td>
+</tr>
+<tr>
+<td><strong>Boutons</strong></td>
+<td><code>button_a.is_pressed()</code></td>
+<td>Retourne <code>True</code> si le bouton A est enfoncé.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>button_a.was_pressed()</code></td>
+<td>Retourne <code>True</code> si le bouton A a été pressé (mémorisation).</td>
+</tr>
+<tr>
+<td><strong>CAN</strong></td>
+<td><code>pin.read_analog()</code></td>
+<td>Lit une tension analogique (0-1023). <strong>1023 ≈ 3.3 V</strong>. Résolution ≈ 3.22 mV.</td>
+</tr>
+<tr>
+<td><strong>E/S logiques</strong></td>
+<td><code>pin.write_digital(value)</code></td>
+<td>Écrit une valeur logique (<code>0</code> ou <code>1</code>) sur une broche.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>pin.read_digital()</code></td>
+<td>Lit une valeur logique (<code>0</code> ou <code>1</code>) sur une broche.</td>
+</tr>
+<tr>
+<td><strong>MLI</strong></td>
+<td><code>pin.write_analog(value)</code></td>
+<td>Génère un signal MLI avec un rapport cyclique <code>value/1023</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>pin.set_analog_period_microseconds(µs)</code></td>
+<td>Définit la période du signal MLI en microsecondes.</td>
+</tr>
+<tr>
+<td><strong>Servomoteur</strong></td>
+<td><code>pin.set_analog_period_microseconds(20000)</code></td>
+<td>Configure une période de 20 ms pour un servomoteur.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>pin.write_analog(µs)</code></td>
+<td>Envoie une impulsion de durée <code>µs</code> (1000-2000 µs pour 0°-180°).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>

@@ -2,70 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://USERNAME.github.io/REPO/index.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/c.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/docker.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/git.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/microbit.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/python.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/web.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/microbit/codal.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/devops/microbit/micro_python.html</loc>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/python/environnement-virtuel.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/windows.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/install_srv_web_debian.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/list_usb.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/systemd.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/reseaux_interfaces/interfaces.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux/guide_dns.html</loc>
-         <lastmod>2025-09-23</lastmod>
+         <lastmod>2025-09-24</lastmod>
     </url>
 </urlset>
