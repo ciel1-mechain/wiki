@@ -894,7 +894,7 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <li><strong>Distribuée</strong> : les données sont réparties sur un ensemble de machines physiques.</li>
 </ul>
 </li>
-<li>Ces <strong>données</strong> sont appelées enregistrements, nommés <strong>Resource Records (RR)</strong> pour le DNS.</li>
+<li>Ces <strong>données</strong> sont nommés <strong>Resource Records (RR)</strong> pour le DNS.</li>
 <li>Chaque RR a une structure comprenant :<ul>
 <li><strong>Nom</strong> : le nom du nœud ou domaine</li>
 <li><strong>Type</strong> : type d’enregistrement (<code>A</code>, <code>AAAA</code>, <code>CNAME</code>, <code>MX</code>, <code>NS</code>, <code>PTR</code>, etc.)</li>
@@ -968,11 +968,11 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <li>un FQDN peut identifier un hôte, mais également un service ou un alias (CNAME).</li>
 </ul>
 <h3 id="zones-dns">Zones DNS</h3>
-<p>Une <strong>zone DNS</strong> est une portion de l’espace de noms gérée par un serveur.<br />
+<p>Une <strong>zone DNS</strong> est une portion de l’espace de noms gérée par un serveur.
 - Une zone contient des <strong>Resource Records (RR)</strong>.<br />
 - Exemple : la zone <code>example.com</code> peut définir les enregistrements <code>A</code>, <code>MX</code>, etc.<br />
-- Une zone DNS peut contenir plusieurs sous-domaines.
-- Un sous-domaine peut être délégué à une zone séparée sur un autre serveur.</p>
+- Une zone DNS peut contenir plusieurs sous-domaines.<br />
+- Un sous-domaine peut être délégué à une zone séparée sur un autre serveur.  </p>
 <h3 id="serveurs-dns">Serveurs DNS</h3>
 <ul>
 <li><strong>Serveurs racines</strong> : point de départ de la résolution, connaissent les adresses des serveurs des TLD. Il existe <strong>13 ensembles</strong> de serveurs racine répartis dans le monde. </li>
@@ -1001,10 +1001,9 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 </div>
 <h3 id="principe-de-la-resolution-de-nom">Principe de la résolution de nom</h3>
 <ul>
-<li>Le client demande au résolveur DNS de trouver la réponse complète.\</li>
-<li>Le résolveur utilise des <strong>requêtes itératives</strong> auprès d'autres
-    serveurs si nécessaire.\</li>
-<li>Le résolveur retourne finalement la réponse complète au client.</li>
+<li>Le client demande au résolveur DNS de trouver la réponse complète.    </li>
+<li>Le résolveur utilise des <strong>requêtes itératives</strong> auprès d'autres serveurs si nécessaire.  </li>
+<li>Le résolveur retourne finalement la réponse complète au client.  </li>
 </ul>
 <hr />
 <h2 id="structure-dun-message-dns">Structure d'un message DNS</h2>

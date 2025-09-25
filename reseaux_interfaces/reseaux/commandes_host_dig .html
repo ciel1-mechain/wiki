@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/systemd.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux/commandes_host_dig%20.html">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Gestion des services avec systemd - Wiki</title>
+        <title>Guide : Commandes host et dig sous Linux - Wiki</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gestion-des-services-avec-systemd" class="md-skip">
+        <a href="#guide-commandes-host-et-dig-sous-linux" class="md-skip">
           Aller au contenu
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gestion des services avec systemd
+              Guide : Commandes host et dig sous Linux
             
           </span>
         </div>
@@ -315,7 +315,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../reseaux_interfaces/reseaux.html" class="md-tabs__link">
+      <a href="../reseaux.html" class="md-tabs__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../reseaux_interfaces/interfaces.html" class="md-tabs__link">
+      <a href="../interfaces.html" class="md-tabs__link">
         
   
   
@@ -353,7 +353,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../windows.html" class="md-tabs__link">
+      <a href="../../os/windows.html" class="md-tabs__link">
         
   
   
@@ -372,7 +372,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../gnu_linux.html" class="md-tabs__link">
+      <a href="../../os/gnu_linux.html" class="md-tabs__link">
         
   
   
@@ -563,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reseaux_interfaces/reseaux.html" class="md-nav__link">
+      <a href="../reseaux.html" class="md-nav__link">
         
   
   
@@ -585,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reseaux_interfaces/interfaces.html" class="md-nav__link">
+      <a href="../interfaces.html" class="md-nav__link">
         
   
   
@@ -607,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows.html" class="md-nav__link">
+      <a href="../../os/windows.html" class="md-nav__link">
         
   
   
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gnu_linux.html" class="md-nav__link">
+      <a href="../../os/gnu_linux.html" class="md-nav__link">
         
   
   
@@ -671,18 +671,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tableau-des-commandes-systemctl-les-plus-utiles" class="md-nav__link">
+  <a href="#1-introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Tableau des commandes systemctl les plus utiles
+      1. Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remarques-supplementaires" class="md-nav__link">
+  <a href="#2-la-commande-host" class="md-nav__link">
     <span class="md-ellipsis">
-      Remarques supplémentaires
+      2. La commande host
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. La commande host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-la-commande-dig" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. La commande dig
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. La commande dig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cas-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cas pratiques
     </span>
   </a>
   
@@ -704,126 +779,158 @@
 
 
 
-<h1 id="gestion-des-services-avec-systemd">Gestion des services avec systemd</h1>
-<p><strong>systemd</strong> est le système d'initialisation et de gestion des services sous la plupart des distributions Linux modernes. Il remplace l'ancien système SysVinit et offre des fonctionnalités avancées pour démarrer, arrêter, surveiller et gérer les services système.</p>
-<p>Les commandes principales s'utilisent via <code>systemctl</code>, qui permet de contrôler l'état des services, de les activer/désactiver au démarrage, et bien plus encore.</p>
-<blockquote>
-<p>Remarque : taper simplement <code>systemctl</code> équivaut par défaut à <code>systemctl list-units</code>, affichant toutes les unités <strong>actives</strong>. L'utilisation explicite de <code>list-units</code> est surtout pour être clair ou pour filtrer les types d'unités (services, sockets, timers, etc.).</p>
-</blockquote>
+<h1 id="guide-commandes-host-et-dig-sous-linux">Guide : Commandes <code>host</code> et <code>dig</code> sous Linux</h1>
 <hr />
-<h2 id="tableau-des-commandes-systemctl-les-plus-utiles">Tableau des commandes systemctl les plus utiles</h2>
-<table>
-<thead>
-<tr>
-<th>Commande</th>
-<th>Description</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>systemctl list-units --type=service</code></td>
-<td>Lister tous les services <strong>actifs</strong> (équivalent à <code>systemctl --type=service</code>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --state=running</code></td>
-<td>Lister uniquement les services en cours d'exécution</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --state=failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --all</code></td>
-<td>Lister <strong>tous les services</strong>, y compris les inactifs et morts</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --all</code></td>
-<td>Lister toutes les unités (services, sockets, timers, etc.), actives ou inactives</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --all            | grep -i "mot_clé"</code></td>
-<td>Trouver un service à partir d’un mot-clé</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-unit-files                            | grep -i "mot_clé"</code></td>
-<td>Trouver un fichier de service à partir d’un mot-clé</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl status &lt;nom_du_service&gt;</code></td>
-<td>Afficher le statut détaillé d'un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl start &lt;nom_du_service&gt;</code></td>
-<td>Démarrer un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl stop &lt;nom_du_service&gt;</code></td>
-<td>Arrêter un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl restart &lt;nom_du_service&gt;</code></td>
-<td>Redémarrer un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl reload &lt;nom_du_service&gt;</code></td>
-<td>Recharger la configuration d'un service sans interruption</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl enable &lt;nom_du_service&gt;</code></td>
-<td>Activer un service pour qu'il démarre au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl disable &lt;nom_du_service&gt;</code></td>
-<td>Désactiver un service pour qu'il ne démarre pas au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-enabled &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est activé au démarrage</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-active &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est actuellement actif</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl daemon-reload</code></td>
-<td>Recharger la configuration de systemd après modification des fichiers de service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -u &lt;nom_du_service&gt;</code></td>
-<td>Afficher les logs d'un service spécifique</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl --failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Les commandes <strong><code>host</code></strong> et <strong><code>dig</code></strong> permettent d’interroger le système de noms de domaine (<strong>DNS</strong>) pour obtenir des informations sur :<br />
+- les adresses IP associées à un nom de domaine,<br />
+- les noms de domaine associés à une adresse IP (<strong>résolution inverse</strong>),<br />
+- les enregistrements DNS spécifiques (A, AAAA, MX, NS, CNAME, PTR, etc.),<br />
+- la résolution pas à pas d’un domaine.  </p>
+<p>Elles sont particulièrement utiles pour :<br />
+✅ le <strong>diagnostic réseau</strong>,<br />
+✅ la <strong>vérification de configuration DNS</strong>,<br />
+✅ l’<strong>analyse de propagation DNS</strong>.</p>
 <hr />
-<h2 id="remarques-supplementaires">Remarques supplémentaires</h2>
-<ul>
-<li><code>systemctl</code> sans sous-commande <strong>affiche par défaut les unités actives</strong>, ce qui équivaut à <code>systemctl list-units</code>.</li>
-<li>L'option <code>--all</code> ne fonctionne <strong>que combinée avec <code>list-units</code></strong> : <code>systemctl list-units --all</code> pour lister toutes les unités, actives ou inactives.</li>
-</ul>
+<h2 id="2-la-commande-host">2. La commande <code>host</code></h2>
+<h3 id="syntaxe">Syntaxe</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>host<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>nom_domaine<span class="w"> </span><span class="o">[</span>serveur_dns<span class="o">]</span>
+</span></code></pre></div>
+<h3 id="exemples">Exemples</h3>
+<ol>
+<li>
+<p>Résolution simple d’un nom de domaine :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>host<span class="w"> </span>www.example.com
+</span></code></pre></div>
+👉 Retourne l’adresse IP associée (par défaut IPv4 et IPv6 si disponible).</p>
+</li>
+<li>
+<p>Résolution inverse (IP → nom de domaine) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>host<span class="w"> </span><span class="m">93</span>.184.216.34
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Résolution en spécifiant un serveur DNS particulier :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>host<span class="w"> </span>www.example.com<span class="w"> </span><span class="m">8</span>.8.8.8
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Obtenir les serveurs de messagerie (MX) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>host<span class="w"> </span>-t<span class="w"> </span>MX<span class="w"> </span>example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Obtenir les serveurs de noms (NS) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>host<span class="w"> </span>-t<span class="w"> </span>NS<span class="w"> </span>example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Vérifier un enregistrement spécifique (ex. TXT pour SPF ou DKIM) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>host<span class="w"> </span>-t<span class="w"> </span>TXT<span class="w"> </span>example.com
+</span></code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="3-la-commande-dig">3. La commande <code>dig</code></h2>
+<h3 id="presentation">Présentation</h3>
+<p><code>dig</code> (<strong>Domain Information Groper</strong>) est plus complet que <code>host</code>.<br />
+Il permet de contrôler finement la requête DNS et d’obtenir davantage de détails sur la résolution.</p>
+<h3 id="syntaxe_1">Syntaxe</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dig<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>nom_domaine<span class="w"> </span><span class="o">[</span>type_enregistrement<span class="o">]</span><span class="w"> </span><span class="o">[</span>@serveur_dns<span class="o">]</span>
+</span></code></pre></div>
+<h3 id="exemples_1">Exemples</h3>
+<ol>
+<li>
+<p>Requête simple (par défaut, type <strong>A</strong>) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dig<span class="w"> </span>www.example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Spécifier le type d’enregistrement :  </p>
+</li>
+<li>IPv4 :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>dig<span class="w"> </span>example.com<span class="w"> </span>A
+</span></code></pre></div></li>
+<li>
+<p>IPv6 :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>dig<span class="w"> </span>example.com<span class="w"> </span>AAAA
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Réponse concise (adresse uniquement) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>dig<span class="w"> </span>+short<span class="w"> </span>www.example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Obtenir un enregistrement MX (serveurs mail) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>dig<span class="w"> </span>example.com<span class="w"> </span>MX
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Obtenir un alias (CNAME) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>dig<span class="w"> </span>www.example.com<span class="w"> </span>CNAME
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Obtenir les serveurs de noms (NS) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>dig<span class="w"> </span>example.com<span class="w"> </span>NS
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Requête inverse (PTR) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>dig<span class="w"> </span>-x<span class="w"> </span><span class="m">93</span>.184.216.34
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Interroger un serveur DNS spécifique (Google DNS 8.8.8.8) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>dig<span class="w"> </span>@8.8.8.8<span class="w"> </span>www.example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Suivre la résolution pas à pas (<strong>trace</strong>) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>dig<span class="w"> </span>+trace<span class="w"> </span>www.example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Obtenir uniquement la section réponse :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>www.example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Vérifier plusieurs enregistrements en une commande :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>dig<span class="w"> </span>example.com<span class="w"> </span>A<span class="w"> </span>MX<span class="w"> </span>NS<span class="w"> </span>TXT
+</span></code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="4-cas-pratiques">4. Cas pratiques</h2>
+<ol>
+<li>
+<p>Vérifier la configuration DNS complète d’un domaine :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>example.com<span class="w"> </span>A
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>example.com<span class="w"> </span>AAAA
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>example.com<span class="w"> </span>MX
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>example.com<span class="w"> </span>NS
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>dig<span class="w"> </span>+noall<span class="w"> </span>+answer<span class="w"> </span>example.com<span class="w"> </span>TXT
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Diagnostiquer un problème de résolution avec un serveur DNS donné :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>dig<span class="w"> </span>@1.1.1.1<span class="w"> </span>www.example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Vérifier la propagation DNS d’un nouveau domaine (traverse les serveurs racine → TLD → DNS autoritaires) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>dig<span class="w"> </span>+trace<span class="w"> </span>example.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Vérifier l’enregistrement PTR d’une IP (utile pour la configuration des serveurs mail) :<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>dig<span class="w"> </span>-x<span class="w"> </span><span class="m">203</span>.0.113.5<span class="w"> </span>+short
+</span></code></pre></div></p>
+</li>
+</ol>
+<hr />
 
 
 

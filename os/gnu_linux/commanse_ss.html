@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/systemd.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/commanse_ss.html">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Gestion des services avec systemd - Wiki</title>
+        <title>Guide de la commande ss sous Linux - Wiki</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gestion-des-services-avec-systemd" class="md-skip">
+        <a href="#guide-de-la-commande-ss-sous-linux" class="md-skip">
           Aller au contenu
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gestion des services avec systemd
+              Guide de la commande ss sous Linux
             
           </span>
         </div>
@@ -671,18 +671,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tableau-des-commandes-systemctl-les-plus-utiles" class="md-nav__link">
+  <a href="#syntaxe-de-base" class="md-nav__link">
     <span class="md-ellipsis">
-      Tableau des commandes systemctl les plus utiles
+      Syntaxe de base
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remarques-supplementaires" class="md-nav__link">
+  <a href="#exemples-pratiques" class="md-nav__link">
     <span class="md-ellipsis">
-      Remarques supplémentaires
+      Exemples pratiques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtres-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtres utiles
     </span>
   </a>
   
@@ -704,126 +713,105 @@
 
 
 
-<h1 id="gestion-des-services-avec-systemd">Gestion des services avec systemd</h1>
-<p><strong>systemd</strong> est le système d'initialisation et de gestion des services sous la plupart des distributions Linux modernes. Il remplace l'ancien système SysVinit et offre des fonctionnalités avancées pour démarrer, arrêter, surveiller et gérer les services système.</p>
-<p>Les commandes principales s'utilisent via <code>systemctl</code>, qui permet de contrôler l'état des services, de les activer/désactiver au démarrage, et bien plus encore.</p>
-<blockquote>
-<p>Remarque : taper simplement <code>systemctl</code> équivaut par défaut à <code>systemctl list-units</code>, affichant toutes les unités <strong>actives</strong>. L'utilisation explicite de <code>list-units</code> est surtout pour être clair ou pour filtrer les types d'unités (services, sockets, timers, etc.).</p>
-</blockquote>
+<h1 id="guide-de-la-commande-ss-sous-linux">Guide de la commande <code>ss</code> sous Linux</h1>
+<p><strong><code>ss</code></strong> (socket statistics) est un outil puissant pour examiner les sockets et connexions réseau sur un système Linux. Il remplace et est plus rapide que l'ancien <code>netstat</code>.</p>
+<p>Avec <code>ss</code>, vous pouvez lister les connexions TCP/UDP, les sockets d'écoute, les sockets Unix et obtenir des informations détaillées sur chaque connexion.</p>
 <hr />
-<h2 id="tableau-des-commandes-systemctl-les-plus-utiles">Tableau des commandes systemctl les plus utiles</h2>
+<h2 id="syntaxe-de-base">Syntaxe de base</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ss<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>filtres<span class="o">]</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Options principales</strong> :</p>
+</li>
+<li>
+<p><code>-t</code> : TCP</p>
+</li>
+<li><code>-u</code> : UDP</li>
+<li><code>-l</code> : Liste les sockets en écoute (listening)</li>
+<li><code>-a</code> : Tous les sockets (listening + non listening)</li>
+<li><code>-n</code> : N'affiche pas les noms de service (affiche les numéros de port)</li>
+<li><code>-p</code> : Affiche le processus utilisant le socket</li>
+<li><code>-s</code> : Résumé global des sockets</li>
+</ul>
+<hr />
+<h2 id="exemples-pratiques">Exemples pratiques</h2>
 <table>
 <thead>
 <tr>
 <th>Commande</th>
 <th>Description</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>systemctl list-units --type=service</code></td>
-<td>Lister tous les services <strong>actifs</strong> (équivalent à <code>systemctl --type=service</code>)</td>
-<td></td>
+<td><code>ss -t</code></td>
+<td>Liste toutes les connexions TCP actives</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --state=running</code></td>
-<td>Lister uniquement les services en cours d'exécution</td>
-<td></td>
+<td><code>ss -u</code></td>
+<td>Liste toutes les connexions UDP actives</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --state=failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
+<td><code>ss -l</code></td>
+<td>Liste les sockets en écoute</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --all</code></td>
-<td>Lister <strong>tous les services</strong>, y compris les inactifs et morts</td>
-<td></td>
+<td><code>ss -t -l</code></td>
+<td>Liste les ports TCP en écoute</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --all</code></td>
-<td>Lister toutes les unités (services, sockets, timers, etc.), actives ou inactives</td>
-<td></td>
+<td><code>ss -u -l</code></td>
+<td>Liste les ports UDP en écoute</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --all            | grep -i "mot_clé"</code></td>
-<td>Trouver un service à partir d’un mot-clé</td>
-<td></td>
+<td><code>ss -a</code></td>
+<td>Liste tous les sockets (écoute et non-écoute)</td>
 </tr>
 <tr>
-<td><code>systemctl list-unit-files                            | grep -i "mot_clé"</code></td>
-<td>Trouver un fichier de service à partir d’un mot-clé</td>
-<td></td>
+<td><code>ss -t -n</code></td>
+<td>Affiche les connexions TCP avec numéros de port sans résolution DNS</td>
 </tr>
 <tr>
-<td><code>systemctl status &lt;nom_du_service&gt;</code></td>
-<td>Afficher le statut détaillé d'un service</td>
-<td></td>
+<td><code>ss -t -p</code></td>
+<td>Affiche les connexions TCP et les PID/processus associés</td>
 </tr>
 <tr>
-<td><code>systemctl start &lt;nom_du_service&gt;</code></td>
-<td>Démarrer un service</td>
-<td></td>
+<td><code>ss -s</code></td>
+<td>Affiche un résumé global des sockets (statistiques TCP/UDP)</td>
 </tr>
 <tr>
-<td><code>systemctl stop &lt;nom_du_service&gt;</code></td>
-<td>Arrêter un service</td>
-<td></td>
+<td><code>ss -t state ESTABLISHED</code></td>
+<td>Liste uniquement les connexions TCP établies</td>
 </tr>
 <tr>
-<td><code>systemctl restart &lt;nom_du_service&gt;</code></td>
-<td>Redémarrer un service</td>
-<td></td>
+<td><code>ss -o</code></td>
+<td>Affiche les options TCP comme les timers</td>
 </tr>
 <tr>
-<td><code>systemctl reload &lt;nom_du_service&gt;</code></td>
-<td>Recharger la configuration d'un service sans interruption</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl enable &lt;nom_du_service&gt;</code></td>
-<td>Activer un service pour qu'il démarre au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl disable &lt;nom_du_service&gt;</code></td>
-<td>Désactiver un service pour qu'il ne démarre pas au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-enabled &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est activé au démarrage</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-active &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est actuellement actif</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl daemon-reload</code></td>
-<td>Recharger la configuration de systemd après modification des fichiers de service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -u &lt;nom_du_service&gt;</code></td>
-<td>Afficher les logs d'un service spécifique</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl --failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
+<td><code>ss -x -a</code></td>
+<td>Liste tous les sockets Unix</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="remarques-supplementaires">Remarques supplémentaires</h2>
+<h2 id="filtres-utiles">Filtres utiles</h2>
 <ul>
-<li><code>systemctl</code> sans sous-commande <strong>affiche par défaut les unités actives</strong>, ce qui équivaut à <code>systemctl list-units</code>.</li>
-<li>L'option <code>--all</code> ne fonctionne <strong>que combinée avec <code>list-units</code></strong> : <code>systemctl list-units --all</code> pour lister toutes les unités, actives ou inactives.</li>
+<li>Par port :</li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ss<span class="w"> </span>-t<span class="w"> </span><span class="s1">&#39;( dport = :80 or sport = :443 )&#39;</span>
+</span></code></pre></div>
+<ul>
+<li>Par adresse :</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ss<span class="w"> </span>-t<span class="w"> </span>dst<span class="w"> </span><span class="m">192</span>.168.1.10
+</span></code></pre></div>
+<ul>
+<li>Par processus :</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ss<span class="w"> </span>-t<span class="w"> </span>-p<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nginx
+</span></code></pre></div>
+<hr />
 
 
 
