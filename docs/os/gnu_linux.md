@@ -10,3 +10,5 @@ hide:
 [Lister les ports usb utilisés](gnu_linux/list_usb.md)
 ## Gestion des services
 [Gestion des services avec systemd](gnu_linux/systemd.md)
+## analyser les connexions réseaux
+[La commande `ss` (socket statistics)](gnu_linux/commande_ss.md)

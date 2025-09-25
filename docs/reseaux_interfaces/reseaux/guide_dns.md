@@ -11,7 +11,7 @@ Le DNS est une **base de données distribuée** organisée de façon **hiérarch
 - Le DNS est une **base de données distribuée** :
     - **Base de données** : une collection de **données** ayant une structure similaire.
     - **Distribuée** : les données sont réparties sur un ensemble de machines physiques.
-- Ces **données** sont appelées enregistrements, nommés **Resource Records (RR)** pour le DNS.
+- Ces **données** sont nommés **Resource Records (RR)** pour le DNS.
 - Chaque RR a une structure comprenant :
     - **Nom** : le nom du nœud ou domaine
     - **Type** : type d’enregistrement (`A`, `AAAA`, `CNAME`, `MX`, `NS`, `PTR`, etc.)
@@ -69,11 +69,11 @@ Le DNS est une **base de données distribuée** organisée de façon **hiérarch
 - un FQDN peut identifier un hôte, mais également un service ou un alias (CNAME).
 
 ### Zones DNS
-Une **zone DNS** est une portion de l’espace de noms gérée par un serveur.  
+Une **zone DNS** est une portion de l’espace de noms gérée par un serveur.
 - Une zone contient des **Resource Records (RR)**.  
 - Exemple : la zone `example.com` peut définir les enregistrements `A`, `MX`, etc.  
-- Une zone DNS peut contenir plusieurs sous-domaines.
-- Un sous-domaine peut être délégué à une zone séparée sur un autre serveur.
+- Une zone DNS peut contenir plusieurs sous-domaines.  
+- Un sous-domaine peut être délégué à une zone séparée sur un autre serveur.  
 
 ### Serveurs DNS
 - **Serveurs racines** : point de départ de la résolution, connaissent les adresses des serveurs des TLD. Il existe **13 ensembles** de serveurs racine répartis dans le monde. 
@@ -102,10 +102,9 @@ Un serveur DNS est **authoritative** pour une zone quand il fournit une réponse
 
 ### Principe de la résolution de nom
 
--   Le client demande au résolveur DNS de trouver la réponse complète.\
--   Le résolveur utilise des **requêtes itératives** auprès d'autres
-    serveurs si nécessaire.\
--   Le résolveur retourne finalement la réponse complète au client.
+- Le client demande au résolveur DNS de trouver la réponse complète.    
+- Le résolveur utilise des **requêtes itératives** auprès d'autres serveurs si nécessaire.  
+- Le résolveur retourne finalement la réponse complète au client.  
 
 ---
 
