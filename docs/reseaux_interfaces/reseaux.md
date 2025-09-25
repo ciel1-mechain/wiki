@@ -7,4 +7,4 @@ hide:
 
 ## Le DNS
 - [Le DNS](reseaux/guide_dns.md)  
-- [commandes host & dig ](commandes_host_dig.md)  
+- [commandes host & dig ](reseaux/commandes_host_dig.md)  
