@@ -5,4 +5,4 @@ hide:
 
 # :material-docker: Docker
 
-- [Cycle de vie d'un conteneur](docs/devops/docker/cycle_vie_conteneur_alpine.md)
+- [Cycle de vie d'un conteneur](docker/cycle_vie_conteneur_alpine.md)
