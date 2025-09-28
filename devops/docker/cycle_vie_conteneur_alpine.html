@@ -18,7 +18,7 @@
     
     
       
-        <title>Cycle vie conteneur alpine - Wiki</title>
+        <title>Cycle de vie d’un conteneur Alpine avec Docker - Wiki</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cycle-de-vie-dun-conteneur-alpine-avec-docker" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cycle vie conteneur alpine
+              Cycle de vie d’un conteneur Alpine avec Docker
             
           </span>
         </div>
@@ -656,6 +661,79 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-pourquoi-alpine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction : pourquoi Alpine ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-lancer-un-nouveau-conteneur-nomme" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Lancer un nouveau conteneur nommé
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lister-les-conteneurs-y-compris-arretes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Lister les conteneurs (y compris arrêtés)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-redemarrer-un-conteneur-existant" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Redémarrer un conteneur existant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creer-un-autre-conteneur" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Créer un autre conteneur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-supprimer-un-conteneur" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Supprimer un conteneur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-difference-entre-les-commandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Différence entre les commandes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -671,9 +749,60 @@
 
 
 
-  <h1>Cycle vie conteneur alpine</h1>
-
-
+<h1 id="cycle-de-vie-dun-conteneur-alpine-avec-docker">Cycle de vie d’un conteneur Alpine avec Docker</h1>
+<h2 id="introduction-pourquoi-alpine">Introduction : pourquoi Alpine ?</h2>
+<p>Alpine Linux est une distribution <strong>très légère</strong> (environ 5 Mo) souvent utilisée comme base d’images Docker.<br />
+- Elle inclut <strong>BusyBox</strong> pour les commandes Unix de base.<br />
+- Elle possède un gestionnaire de paquets (<code>apk</code>) pour installer facilement des logiciels.<br />
+- Son faible poids la rend idéale pour créer des conteneurs applicatifs rapides et sécurisés.</p>
+<hr />
+<h2 id="1-lancer-un-nouveau-conteneur-nomme">1. Lancer un nouveau conteneur nommé</h2>
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>mon_alpine<span class="w"> </span>alpine<span class="w"> </span>sh
+</span></code></pre></div>
+- <code>--name mon_alpine</code> : donne un nom explicite au conteneur.
+- <code>-it</code> : interactif avec terminal.
+- <code>sh</code> : lance le shell fourni par Alpine (BusyBox).</p>
+<p>👉 Quand on quitte (<code>exit</code> ou <code>Ctrl+D</code>), le conteneur <strong>s’arrête</strong>.</p>
+<hr />
+<h2 id="2-lister-les-conteneurs-y-compris-arretes">2. Lister les conteneurs (y compris arrêtés)</h2>
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
+</span></code></pre></div>
+Exemple :
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CONTAINER ID   IMAGE    COMMAND   STATUS                      NAMES
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>abc123456789   alpine   &quot;sh&quot;      Exited (0) 2 minutes ago    mon_alpine
+</span></code></pre></div></p>
+<hr />
+<h2 id="3-redemarrer-un-conteneur-existant">3. Redémarrer un conteneur existant</h2>
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>start<span class="w"> </span>-ai<span class="w"> </span>mon_alpine
+</span></code></pre></div>
+- <code>-a</code> : attacher le terminal
+- <code>-i</code> : mode interactif</p>
+<p>👉 On reprend la session dans le conteneur existant.</p>
+<hr />
+<h2 id="4-creer-un-autre-conteneur">4. Créer un autre conteneur</h2>
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>mon_alpine2<span class="w"> </span>alpine<span class="w"> </span>sh
+</span></code></pre></div>
+Chaque appel à <code>run</code> crée <strong>un nouveau conteneur</strong> basé sur l’image (il faut donc donner un autre nom si <code>mon_alpine</code> existe déjà).</p>
+<hr />
+<h2 id="5-supprimer-un-conteneur">5. Supprimer un conteneur</h2>
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>mon_alpine
+</span></code></pre></div>
+👉 Supprime le conteneur définitivement (il doit être arrêté).</p>
+<hr />
+<h2 id="6-difference-entre-les-commandes">6. Différence entre les commandes</h2>
+<ul>
+<li><code>docker run</code> = crée <strong>et démarre</strong> un conteneur.</li>
+<li><code>docker start</code> = relance un conteneur déjà créé (arrêté).</li>
+<li><code>docker exec</code> = exécute une commande dans un conteneur en cours d’exécution.</li>
+<li><code>docker rm</code> = supprime un conteneur arrêté.</li>
+</ul>
+<hr />
+<p>✅ <strong>Résumé pédagogique</strong> :<br />
+- <code>run</code> = création + démarrage.<br />
+- <code>start</code> = redémarrage.<br />
+- <code>exec</code> = commande dans un conteneur actif.<br />
+- <code>rm</code> = suppression.  </p>
+<p>Ceci illustre bien le <strong>cycle de vie complet d’un conteneur Alpine</strong>.</p>
 
 
 
