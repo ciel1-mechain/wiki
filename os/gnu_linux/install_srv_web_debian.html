@@ -14,15 +14,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Installation d'un serveur web Debian - Wiki</title>
+        <title>Installation du serveur http apache2 sous Debian - Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation-dun-serveur-web-debian" class="md-skip">
+        <a href="#installation-du-serveur-http-apache2-sous-debian" class="md-skip">
           Aller au contenu
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation d'un serveur web Debian
+              Installation du serveur http apache2 sous Debian
             
           </span>
         </div>
@@ -664,6 +664,125 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#consignes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consignes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-de-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation de Debian
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-du-serveur-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation du serveur apache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation du serveur apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-du-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation du serveur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-des-repertoires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration des répertoires
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administrer-votre-serveur-a-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrer votre serveur à distance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administrer votre serveur à distance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-de-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation de ssh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deposer-vos-pages-sur-le-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Déposer vos pages sur le serveur
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compléments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -678,7 +797,94 @@
 
 
 
-<h1 id="installation-dun-serveur-web-debian">Installation d'un serveur web Debian</h1>
+<h1 id="installation-du-serveur-http-apache2-sous-debian">Installation du serveur http apache2 sous Debian</h1>
+<hr />
+<h2 id="consignes">Consignes</h2>
+<ul>
+<li>
+<p>Rédiger au format markdown une procédure d'installation qui comprend les étapes ainsi que les commandes à saisir pour réaliser les différentes opérations. <br />
+  Cette procédure vous sera utile lors des évaluations. A vous de noter tout ce qui vous semble important.
+  Elle pourra être exportée au format pdf ou html.<br />
+  Installer sous VsCode les extensions <code>Markdown All in One</code> et <code>Markdown PDF</code>.</p>
+</li>
+<li>
+<p>On n'utilisera pas la commande <code>sudo</code> sous Debian.<br />
+  Les opérations qui nécessitent des privilèges se feront sous le compte root. (Commande <code>su</code> ou <code>su -</code>)</p>
+</li>
+</ul>
+<h2 id="notations">Notations</h2>
+<p><strong>$</strong> indique que la commande doit être lancée en tant qu'utilisateur.<br />
+<strong>#</strong> indique que la commande doit être lancée en tant que super-utilisateur (root).</p>
+<h2 id="installation-de-debian">Installation de Debian</h2>
+<p><strong>1.</strong> Créer une machine virtuelle basée sur une distribution Debian  </p>
+<p><strong>Configuration machine</strong> :<br />
+  * Créer et configurer un <strong>Réseau NAT</strong> dans VirtualBox
+  * Dans la configuration réseau de la machine virtuelle sélectionner réseau NAT et indiquer le réseau crée ci-dessus.
+  * RAM : 4Gio
+  * Disque : 20 Go</p>
+<p><strong>Installation</strong> : </p>
+<ul>
+<li>Sélectionner <strong>graphical install</strong> puis suivre la procédure indiquée.</li>
+<li>Nom de votre machine : <code>srv-web</code>.</li>
+<li>Nom utilisateur : <code>user</code> et mdp <code>debian</code>. Mdp root : <code>debian</code></li>
+<li>Mettre <strong>local</strong> dans le domaine.</li>
+<li>Sélectionner <strong>Assisté – utiliser un disque entier</strong></li>
+<li>Sélectionner <strong>Tout dans une seule partition</strong></li>
+<li>Sélectionner <strong>oui</strong> pour l’application des changements</li>
+<li>Sélectionner <strong>non</strong> pour analyser un autre cd/dvd (si demandé)</li>
+<li>Sélectionner <strong>oui</strong> pour l’utilisation d’un miroir réseau</li>
+<li>Pour le proxy (Mandataire HTTP) laisser vide.</li>
+<li>Lors de la sélection des logiciels <strong>supprimer les interfaces graphiques</strong>.</li>
+<li>Sélectionner <strong>oui</strong> pour installer grub ensuite bien sélectionner <strong>/dev/sda</strong></li>
+</ul>
+<p><strong>2.</strong> Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par <code>#</code> dans le fichier <code>/etc/apt/sources.list</code> </p>
+<h2 id="installation-du-serveur-apache">Installation du serveur apache</h2>
+<h3 id="installation-du-serveur">Installation du serveur</h3>
+<p><strong>1. Installer</strong> apache2 :<br />
+<code bash># apt update &amp;&amp; apt upgrade -y</code><br />
+<code bash># apt install apache2</code></p>
+<p><strong>2. Vérification du fonctionnement du serveur</strong><br />
+<strong>Vérifier</strong> le fonctionnement du serveur :<br />
+<code bash># systemctl status apache2</code></p>
+<p><strong>3. Saisir</strong> dans un navigateur lancé sur la machine sous Linux Mint (dans le réseau NAT également) l'adresse ip du serveur (Commande <code>ip -4 a</code>). Une page web doit s'afficher.</p>
+<h3 id="configuration-des-repertoires">Configuration des répertoires</h3>
+<p><strong>1. Définir</strong> <code>www-data</code> comme proprétaire et groupe auquel le répertoire <code>/var/www/html</code> appartient. Utiliser la commande <code>chown</code>.</p>
+<p><strong>2. Ajouter</strong> l'utilisateur courant au groupe <code>www-data</code>  à l'aide de la commande <code>usermod</code> et des options <code>-a</code> et <code>-G</code>.</p>
+<p><strong>3. Définir</strong> les droits du répertoire <code>/var/www/html</code>. Donner les droits <code>-rwxrwxr-x</code>.</p>
+<h2 id="administrer-votre-serveur-a-distance">Administrer votre serveur à distance</h2>
+<h3 id="installation-de-ssh">Installation de ssh</h3>
+<p><strong>1. Installer</strong> <code>openssh-server</code> sur votre machine sous Debian.</p>
+<p><strong>2. Se déconnecter puis se reconnecter.</strong></p>
+<h3 id="utilisation">Utilisation</h3>
+<p>A partir de votre machine virtuelle Linux Mint se connecter à la machine Debian. Pour cela, dans un terminal saisir :<br />
+<code bash>$ ssh user@ip-srv-web</code> 
+Remplacer ip-srv-web par l'adresse ip du serveur.</p>
+<p>Vous êtes maintenant connectés à votre Debian via <code>ssh</code>.</p>
+<h3 id="deposer-vos-pages-sur-le-serveur">Déposer vos pages sur le serveur</h3>
+<ul>
+<li>
+<p>A partir de l’explorateur de fichier sous linux Mint, saisir : <code>sftp://user@ip-srv-web</code> (Remplacer ip-srv-web par l'adresse ip du serveur).</p>
+</li>
+<li>
+<p>Vous pouvez déposer vos pages html dans <code>/var/www/html</code>.   </p>
+</li>
+<li>Penser à nommer un fichier <code>index.html</code> dans chaque répertoire. </li>
+<li>Faire en sorte que tous les fichiers et répertoires dans <code>/var/www/html</code> appartiennent à <code>www-data</code> (proprétaire et groupe). </li>
+</ul>
+<h2 id="complements">Compléments</h2>
+<ul>
+<li>En cas de problème avec le fichier <code>/etc/apt/sources.list</code> on peut le modifier comme ci-dessous (Pour debian 12)</li>
+<li>A adapter à la version de Debian (voir la page <a href="https://wiki.debian.org/fr/SourcesList">Debian sources.list</a>) :
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>deb http://deb.debian.org/debian bookworm main
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>deb-src http://deb.debian.org/debian bookworm main
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>deb http://deb.debian.org/debian-security/ bookworm-security main
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>deb-src http://deb.debian.org/debian-security/ bookworm-security main
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>deb http://deb.debian.org/debian bookworm-updates main
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>deb-src http://deb.debian.org/debian bookworm-updates main
+</span></code></pre></div></li>
+</ul>
 
 
 
