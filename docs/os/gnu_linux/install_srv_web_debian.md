@@ -19,6 +19,7 @@
 **1.** Créer une machine virtuelle basée sur une distribution Debian  
 
 **Configuration machine** :  
+
   * Créer et configurer un **Réseau NAT** dans VirtualBox
   * Dans la configuration réseau de la machine virtuelle sélectionner réseau NAT et indiquer le réseau crée ci-dessus.
   * RAM : 4Gio
