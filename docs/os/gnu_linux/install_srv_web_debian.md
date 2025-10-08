@@ -25,9 +25,11 @@ Installer **Debian** dans **VirtualBox** avec :
   
 ## 💿 2. Installation de Debian
 **1.** Télécharger l’image ISO (choisir la netinstall)
-➡️  https://www.debian.org/distrib/
 
-**2.** Procéder à l'installation
+➡️  [ISO Debian](https://www.debian.org/distrib/)
+
+**2.** Procéder à l'installation :
+
   * Démarrer la VM :
   * Ouvrir les **Paramètres** → **Stockage** → monter l’ISO dans le lecteur optique.
   * Sélectionner **graphical install** puis suivre la procédure indiquée.
