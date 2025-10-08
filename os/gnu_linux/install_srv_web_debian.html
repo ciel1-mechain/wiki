@@ -828,23 +828,25 @@
 <li>Disque : 20 Go</li>
 </ul>
 <h2 id="2-installation-de-debian">💿 2. Installation de Debian</h2>
-<p><strong>1.</strong> Télécharger l’image ISO (choisir la netinstall)
-➡️  https://www.debian.org/distrib/</p>
-<p><strong>2.</strong> Procéder à l'installation
-  * Démarrer la VM :
-  * Ouvrir les <strong>Paramètres</strong> → <strong>Stockage</strong> → monter l’ISO dans le lecteur optique.
-  * Sélectionner <strong>graphical install</strong> puis suivre la procédure indiquée.
-  * Nom de votre machine : <code>srv-web</code>.
-  * Nom utilisateur : <code>user</code> et mdp <code>debian</code>. Mdp root : <code>debian</code>
-  * Mettre <strong>local</strong> dans le domaine.
-  * Sélectionner <strong>Assisté – utiliser un disque entier</strong>
-  * Sélectionner <strong>Tout dans une seule partition</strong>
-  * Sélectionner <strong>oui</strong> pour l’application des changements
-  * Sélectionner <strong>non</strong> pour analyser un autre cd/dvd (si demandé)
-  * Sélectionner <strong>oui</strong> pour l’utilisation d’un miroir réseau
-  * Pour le proxy (Mandataire HTTP) laisser vide.
-  * Lors de la sélection des logiciels <strong>supprimer les interfaces graphiques</strong>.
-  * Sélectionner <strong>oui</strong> pour installer grub ensuite bien sélectionner <strong>/dev/sda</strong></p>
+<p><strong>1.</strong> Télécharger l’image ISO (choisir la netinstall)</p>
+<p>➡️  <a href="https://www.debian.org/distrib/">ISO Debian</a></p>
+<p><strong>2.</strong> Procéder à l'installation :</p>
+<ul>
+<li>Démarrer la VM :</li>
+<li>Ouvrir les <strong>Paramètres</strong> → <strong>Stockage</strong> → monter l’ISO dans le lecteur optique.</li>
+<li>Sélectionner <strong>graphical install</strong> puis suivre la procédure indiquée.</li>
+<li>Nom de votre machine : <code>srv-web</code>.</li>
+<li>Nom utilisateur : <code>user</code> et mdp <code>debian</code>. Mdp root : <code>debian</code></li>
+<li>Mettre <strong>local</strong> dans le domaine.</li>
+<li>Sélectionner <strong>Assisté – utiliser un disque entier</strong></li>
+<li>Sélectionner <strong>Tout dans une seule partition</strong></li>
+<li>Sélectionner <strong>oui</strong> pour l’application des changements</li>
+<li>Sélectionner <strong>non</strong> pour analyser un autre cd/dvd (si demandé)</li>
+<li>Sélectionner <strong>oui</strong> pour l’utilisation d’un miroir réseau</li>
+<li>Pour le proxy (Mandataire HTTP) laisser vide.</li>
+<li>Lors de la sélection des logiciels <strong>supprimer les interfaces graphiques</strong>.</li>
+<li>Sélectionner <strong>oui</strong> pour installer grub ensuite bien sélectionner <strong>/dev/sda</strong></li>
+</ul>
 <p><strong>3.</strong> Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par <code>#</code> dans le fichier <code>/etc/apt/sources.list</code> </p>
 <p><strong>4.</strong> Retirer l’ISO après redémarrage.</p>
 <h2 id="2-installation-du-serveur-apache2">💿 2. Installation du serveur apache2</h2>
