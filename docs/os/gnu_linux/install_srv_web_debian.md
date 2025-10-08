@@ -1,26 +1,35 @@
 # Installation du serveur http apache2 sous Debian
 
 ----
+## 🎯 Objectifs et remarques
+Installer **Debian** dans **VirtualBox** avec :
 
-!!! note
-    - On n'utilisera pas la commande `sudo` sous Debian. 
-    - Les opérations qui nécessitent des privilèges se feront sous le compte root. (Commande `su -`)
+- 4 Gio de RAM
+- 20 Go de disque
+- Installation et configuration du serveur **Apache2**
+- On n'utilisera pas la commande `sudo` sous Debian
+- Les opérations qui nécessitent des privilèges se feront sous le compte root. (Commande `su -`)
+
 
 ## Notations
 **$** indique que la commande doit être lancée en tant qu'utilisateur.  
  **#** indique que la commande doit être lancée en tant que super-utilisateur (root).
 
-## Installation de Debian 
-**1.** Créer une machine virtuelle basée sur une distribution Debian  
+## 🖥️ 1. Création de la VM dans VirtualBox
 
 **Configuration machine** :  
 
   * Dans la configuration réseau de la machine virtuelle sélectionner **accès par pont**.
-  * RAM : 4Gio
+  * RAM : 4 Gio
   * Disque : 20 Go
   
-**Installation** : 
+## 💿 2. Installation de Debian
+**1.** Télécharger l’image ISO (choisir la netinstall)
+➡️  https://www.debian.org/distrib/
 
+**2.** Procéder à l'installation
+  * Démarrer la VM :
+  * Ouvrir les **Paramètres** → **Stockage** → monter l’ISO dans le lecteur optique.
   * Sélectionner **graphical install** puis suivre la procédure indiquée.
   * Nom de votre machine : `srv-web`.
   * Nom utilisateur : `user` et mdp `debian`. Mdp root : `debian`
@@ -34,9 +43,11 @@
   * Lors de la sélection des logiciels **supprimer les interfaces graphiques**.
   * Sélectionner **oui** pour installer grub ensuite bien sélectionner **/dev/sda**
 
-**2.** Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par `#` dans le fichier `/etc/apt/sources.list` 
+**3.** Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par `#` dans le fichier `/etc/apt/sources.list` 
 
-##  Installation du serveur apache 
+**4.** Retirer l’ISO après redémarrage.
+
+## 💿 2. Installation du serveur apache2
 
 ### Installation du serveur
 
@@ -61,7 +72,7 @@
 
 
 
-## Administrer votre serveur à distance
+## ⚙️  3. Administrer votre serveur à distance
 ### Installation de ssh
 **1. Installer** `openssh-server` sur votre machine sous Debian.
 
@@ -69,14 +80,14 @@
 
 ### Utilisation 
 
-A partir de votre machine virtuelle Linux Mint se connecter à la machine Debian. Pour cela, dans un terminal saisir :  
+A partir d'une machine cliente se connecter à la machine Debian. Pour cela, dans un terminal saisir :  
 <code bash>$ ssh user@ip-srv-web</code> 
 Remplacer ip-srv-web par l'adresse ip du serveur.
 
 Vous êtes maintenant connectés à votre Debian via `ssh`.
 
 ### Déposer vos pages sur le serveur
-  * A partir de l’explorateur de fichier sous linux Mint, saisir : `sftp://user@ip-srv-web` (Remplacer ip-srv-web par l'adresse ip du serveur).
+  * A partir de l’explorateur de fichier de la machine cliente, saisir : `sftp://user@ip-srv-web` (Remplacer ip-srv-web par l'adresse ip du serveur).
 
   * Vous pouvez déposer vos pages html dans `/var/www/html`.   
   * Penser à nommer un fichier `index.html` dans chaque répertoire. 
