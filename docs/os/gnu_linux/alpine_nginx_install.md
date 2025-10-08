@@ -2,6 +2,7 @@
 
 ## 🎯 Objectif
 Installer **Alpine Linux** dans **VirtualBox** avec :
+
 - 512 Mo de RAM
 - 512 Mo de disque (ou plus si gros site web à héberger)
 - Uniquement l'utilisateur **root**
@@ -30,6 +31,7 @@ Télécharger l’image ISO minimale :
 Choisir **Standard x86_64**.
 
 Dans VirtualBox :
+
 - Ouvrir les **Paramètres** → **Stockage** → monter l’ISO dans le lecteur optique.
 
 ### Démarrer la VM
@@ -44,6 +46,7 @@ setup-alpine
 ```
 
 Répondre aux questions :
+
 - Keyboard layout : `fr`
 - Hostname : `alpine`
 - Network : auto (DHCP)
