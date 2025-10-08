@@ -671,6 +671,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#objectifs-et-remarques" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objectifs et remarques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notations" class="md-nav__link">
     <span class="md-ellipsis">
       Notations
@@ -680,22 +689,31 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-de-debian" class="md-nav__link">
+  <a href="#1-creation-de-la-vm-dans-virtualbox" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation de Debian
+      🖥️ 1. Création de la VM dans VirtualBox
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-du-serveur-apache" class="md-nav__link">
+  <a href="#2-installation-de-debian" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation du serveur apache
+      💿 2. Installation de Debian
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation du serveur apache">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installation-du-serveur-apache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      💿 2. Installation du serveur apache2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💿 2. Installation du serveur apache2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -722,13 +740,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#administrer-votre-serveur-a-distance" class="md-nav__link">
+  <a href="#3-administrer-votre-serveur-a-distance" class="md-nav__link">
     <span class="md-ellipsis">
-      Administrer votre serveur à distance
+      ⚙️ 3. Administrer votre serveur à distance
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Administrer votre serveur à distance">
+    <nav class="md-nav" aria-label="⚙️ 3. Administrer votre serveur à distance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -790,41 +808,46 @@
 
 <h1 id="installation-du-serveur-http-apache2-sous-debian">Installation du serveur http apache2 sous Debian</h1>
 <hr />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<h2 id="objectifs-et-remarques">🎯 Objectifs et remarques</h2>
+<p>Installer <strong>Debian</strong> dans <strong>VirtualBox</strong> avec :</p>
 <ul>
-<li>On n'utilisera pas la commande <code>sudo</code> sous Debian. </li>
+<li>4 Gio de RAM</li>
+<li>20 Go de disque</li>
+<li>Installation et configuration du serveur <strong>Apache2</strong></li>
+<li>On n'utilisera pas la commande <code>sudo</code> sous Debian</li>
 <li>Les opérations qui nécessitent des privilèges se feront sous le compte root. (Commande <code>su -</code>)</li>
 </ul>
-</div>
 <h2 id="notations">Notations</h2>
 <p><strong>$</strong> indique que la commande doit être lancée en tant qu'utilisateur.<br />
 <strong>#</strong> indique que la commande doit être lancée en tant que super-utilisateur (root).</p>
-<h2 id="installation-de-debian">Installation de Debian</h2>
-<p><strong>1.</strong> Créer une machine virtuelle basée sur une distribution Debian  </p>
+<h2 id="1-creation-de-la-vm-dans-virtualbox">🖥️ 1. Création de la VM dans VirtualBox</h2>
 <p><strong>Configuration machine</strong> :  </p>
 <ul>
 <li>Dans la configuration réseau de la machine virtuelle sélectionner <strong>accès par pont</strong>.</li>
-<li>RAM : 4Gio</li>
+<li>RAM : 4 Gio</li>
 <li>Disque : 20 Go</li>
 </ul>
-<p><strong>Installation</strong> : </p>
-<ul>
-<li>Sélectionner <strong>graphical install</strong> puis suivre la procédure indiquée.</li>
-<li>Nom de votre machine : <code>srv-web</code>.</li>
-<li>Nom utilisateur : <code>user</code> et mdp <code>debian</code>. Mdp root : <code>debian</code></li>
-<li>Mettre <strong>local</strong> dans le domaine.</li>
-<li>Sélectionner <strong>Assisté – utiliser un disque entier</strong></li>
-<li>Sélectionner <strong>Tout dans une seule partition</strong></li>
-<li>Sélectionner <strong>oui</strong> pour l’application des changements</li>
-<li>Sélectionner <strong>non</strong> pour analyser un autre cd/dvd (si demandé)</li>
-<li>Sélectionner <strong>oui</strong> pour l’utilisation d’un miroir réseau</li>
-<li>Pour le proxy (Mandataire HTTP) laisser vide.</li>
-<li>Lors de la sélection des logiciels <strong>supprimer les interfaces graphiques</strong>.</li>
-<li>Sélectionner <strong>oui</strong> pour installer grub ensuite bien sélectionner <strong>/dev/sda</strong></li>
-</ul>
-<p><strong>2.</strong> Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par <code>#</code> dans le fichier <code>/etc/apt/sources.list</code> </p>
-<h2 id="installation-du-serveur-apache">Installation du serveur apache</h2>
+<h2 id="2-installation-de-debian">💿 2. Installation de Debian</h2>
+<p><strong>1.</strong> Télécharger l’image ISO (choisir la netinstall)
+➡️  https://www.debian.org/distrib/</p>
+<p><strong>2.</strong> Procéder à l'installation
+  * Démarrer la VM :
+  * Ouvrir les <strong>Paramètres</strong> → <strong>Stockage</strong> → monter l’ISO dans le lecteur optique.
+  * Sélectionner <strong>graphical install</strong> puis suivre la procédure indiquée.
+  * Nom de votre machine : <code>srv-web</code>.
+  * Nom utilisateur : <code>user</code> et mdp <code>debian</code>. Mdp root : <code>debian</code>
+  * Mettre <strong>local</strong> dans le domaine.
+  * Sélectionner <strong>Assisté – utiliser un disque entier</strong>
+  * Sélectionner <strong>Tout dans une seule partition</strong>
+  * Sélectionner <strong>oui</strong> pour l’application des changements
+  * Sélectionner <strong>non</strong> pour analyser un autre cd/dvd (si demandé)
+  * Sélectionner <strong>oui</strong> pour l’utilisation d’un miroir réseau
+  * Pour le proxy (Mandataire HTTP) laisser vide.
+  * Lors de la sélection des logiciels <strong>supprimer les interfaces graphiques</strong>.
+  * Sélectionner <strong>oui</strong> pour installer grub ensuite bien sélectionner <strong>/dev/sda</strong></p>
+<p><strong>3.</strong> Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par <code>#</code> dans le fichier <code>/etc/apt/sources.list</code> </p>
+<p><strong>4.</strong> Retirer l’ISO après redémarrage.</p>
+<h2 id="2-installation-du-serveur-apache2">💿 2. Installation du serveur apache2</h2>
 <h3 id="installation-du-serveur">Installation du serveur</h3>
 <p><strong>1. Installer</strong> apache2 :<br />
 <code bash># apt update &amp;&amp; apt upgrade -y</code><br />
@@ -837,19 +860,19 @@
 <p><strong>1. Définir</strong> <code>www-data</code> comme proprétaire et groupe auquel le répertoire <code>/var/www/html</code> appartient. Utiliser la commande <code>chown</code>.</p>
 <p><strong>2. Ajouter</strong> l'utilisateur courant au groupe <code>www-data</code>  à l'aide de la commande <code>usermod</code> et des options <code>-a</code> et <code>-G</code>.</p>
 <p><strong>3. Définir</strong> les droits du répertoire <code>/var/www/html</code>. Donner les droits <code>-rwxrwxr-x</code>.</p>
-<h2 id="administrer-votre-serveur-a-distance">Administrer votre serveur à distance</h2>
+<h2 id="3-administrer-votre-serveur-a-distance">⚙️  3. Administrer votre serveur à distance</h2>
 <h3 id="installation-de-ssh">Installation de ssh</h3>
 <p><strong>1. Installer</strong> <code>openssh-server</code> sur votre machine sous Debian.</p>
 <p><strong>2. Se déconnecter puis se reconnecter.</strong></p>
 <h3 id="utilisation">Utilisation</h3>
-<p>A partir de votre machine virtuelle Linux Mint se connecter à la machine Debian. Pour cela, dans un terminal saisir :<br />
+<p>A partir d'une machine cliente se connecter à la machine Debian. Pour cela, dans un terminal saisir :<br />
 <code bash>$ ssh user@ip-srv-web</code> 
 Remplacer ip-srv-web par l'adresse ip du serveur.</p>
 <p>Vous êtes maintenant connectés à votre Debian via <code>ssh</code>.</p>
 <h3 id="deposer-vos-pages-sur-le-serveur">Déposer vos pages sur le serveur</h3>
 <ul>
 <li>
-<p>A partir de l’explorateur de fichier sous linux Mint, saisir : <code>sftp://user@ip-srv-web</code> (Remplacer ip-srv-web par l'adresse ip du serveur).</p>
+<p>A partir de l’explorateur de fichier de la machine cliente, saisir : <code>sftp://user@ip-srv-web</code> (Remplacer ip-srv-web par l'adresse ip du serveur).</p>
 </li>
 <li>
 <p>Vous pouvez déposer vos pages html dans <code>/var/www/html</code>.   </p>
