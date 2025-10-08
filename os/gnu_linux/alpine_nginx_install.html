@@ -808,11 +808,13 @@
 
 <h1 id="fiche-dinstallation-alpine-linux-nginx-virtualbox">🧾 Fiche d'installation Alpine Linux + Nginx (VirtualBox)</h1>
 <h2 id="objectif">🎯 Objectif</h2>
-<p>Installer <strong>Alpine Linux</strong> dans <strong>VirtualBox</strong> avec :
-- 512 Mo de RAM
-- 512 Mo de disque (ou plus si gros site web à héberger)
-- Uniquement l'utilisateur <strong>root</strong>
-- Installation et configuration de <strong>Nginx</strong></p>
+<p>Installer <strong>Alpine Linux</strong> dans <strong>VirtualBox</strong> avec :</p>
+<ul>
+<li>512 Mo de RAM</li>
+<li>512 Mo de disque (ou plus si gros site web à héberger)</li>
+<li>Uniquement l'utilisateur <strong>root</strong></li>
+<li>Installation et configuration de <strong>Nginx</strong></li>
+</ul>
 <hr />
 <h2 id="1-creation-de-la-vm-dans-virtualbox">🖥️ 1. Création de la VM dans VirtualBox</h2>
 <ol>
@@ -830,8 +832,10 @@
 <p>Télécharger l’image ISO minimale :<br />
 ➡️ https://alpinelinux.org/downloads/</p>
 <p>Choisir <strong>Standard x86_64</strong>.</p>
-<p>Dans VirtualBox :
-- Ouvrir les <strong>Paramètres</strong> → <strong>Stockage</strong> → monter l’ISO dans le lecteur optique.</p>
+<p>Dans VirtualBox :</p>
+<ul>
+<li>Ouvrir les <strong>Paramètres</strong> → <strong>Stockage</strong> → monter l’ISO dans le lecteur optique.</li>
+</ul>
 <h3 id="demarrer-la-vm">Démarrer la VM</h3>
 <p>Dans le shell Alpine, se connecter :
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>login:<span class="w"> </span>root
@@ -839,17 +843,19 @@
 <h3 id="lancer-le-script-dinstallation">Lancer le script d’installation</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>setup-alpine
 </span></code></pre></div>
-<p>Répondre aux questions :
-- Keyboard layout : <code>fr</code>
-- Hostname : <code>alpine</code>
-- Network : auto (DHCP)
-- Root password : définir un mot de passe
-- Timezone : <code>Europe/Paris</code>
-- Proxy : (laisser vide)
-- Mirror : choisir automatique (ou <code>f</code> pour fastest)
-- SSH : <code>no</code>
-- Disk : <code>sda</code>
-- Use it for sys : <code>sys</code></p>
+<p>Répondre aux questions :</p>
+<ul>
+<li>Keyboard layout : <code>fr</code></li>
+<li>Hostname : <code>alpine</code></li>
+<li>Network : auto (DHCP)</li>
+<li>Root password : définir un mot de passe</li>
+<li>Timezone : <code>Europe/Paris</code></li>
+<li>Proxy : (laisser vide)</li>
+<li>Mirror : choisir automatique (ou <code>f</code> pour fastest)</li>
+<li>SSH : <code>no</code></li>
+<li>Disk : <code>sda</code></li>
+<li>Use it for sys : <code>sys</code></li>
+</ul>
 <p>⚙️ Attendre la fin de l’installation, puis :
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>reboot
 </span></code></pre></div></p>
