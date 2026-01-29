@@ -13,7 +13,7 @@ OUTPUT = os.path.join(ROOT, "index.md")
 # Sections et sous-dossiers
 SECTIONS = {
     "DevOps": ["python", "c", "web", "git", "docker", "microbit"],
-    "Réseaux & Interfaces": ["reseaux", "interfaces"],
+    "Réseaux & Liaisons": ["reseaux", "liaisons numériques"],
     "Systèmes exploitation": ["windows", "gnu_linux"]
 }
 
@@ -26,7 +26,7 @@ LINKS = {
     "docker": "[:material-docker: Docker](devops/docker.md)",
     "microbit": "[:material-chip: Micro:Bit](devops/microbit.md)",
     "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_liaisons/reseaux.md)",
-    "interfaces": "[:material-connection: Réseaux TCP/IP et liaisons numériques](reseaux_liaisons/liaisons.md)",
+    "interfaces": "[:material-connection: Liaisons numériques](reseaux_liaisons/liaisons.md)",
     "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
     "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)"
 }
@@ -48,7 +48,7 @@ for section, subfolders in SECTIONS.items():
         elif section == "Systèmes exploitation":
             full_path = os.path.join(ROOT, "os", folder)
         else:  # Réseaux & Interfaces
-            full_path = os.path.join(ROOT, "reseaux_interfaces", folder)
+            full_path = os.path.join(ROOT, "reseaux_liaisons", folder)
 
         n_files = count_md_files(full_path)
         link = LINKS.get(folder, folder)
