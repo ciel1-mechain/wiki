@@ -13,7 +13,7 @@ OUTPUT = os.path.join(ROOT, "index.md")
 # Sections et sous-dossiers
 SECTIONS = {
     "DevOps": ["python", "c", "web", "git", "docker", "microbit"],
-    "Réseaux & Liaisons": ["reseaux", "liaisons numériques"],
+    "Réseaux & Liaisons": ["reseaux", "liaisons"],
     "Systèmes exploitation": ["windows", "gnu_linux"]
 }
 
@@ -26,7 +26,7 @@ LINKS = {
     "docker": "[:material-docker: Docker](devops/docker.md)",
     "microbit": "[:material-chip: Micro:Bit](devops/microbit.md)",
     "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_liaisons/reseaux.md)",
-    "interfaces": "[:material-connection: Liaisons numériques](reseaux_liaisons/liaisons.md)",
+    "liaisons": "[:material-connection: Liaisons numériques](reseaux_liaisons/liaisons.md)",
     "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
     "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)"
 }
