@@ -2,98 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://USERNAME.github.io/REPO/index.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/c.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/docker.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/git.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/microbit.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/python.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/web.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/docker/cycle_vie_conteneur_alpine.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/git/guide_git_github.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/microbit/codal.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/microbit/micro_python.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/devops/python/environnement-virtuel.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/windows.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/alpine_nginx_install.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/commande_ss.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/commandes_host_dig.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://USERNAME.github.io/REPO/os/gnu_linux/commandes_reseaux.html</loc>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/install_srv_web_debian.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/list_usb.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/mini_serveur_busybox.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
          <loc>https://USERNAME.github.io/REPO/os/gnu_linux/systemd.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://USERNAME.github.io/REPO/reseaux_interfaces/interfaces.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <loc>https://USERNAME.github.io/REPO/reseaux_liaisons/liaisons.html</loc>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <loc>https://USERNAME.github.io/REPO/reseaux_liaisons/reseaux.html</loc>
+         <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux/guide_dns.html</loc>
-         <lastmod>2025-10-08</lastmod>
+         <loc>https://USERNAME.github.io/REPO/reseaux_liaisons/reseaux/guide_dns.html</loc>
+         <lastmod>2026-01-29</lastmod>
     </url>
 </urlset>

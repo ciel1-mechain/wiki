@@ -8,13 +8,16 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/reseaux_interfaces/reseaux/guide_dns.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/reseaux_liaisons/reseaux/guide_dns.html">
       
       
+      
+      
+        
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -22,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,7 +53,6 @@
     
       
 
-    
     
     
   </head>
@@ -315,7 +317,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../reseaux.html" class="md-tabs__link">
+      <a href="../../reseaux_interfaces/reseaux.md" class="md-tabs__link">
         
   
   
@@ -334,7 +336,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../interfaces.html" class="md-tabs__link">
+      <a href="../../reseaux_interfaces/interfaces.md" class="md-tabs__link">
         
   
   
@@ -436,9 +438,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Python
+  
+
     
   </span>
+  
   
 
       </a>
@@ -458,9 +465,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     C/C++
+  
+
     
   </span>
+  
   
 
       </a>
@@ -480,9 +492,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Web (HTML/CSS/JS)
+  
+
     
   </span>
+  
   
 
       </a>
@@ -502,9 +519,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Git/GitHub
+  
+
     
   </span>
+  
   
 
       </a>
@@ -524,9 +546,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Docker
+  
+
     
   </span>
+  
   
 
       </a>
@@ -546,9 +573,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Micro:Bit
+  
+
     
   </span>
+  
   
 
       </a>
@@ -563,14 +595,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../reseaux.html" class="md-nav__link">
+      <a href="../../reseaux_interfaces/reseaux.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Réseaux TCP/IP
+  
+
     
   </span>
+  
   
 
       </a>
@@ -585,14 +622,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces.html" class="md-nav__link">
+      <a href="../../reseaux_interfaces/interfaces.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Interfaces et Protocoles de Communication
+  
+
     
   </span>
+  
   
 
       </a>
@@ -612,9 +654,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Windows
+  
+
     
   </span>
+  
   
 
       </a>
@@ -634,9 +681,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     GNU/Linux
+  
+
     
   </span>
+  
   
 
       </a>
@@ -673,7 +725,9 @@
         <li class="md-nav__item">
   <a href="#1-concepts-fondamentaux-du-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Concepts fondamentaux du DNS
+      
+        1. Concepts fondamentaux du DNS
+      
     </span>
   </a>
   
@@ -683,7 +737,9 @@
           <li class="md-nav__item">
   <a href="#quest-ce-que-le-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Qu'est ce que le DNS ?
+      
+        Qu'est ce que le DNS ?
+      
     </span>
   </a>
   
@@ -692,7 +748,9 @@
           <li class="md-nav__item">
   <a href="#base-de-donnees-distribuee" class="md-nav__link">
     <span class="md-ellipsis">
-      Base de données distribuée
+      
+        Base de données distribuée
+      
     </span>
   </a>
   
@@ -701,7 +759,9 @@
           <li class="md-nav__item">
   <a href="#espace-de-noms-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Espace de noms DNS
+      
+        Espace de noms DNS
+      
     </span>
   </a>
   
@@ -710,7 +770,9 @@
           <li class="md-nav__item">
   <a href="#racine-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Racine DNS
+      
+        Racine DNS
+      
     </span>
   </a>
   
@@ -719,7 +781,9 @@
           <li class="md-nav__item">
   <a href="#noeud-dns-domaine-et-nom-de-domaine" class="md-nav__link">
     <span class="md-ellipsis">
-      Noeud DNS, Domaine et nom de Domaine
+      
+        Noeud DNS, Domaine et nom de Domaine
+      
     </span>
   </a>
   
@@ -728,7 +792,9 @@
           <li class="md-nav__item">
   <a href="#fqdn-fully-qualified-domain-name" class="md-nav__link">
     <span class="md-ellipsis">
-      FQDN (Fully Qualified Domain Name)
+      
+        FQDN (Fully Qualified Domain Name)
+      
     </span>
   </a>
   
@@ -737,7 +803,9 @@
           <li class="md-nav__item">
   <a href="#hote" class="md-nav__link">
     <span class="md-ellipsis">
-      Hôte
+      
+        Hôte
+      
     </span>
   </a>
   
@@ -746,7 +814,9 @@
           <li class="md-nav__item">
   <a href="#zones-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Zones DNS
+      
+        Zones DNS
+      
     </span>
   </a>
   
@@ -755,7 +825,9 @@
           <li class="md-nav__item">
   <a href="#serveurs-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Serveurs DNS
+      
+        Serveurs DNS
+      
     </span>
   </a>
   
@@ -764,7 +836,9 @@
           <li class="md-nav__item">
   <a href="#authoritative-answer" class="md-nav__link">
     <span class="md-ellipsis">
-      Authoritative Answer
+      
+        Authoritative Answer
+      
     </span>
   </a>
   
@@ -778,7 +852,9 @@
         <li class="md-nav__item">
   <a href="#2-structure-et-fonctionnement-dun-message-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Structure et fonctionnement d'un message DNS
+      
+        2. Structure et fonctionnement d'un message DNS
+      
     </span>
   </a>
   
@@ -788,7 +864,9 @@
           <li class="md-nav__item">
   <a href="#types-de-requetes-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Types de requêtes DNS
+      
+        Types de requêtes DNS
+      
     </span>
   </a>
   
@@ -797,7 +875,9 @@
           <li class="md-nav__item">
   <a href="#principe-de-la-resolution-de-nom" class="md-nav__link">
     <span class="md-ellipsis">
-      Principe de la résolution de nom
+      
+        Principe de la résolution de nom
+      
     </span>
   </a>
   
@@ -811,7 +891,9 @@
         <li class="md-nav__item">
   <a href="#structure-dun-message-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure d'un message DNS
+      
+        Structure d'un message DNS
+      
     </span>
   </a>
   
@@ -821,7 +903,9 @@
           <li class="md-nav__item">
   <a href="#format-de-len-tete-12-octets" class="md-nav__link">
     <span class="md-ellipsis">
-      Format de l'en-tête (12 octets)
+      
+        Format de l'en-tête (12 octets)
+      
     </span>
   </a>
   
@@ -830,7 +914,9 @@
           <li class="md-nav__item">
   <a href="#description-des-champs" class="md-nav__link">
     <span class="md-ellipsis">
-      Description des champs
+      
+        Description des champs
+      
     </span>
   </a>
   
@@ -844,7 +930,9 @@
         <li class="md-nav__item">
   <a href="#exemple-concret-requete-pour-wwwexamplecom-type-a" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemple concret : requête pour www.example.com (Type A)
+      
+        Exemple concret : requête pour www.example.com (Type A)
+      
     </span>
   </a>
   
@@ -854,7 +942,9 @@
           <li class="md-nav__item">
   <a href="#decomposition" class="md-nav__link">
     <span class="md-ellipsis">
-      Décomposition :
+      
+        Décomposition :
+      
     </span>
   </a>
   
@@ -875,6 +965,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1149,10 +1240,11 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/install_srv_web_debian.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/reseaux_liaisons/reseaux.html">
       
       
       
@@ -16,19 +16,19 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Installation du serveur http apache2 sous Debian - Wiki</title>
+        <title>Réseaux TCP/IP - Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,9 +47,9 @@
       
     
     
-      <link rel="stylesheet" href="../../extra.css">
+      <link rel="stylesheet" href="../extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation-du-serveur-http-apache2-sous-debian" class="md-skip">
+        <a href="#reseaux-tcpip" class="md-skip">
           Aller au contenu
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+    <a href=".." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation du serveur http apache2 sous Debian
+              Réseaux TCP/IP
             
           </span>
         </div>
@@ -203,7 +203,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/python.html" class="md-tabs__link">
+      <a href="../devops/python.html" class="md-tabs__link">
         
   
   
@@ -222,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/c.html" class="md-tabs__link">
+      <a href="../devops/c.html" class="md-tabs__link">
         
   
   
@@ -241,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/web.html" class="md-tabs__link">
+      <a href="../devops/web.html" class="md-tabs__link">
         
   
   
@@ -260,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/git.html" class="md-tabs__link">
+      <a href="../devops/git.html" class="md-tabs__link">
         
   
   
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/docker.html" class="md-tabs__link">
+      <a href="../devops/docker.html" class="md-tabs__link">
         
   
   
@@ -298,7 +298,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/microbit.html" class="md-tabs__link">
+      <a href="../devops/microbit.html" class="md-tabs__link">
         
   
   
@@ -317,7 +317,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../reseaux_interfaces/reseaux.md" class="md-tabs__link">
+      <a href="../reseaux_interfaces/reseaux.md" class="md-tabs__link">
         
   
   
@@ -336,7 +336,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../reseaux_interfaces/interfaces.md" class="md-tabs__link">
+      <a href="../reseaux_interfaces/interfaces.md" class="md-tabs__link">
         
   
   
@@ -355,7 +355,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../windows.html" class="md-tabs__link">
+      <a href="../os/windows.html" class="md-tabs__link">
         
   
   
@@ -374,7 +374,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../gnu_linux.html" class="md-tabs__link">
+      <a href="../os/gnu_linux.html" class="md-tabs__link">
         
   
   
@@ -404,7 +404,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -415,7 +417,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+    <a href=".." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -433,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/python.html" class="md-nav__link">
+      <a href="../devops/python.html" class="md-nav__link">
         
   
   
@@ -460,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/c.html" class="md-nav__link">
+      <a href="../devops/c.html" class="md-nav__link">
         
   
   
@@ -487,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/web.html" class="md-nav__link">
+      <a href="../devops/web.html" class="md-nav__link">
         
   
   
@@ -514,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git.html" class="md-nav__link">
+      <a href="../devops/git.html" class="md-nav__link">
         
   
   
@@ -541,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/docker.html" class="md-nav__link">
+      <a href="../devops/docker.html" class="md-nav__link">
         
   
   
@@ -568,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/microbit.html" class="md-nav__link">
+      <a href="../devops/microbit.html" class="md-nav__link">
         
   
   
@@ -595,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reseaux_interfaces/reseaux.md" class="md-nav__link">
+      <a href="../reseaux_interfaces/reseaux.md" class="md-nav__link">
         
   
   
@@ -622,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reseaux_interfaces/interfaces.md" class="md-nav__link">
+      <a href="../reseaux_interfaces/interfaces.md" class="md-nav__link">
         
   
   
@@ -649,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows.html" class="md-nav__link">
+      <a href="../os/windows.html" class="md-nav__link">
         
   
   
@@ -676,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gnu_linux.html" class="md-nav__link">
+      <a href="../os/gnu_linux.html" class="md-nav__link">
         
   
   
@@ -704,6 +706,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -723,143 +727,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectifs-et-remarques" class="md-nav__link">
+  <a href="#le-dns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Objectifs et remarques
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-creation-de-la-vm-dans-virtualbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🖥️ 1. Création de la VM dans VirtualBox
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-installation-de-debian" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💿 2. Installation de Debian
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-installation-du-serveur-apache2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💿 2. Installation du serveur apache2
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💿 2. Installation du serveur apache2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-du-serveur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation du serveur
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-des-repertoires" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration des répertoires
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-administrer-votre-serveur-a-distance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ⚙️ 3. Administrer votre serveur à distance
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚙️ 3. Administrer votre serveur à distance">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-de-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation de ssh
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Utilisation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deposer-vos-pages-sur-le-serveur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Déposer vos pages sur le serveur
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Compléments
+        Le DNS
       
     </span>
   </a>
@@ -880,98 +751,15 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="installation-du-serveur-http-apache2-sous-debian">Installation du serveur http apache2 sous Debian</h1>
-<hr />
-<h2 id="objectifs-et-remarques">🎯 Objectifs et remarques</h2>
-<p>Installer <strong>Debian</strong> dans <strong>VirtualBox</strong> avec :</p>
+
+<h1 id="reseaux-tcpip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v2h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></span> Réseaux TCP/IP</h1>
+<h2 id="le-dns">Le DNS</h2>
 <ul>
-<li>4 Gio de RAM</li>
-<li>20 Go de disque</li>
-<li>Installation et configuration du serveur <strong>Apache2</strong></li>
-<li>On n'utilisera pas la commande <code>sudo</code> sous Debian</li>
-<li>Les opérations qui nécessitent des privilèges se feront sous le compte root. (Commande <code>su -</code>)</li>
-</ul>
-<h2 id="notations">Notations</h2>
-<p><strong>$</strong> indique que la commande doit être lancée en tant qu'utilisateur.<br />
-<strong>#</strong> indique que la commande doit être lancée en tant que super-utilisateur (root).</p>
-<h2 id="1-creation-de-la-vm-dans-virtualbox">🖥️ 1. Création de la VM dans VirtualBox</h2>
-<p><strong>Configuration machine</strong> :  </p>
-<ul>
-<li>Dans la configuration réseau de la machine virtuelle sélectionner <strong>accès par pont</strong>.</li>
-<li>RAM : 4 Gio</li>
-<li>Disque : 20 Go</li>
-</ul>
-<h2 id="2-installation-de-debian">💿 2. Installation de Debian</h2>
-<p><strong>1.</strong> Télécharger l’image ISO (choisir la netinstall)</p>
-<p>➡️  <a href="https://www.debian.org/distrib/">ISO Debian</a></p>
-<p><strong>2.</strong> Procéder à l'installation :</p>
-<ul>
-<li>Démarrer la VM :</li>
-<li>Ouvrir les <strong>Paramètres</strong> → <strong>Stockage</strong> → monter l’ISO dans le lecteur optique.</li>
-<li>Sélectionner <strong>graphical install</strong> puis suivre la procédure indiquée.</li>
-<li>Nom de votre machine : <code>srv-web</code>.</li>
-<li>Nom utilisateur : <code>user</code> et mdp <code>debian</code>. Mdp root : <code>debian</code></li>
-<li>Mettre <strong>local</strong> dans le domaine.</li>
-<li>Sélectionner <strong>Assisté – utiliser un disque entier</strong></li>
-<li>Sélectionner <strong>Tout dans une seule partition</strong></li>
-<li>Sélectionner <strong>oui</strong> pour l’application des changements</li>
-<li>Sélectionner <strong>non</strong> pour analyser un autre cd/dvd (si demandé)</li>
-<li>Sélectionner <strong>oui</strong> pour l’utilisation d’un miroir réseau</li>
-<li>Pour le proxy (Mandataire HTTP) laisser vide.</li>
-<li>Lors de la sélection des logiciels <strong>supprimer les interfaces graphiques</strong>.</li>
-<li>Sélectionner <strong>oui</strong> pour installer grub ensuite bien sélectionner <strong>/dev/sda</strong></li>
-</ul>
-<p><strong>3.</strong> Vérifier que les lignes qui contiennent ''deb cdrom ...'' commencent par <code>#</code> dans le fichier <code>/etc/apt/sources.list</code> </p>
-<p><strong>4.</strong> Retirer l’ISO après redémarrage.</p>
-<h2 id="2-installation-du-serveur-apache2">💿 2. Installation du serveur apache2</h2>
-<h3 id="installation-du-serveur">Installation du serveur</h3>
-<p><strong>1. Installer</strong> apache2 :<br />
-<code bash># apt update &amp;&amp; apt upgrade -y</code><br />
-<code bash># apt install apache2</code></p>
-<p><strong>2. Vérification du fonctionnement du serveur</strong><br />
-<strong>Vérifier</strong> le fonctionnement du serveur :<br />
-<code bash># systemctl status apache2</code></p>
-<p><strong>3. Saisir</strong> dans un navigateur lancé sur la machine sous Linux Mint l'adresse ip du serveur (Commande <code>ip -4 a</code> pour obtenir l'adresse IP du serveur). Une page web doit s'afficher.</p>
-<h3 id="configuration-des-repertoires">Configuration des répertoires</h3>
-<p><strong>1. Définir</strong> <code>www-data</code> comme proprétaire et groupe auquel le répertoire <code>/var/www/html</code> appartient. Utiliser la commande <code>chown</code>.</p>
-<p><strong>2. Ajouter</strong> l'utilisateur courant au groupe <code>www-data</code>  à l'aide de la commande <code>usermod</code> et des options <code>-a</code> et <code>-G</code>.</p>
-<p><strong>3. Définir</strong> les droits du répertoire <code>/var/www/html</code>. Donner les droits <code>-rwxrwxr-x</code>.</p>
-<h2 id="3-administrer-votre-serveur-a-distance">⚙️  3. Administrer votre serveur à distance</h2>
-<h3 id="installation-de-ssh">Installation de ssh</h3>
-<p><strong>1. Installer</strong> <code>openssh-server</code> sur votre machine sous Debian.</p>
-<p><strong>2. Se déconnecter puis se reconnecter.</strong></p>
-<h3 id="utilisation">Utilisation</h3>
-<p>A partir d'une machine cliente se connecter à la machine Debian. Pour cela, dans un terminal saisir :<br />
-<code bash>$ ssh user@ip-srv-web</code> 
-Remplacer ip-srv-web par l'adresse ip du serveur.</p>
-<p>Vous êtes maintenant connectés à votre Debian via <code>ssh</code>.</p>
-<h3 id="deposer-vos-pages-sur-le-serveur">Déposer vos pages sur le serveur</h3>
-<ul>
-<li>
-<p>A partir de l’explorateur de fichier de la machine cliente, saisir : <code>sftp://user@ip-srv-web</code> (Remplacer ip-srv-web par l'adresse ip du serveur).</p>
-</li>
-<li>
-<p>Vous pouvez déposer vos pages html dans <code>/var/www/html</code>.   </p>
-</li>
-<li>Penser à nommer un fichier <code>index.html</code> dans chaque répertoire. </li>
-<li>Faire en sorte que tous les fichiers et répertoires dans <code>/var/www/html</code> appartiennent à <code>www-data</code> (proprétaire et groupe). </li>
-</ul>
-<h2 id="complements">Compléments</h2>
-<ul>
-<li>En cas de problème avec le fichier <code>/etc/apt/sources.list</code> on peut le modifier comme ci-dessous (Pour debian 12)</li>
-<li>A adapter à la version de Debian (voir la page <a href="https://wiki.debian.org/fr/SourcesList">Debian sources.list</a>) :
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>deb http://deb.debian.org/debian bookworm main
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>deb-src http://deb.debian.org/debian bookworm main
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>deb http://deb.debian.org/debian-security/ bookworm-security main
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>deb-src http://deb.debian.org/debian-security/ bookworm-security main
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>deb http://deb.debian.org/debian bookworm-updates main
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>deb-src http://deb.debian.org/debian bookworm-updates main
-</span></code></pre></div></li>
+<li><a href="reseaux/guide_dns.html">Le DNS</a>  </li>
 </ul>
 
 
@@ -980,8 +768,13 @@ Remplacer ip-srv-web par l'adresse ip du serveur.</p>
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -1028,14 +821,14 @@ Remplacer ip-srv-web par l'adresse ip du serveur.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
     
   </body>
