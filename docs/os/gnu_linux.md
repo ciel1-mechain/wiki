@@ -11,6 +11,7 @@ hide:
 - [Lister les ports usb utilisés](gnu_linux/list_usb.md)
 - [Gestion des services avec systemd](gnu_linux/systemd.md)
 - [Analyser les connexions réseaux : la commande `ss` (socket statistics)](gnu_linux/commande_ss.md)
-- [commandes host & dig ](gnu_linux/commandes_host_dig.md)  
+- [commandes host & dig ](gnu_linux/commandes_host_dig.md)
+- [commandes réseaux ](gnu_linux/commandes_reseaux.md)
 ## Serveurs
 - [Mini Serveur busybox](gnu_linux/mini_serveur_busybox.md)

@@ -15,8 +15,8 @@ hide:
 - [:material-chip: Micro:Bit](devops/microbit.md) (0)
 
 ## Réseaux & Interfaces
-- [:material-network: Réseaux TCP/IP](reseaux_interfaces/reseaux.md) (0)
-- [:material-connection: Interfaces et Protocoles de Communication](reseaux_interfaces/interfaces.md) (0)
+- [:material-network: Réseaux TCP/IP](reseaux_liaisons/reseaux.md) (0)
+- [:material-connection: Liaisons numériques](reseaux_liaisons/liaisons.md) (0)
 
 ## Systèmes exploitation
 - [:material-microsoft-windows: Windows](os/windows.md) (0)
