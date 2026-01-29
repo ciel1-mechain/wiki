@@ -10,8 +10,8 @@ nav:
   - Git/GitHub : devops/git.md
   - Docker : devops/docker.md
   - Micro:Bit : devops/microbit.md
-  - Réseaux TCP/IP : reseaux_interfaces/reseaux.md
-  - Interfaces et Protocoles de Communication : reseaux_interfaces/interfaces.md
+  - Réseaux TCP/IP : reseaux_liaisons/reseaux.md
+  - Interfaces et Protocoles de Communication : reseaux_liaisons/liaisons.md
   - Windows : os/windows.md
   - GNU/Linux : os/gnu_linux.md
 

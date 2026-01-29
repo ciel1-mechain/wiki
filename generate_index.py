@@ -25,8 +25,8 @@ LINKS = {
     "git": "[:material-github: Git & GitHub](devops/git.md)",
     "docker": "[:material-docker: Docker](devops/docker.md)",
     "microbit": "[:material-chip: Micro:Bit](devops/microbit.md)",
-    "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_interfaces/reseaux.md)",
-    "interfaces": "[:material-connection: Interfaces et Protocoles de Communication](reseaux_interfaces/interfaces.md)",
+    "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_liaisons/reseaux.md)",
+    "interfaces": "[:material-connection: Réseaux TCP/IP et liaisons numériques](reseaux_liaisons/liaisons.md)",
     "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
     "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)"
 }
