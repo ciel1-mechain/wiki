@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/systemd.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/info_os_machine.html">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Gestion des services avec systemd - Wiki</title>
+        <title>Info os machine - Wiki</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#gestion-des-services-avec-systemd" class="md-skip">
-          Aller au contenu
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gestion des services avec systemd
+              Info os machine
             
           </span>
         </div>
@@ -713,77 +708,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tableau-des-commandes-systemctl-les-plus-utiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tableau des commandes systemctl les plus utiles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scripts-utiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scripts utiles
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scripts utiles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trouver-les-services-actifs-pour-un-utilisateur-donne-ex-www-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trouver les services actifs pour un utilisateur donné (ex: www-data)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verifier-les-services-sans-utilisateur-ou-groupe-defini" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Vérifier les services sans utilisateur ou groupe défini
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remarques-supplementaires" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Remarques supplémentaires
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -800,176 +724,11 @@
 
 
 
-<h1 id="gestion-des-services-avec-systemd">Gestion des services avec systemd</h1>
-<p><strong>systemd</strong> est le système d'initialisation et de gestion des services sous la plupart des distributions Linux modernes. Il remplace l'ancien système SysVinit et offre des fonctionnalités avancées pour démarrer, arrêter, surveiller et gérer les services système.</p>
-<p>Les commandes principales s'utilisent via <code>systemctl</code>, qui permet de contrôler l'état des services, de les activer/désactiver au démarrage, et bien plus encore.</p>
-<blockquote>
-<p>Remarque : taper simplement <code>systemctl</code> équivaut par défaut à <code>systemctl list-units</code>, affichant toutes les unités <strong>actives</strong>. L'utilisation explicite de <code>list-units</code> est surtout pour être clair ou pour filtrer les types d'unités (services, sockets, timers, etc.).</p>
-</blockquote>
-<hr />
-<h2 id="tableau-des-commandes-systemctl-les-plus-utiles">Tableau des commandes systemctl les plus utiles</h2>
-<table>
-<thead>
-<tr>
-<th>Commande</th>
-<th>Description</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>systemctl list-units --type=service</code></td>
-<td>Lister tous les services <strong>actifs</strong> (équivalent à <code>systemctl --type=service</code>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --state=running --no-pager</code></td>
-<td>Lister uniquement les services en cours d'exécution</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --state=running --no-pager --no-legend \| awk '{print $1}'</code></td>
-<td>Lister uniquement les noms des services actifs d'exécution</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --state=failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --all</code></td>
-<td>Lister <strong>tous les services</strong>, y compris les inactifs et morts</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --all</code></td>
-<td>Lister toutes les unités (services, sockets, timers, etc.), actives ou inactives</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --all</code></td>
-<td>grep -i "mot_clé"`</td>
-<td>Trouver un service à partir d’un mot-clé</td>
-</tr>
-<tr>
-<td><code>systemctl list-unit-files</code></td>
-<td>grep -i "mot_clé"`</td>
-<td>Trouver un fichier de service à partir d’un mot-clé</td>
-</tr>
-<tr>
-<td><code>systemctl status &lt;nom_du_service&gt;</code></td>
-<td>Afficher le statut détaillé d'un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl start &lt;nom_du_service&gt;</code></td>
-<td>Démarrer un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl stop &lt;nom_du_service&gt;</code></td>
-<td>Arrêter un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl restart &lt;nom_du_service&gt;</code></td>
-<td>Redémarrer un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl reload &lt;nom_du_service&gt;</code></td>
-<td>Recharger la configuration d'un service sans interruption</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl enable &lt;nom_du_service&gt;</code></td>
-<td>Activer un service pour qu'il démarre au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl disable &lt;nom_du_service&gt;</code></td>
-<td>Désactiver un service pour qu'il ne démarre pas au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-enabled &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est activé au démarrage</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-active &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est actuellement actif</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl daemon-reload</code></td>
-<td>Recharger la configuration de systemd après modification des fichiers de service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -u &lt;nom_du_service&gt;</code></td>
-<td>Afficher les logs d'un service spécifique</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -xeu &lt;nom_du_service&gt;</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl --failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -u apache2 --no-pager -n 20</code></td>
-<td>Afficher les logs d'un service (ex: apache2)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>cat /lib/systemd/system/apache2.service</code></td>
-<td>Vérifier le fichier de configuration d'un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>ps aux \| grep cron</code></td>
-<td>Voir les processus d'un service (ex: cron)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>ps -u www-data -o pid,user,group,comm</code></td>
-<td>Filtrer par utilisateur (ex: www-data)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>top -c -o %CPU</code></td>
-<td>Lister les services par consommation CPU/mémoire</td>
-<td></td>
-</tr>
-<tr>
-<td>---</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="scripts-utiles">Scripts utiles</h2>
-<h3 id="trouver-les-services-actifs-pour-un-utilisateur-donne-ex-www-data">Trouver les services actifs pour un utilisateur donné (ex: www-data)</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span>pid<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ps<span class="w"> </span>-u<span class="w"> </span>www-data<span class="w"> </span>-o<span class="w"> </span><span class="nv">pid</span><span class="o">=</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>systemctl<span class="w"> </span>status<span class="w"> </span><span class="nv">$pid</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;Loaded:&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span><span class="nv">$pid</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">done</span>
+  <h1>Info os machine</h1>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>info<span class="w"> </span>système<span class="w"> </span>:sudo<span class="w"> </span>dmidecode<span class="w"> </span>-s<span class="w"> </span>system-product-name
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>info<span class="w"> </span>bios<span class="w"> </span>sudo<span class="w"> </span>dmidecode<span class="w"> </span>-t<span class="w"> </span>bios<span class="w"> </span>ou<span class="w"> </span>cat<span class="w"> </span>/sys/class/dmi/id/bios_version
 </span></code></pre></div>
-<h3 id="verifier-les-services-sans-utilisateur-ou-groupe-defini">Vérifier les services sans utilisateur ou groupe défini</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>systemctl<span class="w"> </span>list-units<span class="w"> </span>--type<span class="o">=</span>service<span class="w"> </span>--state<span class="o">=</span>running<span class="w"> </span>--no-pager<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>service<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>systemctl<span class="w"> </span>show<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$service</span><span class="s2">&quot;</span><span class="w"> </span>-p<span class="w"> </span>User,Group<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;User=&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Service </span><span class="nv">$service</span><span class="s2"> : utilisateur non défini (root par défaut)&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">done</span>
-</span></code></pre></div>
-<h2 id="remarques-supplementaires">Remarques supplémentaires</h2>
-<ul>
-<li><code>systemctl</code> sans sous-commande <strong>affiche par défaut les unités actives</strong>, ce qui équivaut à <code>systemctl list-units</code>.</li>
-<li>L'option <code>--all</code> ne fonctionne <strong>que combinée avec <code>list-units</code></strong> : <code>systemctl list-units --all</code> pour lister toutes les unités, actives ou inactives.</li>
-</ul>
 
 
 

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/systemd.html">
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/os/gnu_linux/apache2.html">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Gestion des services avec systemd - Wiki</title>
+        <title>Apache : Fonctionnement, Modes et Sécurité - Wiki</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gestion-des-services-avec-systemd" class="md-skip">
+        <a href="#apache-fonctionnement-modes-et-securite" class="md-skip">
           Aller au contenu
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gestion des services avec systemd
+              Apache : Fonctionnement, Modes et Sécurité
             
           </span>
         </div>
@@ -723,10 +723,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tableau-des-commandes-systemctl-les-plus-utiles" class="md-nav__link">
+  <a href="#1-introduction-a-apache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tableau des commandes systemctl les plus utiles
+        1. Introduction à Apache
       
     </span>
   </a>
@@ -734,22 +734,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scripts-utiles" class="md-nav__link">
+  <a href="#2-fonctionnement-general-dapache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scripts utiles
+        2. Fonctionnement général d'Apache
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scripts utiles">
+    <nav class="md-nav" aria-label="2. Fonctionnement général d&#39;Apache">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#trouver-les-services-actifs-pour-un-utilisateur-donne-ex-www-data" class="md-nav__link">
+  <a href="#a-processus-parent-et-enfants" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trouver les services actifs pour un utilisateur donné (ex: www-data)
+        a) Processus parent et enfants
       
     </span>
   </a>
@@ -757,10 +757,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#verifier-les-services-sans-utilisateur-ou-groupe-defini" class="md-nav__link">
+  <a href="#b-pourquoi-ce-modele" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vérifier les services sans utilisateur ou groupe défini
+        b) Pourquoi ce modèle ?
       
     </span>
   </a>
@@ -773,10 +773,188 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remarques-supplementaires" class="md-nav__link">
+  <a href="#3-modes-de-fonctionnement-dapache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remarques supplémentaires
+        3. Modes de fonctionnement d'Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modes de fonctionnement d&#39;Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mode-prefork-multi-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Mode Prefork (multi-processus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-mode-worker-multi-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Mode Worker (multi-threads)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-verification-des-processus-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Vérification des processus Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Vérification des processus Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-lister-les-processus-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Lister les processus Apache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-verifier-le-mode-actif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Vérifier le mode actif
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-securite-et-bonnes-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sécurité et bonnes pratiques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Sécurité et bonnes pratiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mode-prefork" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Mode Prefork
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-mode-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Mode Worker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configuration-et-optimisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Configuration et optimisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Configuration et optimisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ajuster-le-nombre-de-processusthreads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Ajuster le nombre de processus/threads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-redemarrer-apache-apres-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Redémarrer Apache après modification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resume-comparatif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Résumé comparatif
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cas-pratique-pour-un-lycee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Cas pratique pour un lycée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-commandes-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Commandes utiles
       
     </span>
   </a>
@@ -800,176 +978,189 @@
 
 
 
-<h1 id="gestion-des-services-avec-systemd">Gestion des services avec systemd</h1>
-<p><strong>systemd</strong> est le système d'initialisation et de gestion des services sous la plupart des distributions Linux modernes. Il remplace l'ancien système SysVinit et offre des fonctionnalités avancées pour démarrer, arrêter, surveiller et gérer les services système.</p>
-<p>Les commandes principales s'utilisent via <code>systemctl</code>, qui permet de contrôler l'état des services, de les activer/désactiver au démarrage, et bien plus encore.</p>
-<blockquote>
-<p>Remarque : taper simplement <code>systemctl</code> équivaut par défaut à <code>systemctl list-units</code>, affichant toutes les unités <strong>actives</strong>. L'utilisation explicite de <code>list-units</code> est surtout pour être clair ou pour filtrer les types d'unités (services, sockets, timers, etc.).</p>
-</blockquote>
+<h1 id="apache-fonctionnement-modes-et-securite">Apache : Fonctionnement, Modes et Sécurité</h1>
 <hr />
-<h2 id="tableau-des-commandes-systemctl-les-plus-utiles">Tableau des commandes systemctl les plus utiles</h2>
+<h2 id="1-introduction-a-apache">1. Introduction à Apache</h2>
+<p>Apache est un <strong>serveur web</strong> open source utilisé pour héberger des sites web. Il fonctionne en <strong>gérant des requêtes HTTP</strong> et en servant des pages web aux utilisateurs.</p>
+<hr />
+<h2 id="2-fonctionnement-general-dapache">2. Fonctionnement général d'Apache</h2>
+<h3 id="a-processus-parent-et-enfants">a) Processus parent et enfants</h3>
+<ul>
+<li><strong>Processus parent</strong> : Lancé par <code>root</code> pour ouvrir les ports privilégiés (comme le port 80 ou 443).</li>
+<li><strong>Processus enfants</strong> : Créés pour traiter les requêtes. Ils basculent généralement vers un utilisateur peu privilégié (comme <code>www-data</code>) pour des raisons de sécurité.</li>
+</ul>
+<h3 id="b-pourquoi-ce-modele">b) Pourquoi ce modèle ?</h3>
+<ul>
+<li><strong>Sécurité</strong> : Limiter les privilèges des processus exposés au réseau.</li>
+<li><strong>Performance</strong> : Réutiliser les processus pour traiter plusieurs requêtes successives.</li>
+</ul>
+<hr />
+<h2 id="3-modes-de-fonctionnement-dapache">3. Modes de fonctionnement d'Apache</h2>
+<h3 id="a-mode-prefork-multi-processus">a) Mode Prefork (multi-processus)</h3>
+<ul>
+<li><strong>Un processus par requête</strong> : Chaque processus enfant traite une requête à la fois.</li>
+<li><strong>Utilisateur</strong> : Les processus enfants basculent vers <code>www-data</code> après le démarrage.</li>
+<li><strong>Avantages</strong> : Compatible avec tous les modules Apache (comme <code>mod_php</code>).</li>
+<li><strong>Inconvénients</strong> : Consommation mémoire plus élevée.</li>
+</ul>
+<p><strong>Exemple de configuration :</strong>
+<div class="language-apache highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="s">mpm_prefork_module</span><span class="nt">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nb">StartServers</span><span class="w">             </span><span class="m">5</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">MinSpareServers</span><span class="w">          </span><span class="m">5</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nb">MaxSpareServers</span><span class="w">         </span><span class="m">10</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nb">MaxRequestWorkers</span><span class="w">       </span><span class="m">150</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nb">MaxConnectionsPerChild</span><span class="w">   </span><span class="m">0</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">&lt;/IfModule&gt;</span>
+</span></code></pre></div></p>
+<hr />
+<h3 id="b-mode-worker-multi-threads">b) Mode Worker (multi-threads)</h3>
+<ul>
+<li><strong>Un processus avec plusieurs threads</strong> : Chaque thread traite une requête.</li>
+<li><strong>Utilisateur</strong> : Les processus et threads restent sous <code>root</code> (pas de basculement vers <code>www-data</code>).</li>
+<li><strong>Avantages</strong> : Meilleure performance pour les connexions simultanées.</li>
+<li><strong>Inconvénients</strong> : Certains modules (comme <code>mod_php</code>) ne sont pas compatibles. Nécessite l'utilisation de <strong>PHP-FPM</strong> pour exécuter PHP sous <code>www-data</code>.</li>
+</ul>
+<p><strong>Exemple de configuration :</strong>
+<div class="language-apache highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="s">mpm_worker_module</span><span class="nt">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nb">StartServers</span><span class="w">             </span><span class="m">2</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nb">MinSpareThreads</span><span class="w">         </span><span class="m">25</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nb">MaxSpareThreads</span><span class="w">         </span><span class="m">75</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nb">ThreadLimit</span><span class="w">              </span><span class="m">64</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nb">ThreadsPerChild</span><span class="w">         </span><span class="m">25</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nb">MaxRequestWorkers</span><span class="w">       </span><span class="m">150</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nb">MaxConnectionsPerChild</span><span class="w">   </span><span class="m">0</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">&lt;/IfModule&gt;</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="4-verification-des-processus-apache">4. Vérification des processus Apache</h2>
+<h3 id="a-lister-les-processus-apache">a) Lister les processus Apache</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>apache2
+</span></code></pre></div>
+<p><strong>Exemple de sortie (mode Prefork) :</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>root      1234  0.0  0.5 123456 7890 ?        Ss   10:00   0:00 /usr/sbin/apache2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>www-data  1235  0.0  0.3 123456 4567 ?        S    10:00   0:00 /usr/sbin/apache2
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>www-data  1236  0.0  0.3 123456 4567 ?        S    10:00   0:00 /usr/sbin/apache2
+</span></code></pre></div></p>
+<p><strong>Exemple de sortie (mode Worker) :</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>root      1234  1 1234  1  0 10:00 ?        00:00:00 /usr/sbin/apache2
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>root      1235 1234 1234  1  0 10:00 ?        00:00:00 /usr/sbin/apache2
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>root      1235 1234 1236  1  0 10:00 ?        00:00:00 /usr/sbin/apache2
+</span></code></pre></div></p>
+<hr />
+<h3 id="b-verifier-le-mode-actif">b) Vérifier le mode actif</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apache2ctl<span class="w"> </span>-V<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Server MPM&quot;</span>
+</span></code></pre></div>
+<p><strong>Exemple de sortie :</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Server MPM: prefork
+</span></code></pre></div>
+ou
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Server MPM: worker
+</span></code></pre></div></p>
+<hr />
+<h2 id="5-securite-et-bonnes-pratiques">5. Sécurité et bonnes pratiques</h2>
+<h3 id="a-mode-prefork">a) Mode Prefork</h3>
+<ul>
+<li><strong>Sécurité</strong> : Les processus enfants s'exécutent sous <code>www-data</code>, limitant les risques.</li>
+<li><strong>Compatibilité</strong> : Fonctionne avec tous les modules Apache.</li>
+</ul>
+<h3 id="b-mode-worker">b) Mode Worker</h3>
+<ul>
+<li><strong>Sécurité</strong> : Les threads s'exécutent sous <code>root</code>. Utiliser <strong>PHP-FPM</strong> pour exécuter PHP sous <code>www-data</code>.</li>
+<li><strong>Configuration de PHP-FPM</strong> :
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php-fpm
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>a2enmod<span class="w"> </span>proxy_fcgi<span class="w"> </span>setenvif
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>a2enconf<span class="w"> </span>php7.x-fpm
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</span></code></pre></div></li>
+</ul>
+<hr />
+<h2 id="6-configuration-et-optimisation">6. Configuration et optimisation</h2>
+<h3 id="a-ajuster-le-nombre-de-processusthreads">a) Ajuster le nombre de processus/threads</h3>
+<ul>
+<li><strong>Mode Prefork</strong> : Augmenter <code>MaxRequestWorkers</code> pour permettre plus de processus enfants.</li>
+<li><strong>Mode Worker</strong> : Ajuster <code>ThreadsPerChild</code> et <code>MaxRequestWorkers</code> pour optimiser les threads.</li>
+</ul>
+<h3 id="b-redemarrer-apache-apres-modification">b) Redémarrer Apache après modification</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</span></code></pre></div>
+<hr />
+<h2 id="7-resume-comparatif">7. Résumé comparatif</h2>
 <table>
 <thead>
 <tr>
-<th>Commande</th>
-<th>Description</th>
-<th></th>
+<th>Élément</th>
+<th>Mode Prefork</th>
+<th>Mode Worker</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>systemctl list-units --type=service</code></td>
-<td>Lister tous les services <strong>actifs</strong> (équivalent à <code>systemctl --type=service</code>)</td>
-<td></td>
+<td><strong>Type</strong></td>
+<td>Multi-processus</td>
+<td>Multi-threads</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --state=running --no-pager</code></td>
-<td>Lister uniquement les services en cours d'exécution</td>
-<td></td>
+<td><strong>Utilisateur</strong></td>
+<td>Processus enfants : <code>www-data</code></td>
+<td>Processus/threads : <code>root</code></td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --state=running --no-pager --no-legend \| awk '{print $1}'</code></td>
-<td>Lister uniquement les noms des services actifs d'exécution</td>
-<td></td>
+<td><strong>Sécurité</strong></td>
+<td>Plus sécurisé</td>
+<td>Moins sécurisé (nécessite PHP-FPM)</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --state=failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
+<td><strong>Performance</strong></td>
+<td>Moins efficace en mémoire</td>
+<td>Plus efficace pour les connexions simultanées</td>
 </tr>
 <tr>
-<td><code>systemctl list-units --type=service --all</code></td>
-<td>Lister <strong>tous les services</strong>, y compris les inactifs et morts</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --all</code></td>
-<td>Lister toutes les unités (services, sockets, timers, etc.), actives ou inactives</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl list-units --type=service --all</code></td>
-<td>grep -i "mot_clé"`</td>
-<td>Trouver un service à partir d’un mot-clé</td>
-</tr>
-<tr>
-<td><code>systemctl list-unit-files</code></td>
-<td>grep -i "mot_clé"`</td>
-<td>Trouver un fichier de service à partir d’un mot-clé</td>
-</tr>
-<tr>
-<td><code>systemctl status &lt;nom_du_service&gt;</code></td>
-<td>Afficher le statut détaillé d'un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl start &lt;nom_du_service&gt;</code></td>
-<td>Démarrer un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl stop &lt;nom_du_service&gt;</code></td>
-<td>Arrêter un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl restart &lt;nom_du_service&gt;</code></td>
-<td>Redémarrer un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl reload &lt;nom_du_service&gt;</code></td>
-<td>Recharger la configuration d'un service sans interruption</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl enable &lt;nom_du_service&gt;</code></td>
-<td>Activer un service pour qu'il démarre au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl disable &lt;nom_du_service&gt;</code></td>
-<td>Désactiver un service pour qu'il ne démarre pas au boot</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-enabled &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est activé au démarrage</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl is-active &lt;nom_du_service&gt;</code></td>
-<td>Vérifier si un service est actuellement actif</td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl daemon-reload</code></td>
-<td>Recharger la configuration de systemd après modification des fichiers de service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -u &lt;nom_du_service&gt;</code></td>
-<td>Afficher les logs d'un service spécifique</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -xeu &lt;nom_du_service&gt;</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>systemctl --failed</code></td>
-<td>Lister les services en échec</td>
-<td></td>
-</tr>
-<tr>
-<td><code>journalctl -u apache2 --no-pager -n 20</code></td>
-<td>Afficher les logs d'un service (ex: apache2)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>cat /lib/systemd/system/apache2.service</code></td>
-<td>Vérifier le fichier de configuration d'un service</td>
-<td></td>
-</tr>
-<tr>
-<td><code>ps aux \| grep cron</code></td>
-<td>Voir les processus d'un service (ex: cron)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>ps -u www-data -o pid,user,group,comm</code></td>
-<td>Filtrer par utilisateur (ex: www-data)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>top -c -o %CPU</code></td>
-<td>Lister les services par consommation CPU/mémoire</td>
-<td></td>
-</tr>
-<tr>
-<td>---</td>
-<td></td>
-<td></td>
+<td><strong>Compatibilité</strong></td>
+<td>Tous les modules Apache</td>
+<td>Modules thread-safe uniquement</td>
 </tr>
 </tbody>
 </table>
-<h2 id="scripts-utiles">Scripts utiles</h2>
-<h3 id="trouver-les-services-actifs-pour-un-utilisateur-donne-ex-www-data">Trouver les services actifs pour un utilisateur donné (ex: www-data)</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span>pid<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ps<span class="w"> </span>-u<span class="w"> </span>www-data<span class="w"> </span>-o<span class="w"> </span><span class="nv">pid</span><span class="o">=</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>systemctl<span class="w"> </span>status<span class="w"> </span><span class="nv">$pid</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;Loaded:&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span><span class="nv">$pid</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">done</span>
-</span></code></pre></div>
-<h3 id="verifier-les-services-sans-utilisateur-ou-groupe-defini">Vérifier les services sans utilisateur ou groupe défini</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>systemctl<span class="w"> </span>list-units<span class="w"> </span>--type<span class="o">=</span>service<span class="w"> </span>--state<span class="o">=</span>running<span class="w"> </span>--no-pager<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>service<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>systemctl<span class="w"> </span>show<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$service</span><span class="s2">&quot;</span><span class="w"> </span>-p<span class="w"> </span>User,Group<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;User=&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Service </span><span class="nv">$service</span><span class="s2"> : utilisateur non défini (root par défaut)&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">done</span>
-</span></code></pre></div>
-<h2 id="remarques-supplementaires">Remarques supplémentaires</h2>
+<hr />
+<h2 id="8-cas-pratique-pour-un-lycee">8. Cas pratique pour un lycée</h2>
 <ul>
-<li><code>systemctl</code> sans sous-commande <strong>affiche par défaut les unités actives</strong>, ce qui équivaut à <code>systemctl list-units</code>.</li>
-<li>L'option <code>--all</code> ne fonctionne <strong>que combinée avec <code>list-units</code></strong> : <code>systemctl list-units --all</code> pour lister toutes les unités, actives ou inactives.</li>
+<li><strong>Site web du lycée</strong> : Utiliser le mode <strong>Prefork</strong> pour une compatibilité maximale avec les modules.</li>
+<li><strong>Intranet avec beaucoup de connexions</strong> : Utiliser le mode <strong>Worker</strong> avec PHP-FPM pour une meilleure performance.</li>
+<li><strong>Optimisation</strong> : Ajuster <code>MaxRequestWorkers</code> en fonction du trafic attendu.</li>
 </ul>
+<hr />
+<h2 id="9-commandes-utiles">9. Commandes utiles</h2>
+<table>
+<thead>
+<tr>
+<th>Besoin</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lister les processus Apache</td>
+<td><code>ps aux | grep apache2</code></td>
+</tr>
+<tr>
+<td>Vérifier le mode MPM</td>
+<td><code>apache2ctl -V | grep "Server MPM"</code></td>
+</tr>
+<tr>
+<td>Redémarrer Apache</td>
+<td><code>sudo systemctl restart apache2</code></td>
+</tr>
+<tr>
+<td>Voir les logs d'Apache</td>
+<td><code>journalctl -u apache2 --no-pager -n 20</code></td>
+</tr>
+<tr>
+<td>Configurer PHP-FPM</td>
+<td><code>sudo apt install php-fpm; sudo a2enmod proxy_fcgi setenvif; sudo a2enconf php7.x-fpm</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 
 
 
