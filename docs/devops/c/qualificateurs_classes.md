@@ -52,3 +52,4 @@ int main() {
     incrementer(); // Local: 2, Global: 2
     return 0;
 }
+```
