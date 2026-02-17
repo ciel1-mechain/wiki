@@ -21,5 +21,5 @@ hide:
 ## Gestion des services
 - [Gestion des services avec systemd](gnu_linux/systemd.md)
 ## Sauvegarde
-- [Sauvegarde avec rsynch](gnu_linux/rsynch_sauvegarde.md)
+- [Sauvegarde avec rsync](gnu_linux/rsync_sauvegarde.md)
 
