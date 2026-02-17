@@ -20,4 +20,6 @@ hide:
 - [Information sur la machine et l'OS](gnu_linux/info_os_machine.md)
 ## Gestion des services
 - [Gestion des services avec systemd](gnu_linux/systemd.md)
+## Sauvegarde
+- [Sauvegarde avec rsynch](gnu_linux/rsynch_sauvegarde.md)
 
