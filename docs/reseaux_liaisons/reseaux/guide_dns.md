@@ -4,7 +4,7 @@
 
 ### Qu'est ce que le DNS ?
 Le **DNS (Domain Name System)** est le système qui traduit les **noms de domaine** (ex: `example.com`) en **adresses IP** (ex: `93.184.216.34`).  
-C'est l’équivalent d’un **annuaire téléphonique** d’Internet.
+C'est l'équivalent d'un **annuaire téléphonique** d'Internet.
 Le DNS est une **base de données distribuée** organisée de façon **hiérarchique** 
 
 ### Base de données distribuée
@@ -14,8 +14,8 @@ Le DNS est une **base de données distribuée** organisée de façon **hiérarch
 - Ces **données** sont nommés **Resource Records (RR)** pour le DNS.
 - Chaque RR a une structure comprenant :
     - **Nom** : le nom du nœud ou domaine
-    - **Type** : type d’enregistrement (`A`, `AAAA`, `CNAME`, `MX`, `NS`, `PTR`, etc.)
-    - **Valeur** : l’information associée (IP, nom canonique, etc.)
+    - **Type** : type d'enregistrement (`A`, `AAAA`, `CNAME`, `MX`, `NS`, `PTR`, etc.)
+    - **Valeur** : l'information associée (IP, nom canonique, etc.)
     - **TTL** : Time To Live, durée de validité du cache
 - Exemples de RR : `A`, `AAAA`, `CNAME`, `MX`, `NS`, `PTR`.
 
@@ -35,31 +35,31 @@ Le DNS est une **base de données distribuée** organisée de façon **hiérarch
         certificats TLS).
  
 ###  Espace de noms DNS
-- C’est l’**arborescence hiérarchique** qui organise tous les noms sur Internet.  
+- C'est l'**arborescence hiérarchique** qui organise tous les noms sur Internet.  
 - Chaque niveau est séparé par un point (`.`).  
-- Exemple : `www.example.com.` fait partie de l’espace de noms DNS.
+- Exemple : `www.example.com.` fait partie de l'espace de noms DNS.
 
 ### Racine DNS
-- Niveau le plus haut de l’arborescence DNS.
+- Niveau le plus haut de l'arborescence DNS.
 - Représentée par un simple **.** (point).
 - Les serveurs racine (root servers) sont responsables de cette partie.
 
 ### Noeud DNS, Domaine et nom de Domaine
 - Un noeud est une position dans l'arbre.
 - Un domaine est un nœud qui peut contenir des sous-domaines et éventuellement une zone DNS.
-- Un nom de domaine identifie un nœud dans l’arborescence.
-- Chaque domaine correspond à une **zone d’autorité**.
+- Un nom de domaine identifie un nœud dans l'arborescence.
+- Chaque domaine correspond à une **zone d'autorité**.
   
 !!! example "Exemple" 
     - Domaine racine : `.`  
-    - Domaine `.com` : c’est un domaine de premier niveau (TLD)   
+    - Domaine `.com` : c'est un domaine de premier niveau (TLD)   
       **TLD (Top-Level Domain)** : `.com`, `.org`, `.fr`, etc.
     - Domaine `.com` contient les domaines `example.com`, `google.com`, etc.  
       Ce sont des sous domaines de `.com`.
     - Domaine `example.com` contient `www.example.com`, `mail.example.com`, etc.
   
 ### FQDN (Fully Qualified Domain Name)
-- C’est le **nom de domaine complet** qui inclut **tous les niveaux** jusqu’à la racine (`.`).  
+- C'est le **nom de domaine complet** qui inclut **tous les niveaux** jusqu'à la racine (`.`).  
 !!! example "Exemple"  
     - `www.example.com.` est un **FQDN** (note le point final représentant la racine).  
     - `www.example.com` (sans point) est souvent considéré comme un FQDN implicite.
@@ -69,7 +69,7 @@ Le DNS est une **base de données distribuée** organisée de façon **hiérarch
 - un FQDN peut identifier un hôte, mais également un service ou un alias (CNAME).
 
 ### Zones DNS
-Une **zone DNS** est une portion de l’espace de noms gérée par un serveur.
+Une **zone DNS** est une portion de l'espace de noms gérée par un serveur.
 - Une zone contient des **Resource Records (RR)**.  
 - Exemple : la zone `example.com` peut définir les enregistrements `A`, `MX`, etc.  
 - Une zone DNS peut contenir plusieurs sous-domaines.  
@@ -81,7 +81,7 @@ Une **zone DNS** est une portion de l’espace de noms gérée par un serveur.
 - **Serveurs secondaires (slaves)** : reçoivent des copies du primaire pour la redondance.  
 - **Serveurs intermédiaires / Résolveurs DNS (caches)** : 
     - Ne font pas partie de la hiérarchie DNS.
-    - Servent de point d’entrée pour les clients DNS des machines : ils reçoivent les requêtes des clients et résolvent les noms en interrogeant d’autres serveurs DNS (racines, TLD, zones).
+    - Servent de point d'entrée pour les clients DNS des machines : ils reçoivent les requêtes des clients et résolvent les noms en interrogeant d'autres serveurs DNS (racines, TLD, zones).
     - Ils stockent temporairement les réponses dans un cache pour accélérer les requêtes futures.
     - Exemple : Google Public DNS (8.8.8.8)
 
@@ -90,12 +90,92 @@ Un serveur DNS est **authoritative** pour une zone quand il fournit une réponse
 
 ---
 
-## 2. Structure et fonctionnement d'un message DNS
+## 2. Résolveurs, Forwarders et Stub
+
+### Résolveur stub
+Le **résolveur stub** est le composant DNS minimal présent sur chaque machine cliente.
+
+- Ne résout rien lui-même.
+- Reçoit la requête de l'application et la transmet au résolveur récursif configuré.
+- Pas de cache, pas de récursion.
+- Sur Linux : `systemd-resolved` ou ce qui est configuré dans `/etc/resolv.conf`.
+
+Le terme **stub** (souche/talon) désigne une version minimale qui délègue le vrai travail à quelqu'un d'autre. On retrouve ce concept en programmation (stub function = fonction vide qui simule une vraie fonction).
+
+### Résolveur récursif
+Le **résolveur récursif** fait le vrai travail de résolution :
+
+- Reçoit la requête du résolveur stub.
+- Interroge toute la chaîne DNS (serveurs racine → TLD → serveur autoritaire).
+- Met la réponse en cache.
+- Retourne la réponse complète au client.
+
+Exemples : `8.8.8.8` (Google), `1.1.1.1` (Cloudflare), DNS de la box FAI.
+
+### Forwarder (redirecteur)
+Un **forwarder** est un serveur DNS qui **délègue** la résolution à un autre serveur plutôt que de la faire lui-même :
+
+- Reçoit la requête.
+- Ne résout pas lui-même.
+- Transmet à un résolveur récursif (ex: `8.8.8.8`).
+- Met la réponse en cache.
+- Retourne la réponse au client.
+
+**Forwarder vs résolveur récursif :**
+
+| | Résolveur récursif (`8.8.8.8`) | Forwarder (DNS Windows) |
+|---|---|---|
+| Fait la résolution | ✅ lui-même | ❌ délègue |
+| Interroge les racines | ✅ | ❌ |
+| Cache | ✅ | ✅ |
+
+### Transitaire
+**Transitaire** est simplement la traduction française de **forwarder**. Les deux termes désignent la même chose.
+
+!!! note "Terminologie"
+    Ces termes ne sont pas tous officiellement normalisés dans les RFC. La RFC 1034/1035 parle de *resolver* et *name server* sans sous-catégories. Le terme *stub resolver* est introduit dans la RFC 5625. *Forwarder* et *transitaire* sont des termes courants (Microsoft, BIND) mais pas formellement définis dans les RFC de base.
+
+### Exemple concret : DNS Windows en entreprise
+
+Un serveur DNS Windows joue généralement **plusieurs rôles à la fois** :
+
+```
+Client → DNS Windows
+              │
+              ├─ domaine AD (ex: monentreprise.local) → répond directement (autoritaire)
+              │
+              └─ reste (internet) → transmet à 8.8.8.8 (forwarder)
+                      └─ réponse mise en cache pour les prochaines requêtes
+```
+
+- **Autoritaire** pour la zone Active Directory interne.
+- **Forwarder** vers `8.8.8.8` pour tout le reste.
+- **Cache** pour toutes les réponses reçues.
+
+### Chaîne DNS complète
+
+```
+Application
+    │
+Résolveur stub (systemd-resolved / /etc/resolv.conf)
+    │
+Résolveur récursif ou Forwarder (DNS box, DNS Windows, 8.8.8.8)
+    │
+Serveurs racine (.)
+    │
+Serveurs TLD (.com, .fr, ...)
+    │
+Serveur autoritaire (détient la vraie réponse)
+```
+
+---
+
+## 3. Structure et fonctionnement d'un message DNS
 
 ### Types de requêtes DNS
 
 !!! note "Requête itérative"
-    Le serveur DNS ne fait pas tout le travail; il donne l’adresse d’un autre serveur à interroger. 
+    Le serveur DNS ne fait pas tout le travail; il donne l'adresse d'un autre serveur à interroger. 
 
 !!! note "Requête récursive"
     Le serveur DNS fait tout le travail; il donne une réponse complète.
@@ -171,7 +251,7 @@ Chaque message DNS contient :
         Il fournit la traduction nom de domaine ↔ adresse IP aux applications.
 
     - **Couche Transport (4)**   
-        DNS s’appuie sur UDP (port 53) la plupart du temps.
+        DNS s'appuie sur UDP (port 53) la plupart du temps.
 
     - **Couche Réseau (3)**  
         Comme tout trafic IP, les paquets DNS sont encapsulés dans IPv4/IPv6.
