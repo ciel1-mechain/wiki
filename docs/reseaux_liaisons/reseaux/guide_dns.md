@@ -153,7 +153,7 @@ Client → DNS Windows
 - **Cache** pour toutes les réponses reçues.
 
 ### Chaîne DNS complète
-
+image
 ```
 Application
     │
