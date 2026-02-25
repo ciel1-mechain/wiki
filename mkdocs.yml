@@ -1,0 +1,113 @@
+site_name: Wiki
+site_url: https://USERNAME.github.io/REPO/
+use_directory_urls: false
+extra_css: [extra.css]
+generator: false
+nav:
+  - Python : devops/python.md
+  - C/C++ : devops/c.md
+  - Web (HTML/CSS/JS): devops/web.md
+  - Git/GitHub : devops/git.md
+  - Docker : devops/docker.md
+  - Micro:Bit : devops/microbit.md
+  - Réseaux TCP/IP : reseaux_liaisons/reseaux.md
+  - Interfaces et Protocoles de Communication : reseaux_liaisons/liaisons.md
+  - Windows : os/windows.md
+  - GNU/Linux : os/gnu_linux.md
+
+
+theme:
+  name: material
+  icon:
+    logo: material/home
+  language: fr
+  palette:
+    
+    # Mode clair
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode sombre
+    # Mode sombre
+    - scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode clair
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+  features:
+      #- navigation.instant
+      - navigation.tabs 
+      - navigation.tabs.sticky
+      - navigation.top
+      #- header.autohide
+      - content.code.annotate 
+      - content.code.copy
+      - navigation.prune
+      - toc.follow
+      - navigation.sections
+      - navigation.expand
+      - content.icons
+markdown_extensions:
+    - meta
+    - abbr
+    - admonition
+    - pymdownx.details
+    - def_list
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    - pymdownx.snippets
+    - pymdownx.details
+    - attr_list
+    - md_in_html
+    - pymdownx.arithmatex:
+          generic: true
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+
+    - pymdownx.superfences:
+        custom_fences:
+           - name: mermaid
+             class: mermaid
+             format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    
+    - pymdownx.tasklist:
+        custom_checkbox: false
+        clickable_checkbox: true
+    - pymdownx.inlinehilite
+    - pymdownx.superfences
+    - pymdownx.keys
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.arithmatex:
+        generic: true
+
+extra_javascript:
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    #- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    - javascripts/mathjax.js
+
+
+
+
+  
+
