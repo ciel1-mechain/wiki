@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -850,15 +850,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-structure-et-fonctionnement-dun-message-dns" class="md-nav__link">
+  <a href="#2-resolveurs-forwarders-et-stub" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Structure et fonctionnement d'un message DNS
+        2. Résolveurs, Forwarders et Stub
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Structure et fonctionnement d&#39;un message DNS">
+    <nav class="md-nav" aria-label="2. Résolveurs, Forwarders et Stub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolveur-stub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résolveur stub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolveur-recursif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résolveur récursif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwarder-redirecteur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forwarder (redirecteur)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transitaire
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-concret-dns-windows-en-entreprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple concret : DNS Windows en entreprise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaine-dns-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chaîne DNS complète
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-structure-et-fonctionnement-dun-message-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Structure et fonctionnement d'un message DNS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Structure et fonctionnement d&#39;un message DNS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -976,7 +1059,7 @@
 <h2 id="1-concepts-fondamentaux-du-dns">1. Concepts fondamentaux du DNS</h2>
 <h3 id="quest-ce-que-le-dns">Qu'est ce que le DNS ?</h3>
 <p>Le <strong>DNS (Domain Name System)</strong> est le système qui traduit les <strong>noms de domaine</strong> (ex: <code>example.com</code>) en <strong>adresses IP</strong> (ex: <code>93.184.216.34</code>).<br />
-C'est l’équivalent d’un <strong>annuaire téléphonique</strong> d’Internet.
+C'est l'équivalent d'un <strong>annuaire téléphonique</strong> d'Internet.
 Le DNS est une <strong>base de données distribuée</strong> organisée de façon <strong>hiérarchique</strong> </p>
 <h3 id="base-de-donnees-distribuee">Base de données distribuée</h3>
 <ul>
@@ -988,8 +1071,8 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <li>Ces <strong>données</strong> sont nommés <strong>Resource Records (RR)</strong> pour le DNS.</li>
 <li>Chaque RR a une structure comprenant :<ul>
 <li><strong>Nom</strong> : le nom du nœud ou domaine</li>
-<li><strong>Type</strong> : type d’enregistrement (<code>A</code>, <code>AAAA</code>, <code>CNAME</code>, <code>MX</code>, <code>NS</code>, <code>PTR</code>, etc.)</li>
-<li><strong>Valeur</strong> : l’information associée (IP, nom canonique, etc.)</li>
+<li><strong>Type</strong> : type d'enregistrement (<code>A</code>, <code>AAAA</code>, <code>CNAME</code>, <code>MX</code>, <code>NS</code>, <code>PTR</code>, etc.)</li>
+<li><strong>Valeur</strong> : l'information associée (IP, nom canonique, etc.)</li>
 <li><strong>TTL</strong> : Time To Live, durée de validité du cache</li>
 </ul>
 </li>
@@ -1014,13 +1097,13 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 </div>
 <h3 id="espace-de-noms-dns">Espace de noms DNS</h3>
 <ul>
-<li>C’est l’<strong>arborescence hiérarchique</strong> qui organise tous les noms sur Internet.  </li>
+<li>C'est l'<strong>arborescence hiérarchique</strong> qui organise tous les noms sur Internet.  </li>
 <li>Chaque niveau est séparé par un point (<code>.</code>).  </li>
-<li>Exemple : <code>www.example.com.</code> fait partie de l’espace de noms DNS.</li>
+<li>Exemple : <code>www.example.com.</code> fait partie de l'espace de noms DNS.</li>
 </ul>
 <h3 id="racine-dns">Racine DNS</h3>
 <ul>
-<li>Niveau le plus haut de l’arborescence DNS.</li>
+<li>Niveau le plus haut de l'arborescence DNS.</li>
 <li>Représentée par un simple <strong>.</strong> (point).</li>
 <li>Les serveurs racine (root servers) sont responsables de cette partie.</li>
 </ul>
@@ -1028,14 +1111,14 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <ul>
 <li>Un noeud est une position dans l'arbre.</li>
 <li>Un domaine est un nœud qui peut contenir des sous-domaines et éventuellement une zone DNS.</li>
-<li>Un nom de domaine identifie un nœud dans l’arborescence.</li>
-<li>Chaque domaine correspond à une <strong>zone d’autorité</strong>.</li>
+<li>Un nom de domaine identifie un nœud dans l'arborescence.</li>
+<li>Chaque domaine correspond à une <strong>zone d'autorité</strong>.</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemple</p>
 <ul>
 <li>Domaine racine : <code>.</code>  </li>
-<li>Domaine <code>.com</code> : c’est un domaine de premier niveau (TLD) <br />
+<li>Domaine <code>.com</code> : c'est un domaine de premier niveau (TLD) <br />
 <strong>TLD (Top-Level Domain)</strong> : <code>.com</code>, <code>.org</code>, <code>.fr</code>, etc.</li>
 <li>Domaine <code>.com</code> contient les domaines <code>example.com</code>, <code>google.com</code>, etc.<br />
   Ce sont des sous domaines de <code>.com</code>.</li>
@@ -1044,7 +1127,7 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 </div>
 <h3 id="fqdn-fully-qualified-domain-name">FQDN (Fully Qualified Domain Name)</h3>
 <ul>
-<li>C’est le <strong>nom de domaine complet</strong> qui inclut <strong>tous les niveaux</strong> jusqu’à la racine (<code>.</code>).  </li>
+<li>C'est le <strong>nom de domaine complet</strong> qui inclut <strong>tous les niveaux</strong> jusqu'à la racine (<code>.</code>).  </li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemple</p>
@@ -1059,7 +1142,7 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <li>un FQDN peut identifier un hôte, mais également un service ou un alias (CNAME).</li>
 </ul>
 <h3 id="zones-dns">Zones DNS</h3>
-<p>Une <strong>zone DNS</strong> est une portion de l’espace de noms gérée par un serveur.
+<p>Une <strong>zone DNS</strong> est une portion de l'espace de noms gérée par un serveur.
 - Une zone contient des <strong>Resource Records (RR)</strong>.<br />
 - Exemple : la zone <code>example.com</code> peut définir les enregistrements <code>A</code>, <code>MX</code>, etc.<br />
 - Une zone DNS peut contenir plusieurs sous-domaines.<br />
@@ -1071,7 +1154,7 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <li><strong>Serveurs secondaires (slaves)</strong> : reçoivent des copies du primaire pour la redondance.  </li>
 <li><strong>Serveurs intermédiaires / Résolveurs DNS (caches)</strong> : <ul>
 <li>Ne font pas partie de la hiérarchie DNS.</li>
-<li>Servent de point d’entrée pour les clients DNS des machines : ils reçoivent les requêtes des clients et résolvent les noms en interrogeant d’autres serveurs DNS (racines, TLD, zones).</li>
+<li>Servent de point d'entrée pour les clients DNS des machines : ils reçoivent les requêtes des clients et résolvent les noms en interrogeant d'autres serveurs DNS (racines, TLD, zones).</li>
 <li>Ils stockent temporairement les réponses dans un cache pour accélérer les requêtes futures.</li>
 <li>Exemple : Google Public DNS (8.8.8.8)</li>
 </ul>
@@ -1080,11 +1163,101 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 <h3 id="authoritative-answer">Authoritative Answer</h3>
 <p>Un serveur DNS est <strong>authoritative</strong> pour une zone quand il fournit une réponse officielle depuis sa base locale (et pas un cache).  </p>
 <hr />
-<h2 id="2-structure-et-fonctionnement-dun-message-dns">2. Structure et fonctionnement d'un message DNS</h2>
+<h2 id="2-resolveurs-forwarders-et-stub">2. Résolveurs, Forwarders et Stub</h2>
+<h3 id="resolveur-stub">Résolveur stub</h3>
+<p>Le <strong>résolveur stub</strong> est le composant DNS minimal présent sur chaque machine cliente.</p>
+<ul>
+<li>Ne résout rien lui-même.</li>
+<li>Reçoit la requête de l'application et la transmet au résolveur récursif configuré.</li>
+<li>Pas de cache, pas de récursion.</li>
+<li>Sur Linux : <code>systemd-resolved</code> ou ce qui est configuré dans <code>/etc/resolv.conf</code>.</li>
+</ul>
+<p>Le terme <strong>stub</strong> (souche/talon) désigne une version minimale qui délègue le vrai travail à quelqu'un d'autre. On retrouve ce concept en programmation (stub function = fonction vide qui simule une vraie fonction).</p>
+<h3 id="resolveur-recursif">Résolveur récursif</h3>
+<p>Le <strong>résolveur récursif</strong> fait le vrai travail de résolution :</p>
+<ul>
+<li>Reçoit la requête du résolveur stub.</li>
+<li>Interroge toute la chaîne DNS (serveurs racine → TLD → serveur autoritaire).</li>
+<li>Met la réponse en cache.</li>
+<li>Retourne la réponse complète au client.</li>
+</ul>
+<p>Exemples : <code>8.8.8.8</code> (Google), <code>1.1.1.1</code> (Cloudflare), DNS de la box FAI.</p>
+<h3 id="forwarder-redirecteur">Forwarder (redirecteur)</h3>
+<p>Un <strong>forwarder</strong> est un serveur DNS qui <strong>délègue</strong> la résolution à un autre serveur plutôt que de la faire lui-même :</p>
+<ul>
+<li>Reçoit la requête.</li>
+<li>Ne résout pas lui-même.</li>
+<li>Transmet à un résolveur récursif (ex: <code>8.8.8.8</code>).</li>
+<li>Met la réponse en cache.</li>
+<li>Retourne la réponse au client.</li>
+</ul>
+<p><strong>Forwarder vs résolveur récursif :</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Résolveur récursif (<code>8.8.8.8</code>)</th>
+<th>Forwarder (DNS Windows)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fait la résolution</td>
+<td>✅ lui-même</td>
+<td>❌ délègue</td>
+</tr>
+<tr>
+<td>Interroge les racines</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transitaire">Transitaire</h3>
+<p><strong>Transitaire</strong> est simplement la traduction française de <strong>forwarder</strong>. Les deux termes désignent la même chose.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminologie</p>
+<p>Ces termes ne sont pas tous officiellement normalisés dans les RFC. La RFC 1034/1035 parle de <em>resolver</em> et <em>name server</em> sans sous-catégories. Le terme <em>stub resolver</em> est introduit dans la RFC 5625. <em>Forwarder</em> et <em>transitaire</em> sont des termes courants (Microsoft, BIND) mais pas formellement définis dans les RFC de base.</p>
+</div>
+<h3 id="exemple-concret-dns-windows-en-entreprise">Exemple concret : DNS Windows en entreprise</h3>
+<p>Un serveur DNS Windows joue généralement <strong>plusieurs rôles à la fois</strong> :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Client → DNS Windows
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>              │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>              ├─ domaine AD (ex: monentreprise.local) → répond directement (autoritaire)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>              │
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>              └─ reste (internet) → transmet à 8.8.8.8 (forwarder)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                      └─ réponse mise en cache pour les prochaines requêtes
+</span></code></pre></div>
+<ul>
+<li><strong>Autoritaire</strong> pour la zone Active Directory interne.</li>
+<li><strong>Forwarder</strong> vers <code>8.8.8.8</code> pour tout le reste.</li>
+<li><strong>Cache</strong> pour toutes les réponses reçues.</li>
+</ul>
+<h3 id="chaine-dns-complete">Chaîne DNS complète</h3>
+<p>image
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Application
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    │
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Résolveur stub (systemd-resolved / /etc/resolv.conf)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    │
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Résolveur récursif ou Forwarder (DNS box, DNS Windows, 8.8.8.8)
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    │
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Serveurs racine (.)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    │
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Serveurs TLD (.com, .fr, ...)
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    │
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Serveur autoritaire (détient la vraie réponse)
+</span></code></pre></div></p>
+<hr />
+<h2 id="3-structure-et-fonctionnement-dun-message-dns">3. Structure et fonctionnement d'un message DNS</h2>
 <h3 id="types-de-requetes-dns">Types de requêtes DNS</h3>
 <div class="admonition note">
 <p class="admonition-title">Requête itérative</p>
-<p>Le serveur DNS ne fait pas tout le travail; il donne l’adresse d’un autre serveur à interroger. </p>
+<p>Le serveur DNS ne fait pas tout le travail; il donne l'adresse d'un autre serveur à interroger. </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Requête récursive</p>
@@ -1160,7 +1333,7 @@ Le DNS est une <strong>base de données distribuée</strong> organisée de faço
 </li>
 <li>
 <p><strong>Couche Transport (4)</strong> <br />
-    DNS s’appuie sur UDP (port 53) la plupart du temps.</p>
+    DNS s'appuie sur UDP (port 53) la plupart du temps.</p>
 </li>
 <li>
 <p><strong>Couche Réseau (3)</strong><br />
