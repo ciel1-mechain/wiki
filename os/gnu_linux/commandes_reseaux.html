@@ -21,7 +21,7 @@
     
     
       
-        <title>La gestion réseau sous GNU/Linux - Wiki</title>
+        <title>Gestion réseau sous GNU/Linux - Wiki</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#la-gestion-reseau-sous-gnulinux" class="md-skip">
+        <a href="#gestion-reseau-sous-gnulinux" class="md-skip">
           Aller au contenu
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              La gestion réseau sous GNU/Linux
+              Gestion réseau sous GNU/Linux
             
           </span>
         </div>
@@ -723,10 +723,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comment-savoir-lequel-utiliser" class="md-nav__link">
+  <a href="#1-identifier-loutil-actif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comment savoir lequel utiliser ?
+        1. Identifier l'outil actif
       
     </span>
   </a>
@@ -734,10 +734,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#networkmanager-cli" class="md-nav__link">
+  <a href="#2-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NetworkManager CLI
+        2. Architecture
       
     </span>
   </a>
@@ -745,44 +745,222 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#systemd-networkd" class="md-nav__link">
+  <a href="#3-netplan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        systemd-networkd
+        3. Netplan
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#netplan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Netplan
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resume-comparatif" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Résumé comparatif
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Résumé comparatif">
+    <nav class="md-nav" aria-label="3. Netplan">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#remarque" class="md-nav__link">
+  <a href="#fichiers-de-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💡 Remarque
+        Fichiers de configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commandes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-systemd-networkd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. systemd-networkd
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. systemd-networkd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fichier-de-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fichier de configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commandes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commandes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-networkmanager-nmcli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. NetworkManager (nmcli)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. NetworkManager (nmcli)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commandes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commandes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-outil-bas-niveau-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Outil bas niveau : ip
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tableau-comparatif-par-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Tableau comparatif par action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-comparaison-systemd-networkd-vs-networkmanager-en-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Comparaison systemd-networkd vs NetworkManager en production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Comparaison systemd-networkd vs NetworkManager en production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommandations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommandations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-bonding-agregation-dinterfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Bonding (agrégation d'interfaces)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Bonding (agrégation d&#39;interfaces)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modes-courants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modes courants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-netplan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Netplan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-nmcli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration nmcli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vers-networkmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vers NetworkManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vers-systemd-networkd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vers systemd-networkd
       
     </span>
   </a>
@@ -811,298 +989,575 @@
 
 
 
-<h1 id="la-gestion-reseau-sous-gnulinux">La gestion réseau sous GNU/Linux</h1>
-<p>Linux propose plusieurs outils pour <strong>configurer et gérer les interfaces réseau</strong>. Voici un résumé des principaux outils modernes.</p>
+<h1 id="gestion-reseau-sous-gnulinux">Gestion réseau sous GNU/Linux</h1>
 <hr />
-<h2 id="comment-savoir-lequel-utiliser">Comment savoir lequel utiliser ?</h2>
+<h2 id="1-identifier-loutil-actif">1. Identifier l'outil actif</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>NetworkManager<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ nmcli&quot;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-networkd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ networkctl&quot;</span>
 </span></code></pre></div>
-<p>Ou avec netplan :
-* Netplan est utilisé s’il existe AU MOINS un fichier YAML valide dans /etc/netplan.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls -l /etc/netplan/
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo netplan get
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>grep renderer /etc/netplan/*.yaml
+<p>Avec Netplan :
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/etc/netplan/<span class="w">          </span><span class="c1"># existe ? → Netplan actif</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>get<span class="w">             </span><span class="c1"># affiche la config active</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>grep<span class="w"> </span>renderer<span class="w"> </span>/etc/netplan/*.yaml<span class="w">  </span><span class="c1"># voir le backend utilisé</span>
 </span></code></pre></div></p>
-<h2 id="networkmanager-cli">NetworkManager CLI</h2>
-<ul>
-<li><strong>Description :</strong> Interface en ligne de commande de <strong>NetworkManager</strong>, pour gérer les connexions réseau (Ethernet, Wi-Fi, VPN…).</li>
-<li>
-<p><strong>Fonctions principales :</strong></p>
-</li>
-<li>
-<p>Lister les interfaces et connexions :</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nmcli<span class="w"> </span>device<span class="w"> </span>status
-</span></code></pre></div>
-  * Activer / désactiver une interface :</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nmcli<span class="w"> </span>device<span class="w"> </span>connect<span class="w"> </span>eth0
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>nmcli<span class="w"> </span>device<span class="w"> </span>disconnect<span class="w"> </span>eth0
-</span></code></pre></div>
-  * Gérer les connexions (IP statique, DHCP) :</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span>ifname<span class="w"> </span>eth0<span class="w"> </span>con-name<span class="w"> </span><span class="s2">&quot;lan&quot;</span><span class="w"> </span>ip4<span class="w"> </span><span class="m">192</span>.168.1.100/24<span class="w"> </span>gw4<span class="w"> </span><span class="m">192</span>.168.1.1
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span><span class="s2">&quot;lan&quot;</span>
-</span></code></pre></div>
-* <strong>Avantages :</strong></p>
-</li>
-<li>
-<p>Simple et rapide pour les utilisateurs Desktop et serveurs avec NetworkManager.</p>
-</li>
-<li>Supporte Wi-Fi et VPN nativement.</li>
-</ul>
+<blockquote>
+<p>Les trois outils peuvent coexister <strong>mais ne doivent pas gérer la même interface simultanément</strong>.</p>
+</blockquote>
 <hr />
-<h2 id="systemd-networkd"><strong>systemd-networkd</strong></h2>
-<ul>
-<li><strong>Description :</strong> Service <strong>système de <code>systemd</code></strong> pour gérer les interfaces réseau.</li>
-<li>
-<p><strong>Fichiers de configuration :</strong></p>
-</li>
-<li>
-<p>Situés dans <code>/etc/systemd/network/</code></p>
-</li>
-<li>
-<p>Exemple pour une interface Ethernet en DHCP (<code>eth0.network</code>) :</p>
-<p><div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[Match]</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">Name</span><span class="o">=</span><span class="s">eth0</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">[Network]</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="na">DHCP</span><span class="o">=</span><span class="s">yes</span>
+<h2 id="2-architecture">2. Architecture</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Applications / utilisateur
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        │
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    Netplan (front-end YAML, Ubuntu/Debian)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        │
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>   ┌────┴────┐
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>   │         │
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>systemd-   NetworkManager
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>networkd    (nmcli)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>   │         │
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>   └────┬────┘
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        │
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>   noyau Linux (ip, iproute2)
 </span></code></pre></div>
-* <strong>Commandes utiles :</strong></p>
-</li>
-</ul>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>systemd-networkd
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>systemctl<span class="w"> </span>start<span class="w"> </span>systemd-networkd
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>networkctl<span class="w"> </span>status
-</span></code></pre></div>
-* <strong>Avantages :</strong></p>
-<ul>
-<li>Léger et intégré à <code>systemd</code></li>
-<li>Idéal pour les serveurs ou les systèmes sans interface graphique.</li>
-</ul>
-<hr />
-<h2 id="netplan"><strong>Netplan</strong></h2>
-<ul>
-<li><strong>Description :</strong> Outil <strong>Ubuntu / Debian moderne</strong> pour déclarer la configuration réseau en YAML.</li>
-<li>
-<p><strong>Fichiers de configuration :</strong></p>
-</li>
-<li>
-<p><code>/etc/netplan/*.yaml</code></p>
-</li>
-<li>
-<p>Exemple pour configurer DHCP sur Ethernet :</p>
-<p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">network</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">eth0</span><span class="p">:</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
-</span></code></pre></div>
-* <strong>Application de la configuration :</strong></p>
-</li>
-</ul>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
-</span></code></pre></div>
-* <strong>Avantages :</strong></p>
-<ul>
-<li>Syntaxe claire (YAML)</li>
-<li>Peut générer la configuration pour <code>NetworkManager</code> ou <code>systemd-networkd</code> selon la directive <code>renderer</code>.</li>
-</ul>
-<hr />
-<h2 id="resume-comparatif"><strong>Résumé comparatif</strong></h2>
 <table>
 <thead>
 <tr>
 <th>Outil</th>
-<th>Niveau</th>
-<th>Type de configuration</th>
-<th>Usage recommandé</th>
+<th>Rôle</th>
+<th>Source de vérité</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>nmcli</code></td>
-<td>CLI Desktop/Serveur</td>
-<td>Connexions gérées par NetworkManager</td>
-<td>Desktop ou serveurs avec NM</td>
+<td><code>ip</code></td>
+<td>outil bas niveau, parle au <strong>noyau</strong></td>
+<td>kernel</td>
 </tr>
 <tr>
-<td><code>systemd-networkd</code></td>
-<td>Service système</td>
-<td>Fichiers <code>.network</code></td>
-<td>Serveurs ou systèmes légers</td>
+<td><code>networkctl</code></td>
+<td>parle à <strong>systemd-networkd</strong></td>
+<td>systemd</td>
+</tr>
+<tr>
+<td><code>nmcli</code></td>
+<td>parle à <strong>NetworkManager</strong></td>
+<td>NetworkManager</td>
 </tr>
 <tr>
 <td><code>netplan</code></td>
-<td>Front-end YAML</td>
-<td>Génère NM ou systemd</td>
-<td>Ubuntu/Debian modernes</td>
+<td>front-end YAML, génère la config pour NM ou systemd</td>
+<td>fichiers YAML</td>
 </tr>
 </tbody>
 </table>
 <hr />
+<h2 id="3-netplan">3. Netplan</h2>
+<p><strong>Front-end unifié</strong> pour configurer le réseau sur Ubuntu/Debian. Utilise des fichiers YAML dans <code>/etc/netplan/</code> et délègue à <code>systemd-networkd</code> ou <code>NetworkManager</code> selon le <code>renderer</code>.</p>
+<h3 id="fichiers-de-configuration">Fichiers de configuration</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># /etc/netplan/01-config.yaml</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># IP statique avec systemd-networkd</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">network</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkd</span><span class="w">        </span><span class="c1"># ou NetworkManager</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">eth0</span><span class="p">:</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.1.100/24</span><span class="p p-Indicator">]</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.1</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">8.8.8.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8.8.4.4</span><span class="p p-Indicator">]</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># DHCP</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nt">network</span><span class="p">:</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="nt">eth0</span><span class="p">:</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+</span></code></pre></div>
+<h3 id="commandes">Commandes</h3>
 <table>
 <thead>
 <tr>
-<th>Besoin / Action</th>
-<th>nmcli (NetworkManager)</th>
-<th>networkctl (systemd-networkd)</th>
-<th>ip (outil bas niveau)</th>
+<th>Commande</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>🔍 Lister interfaces</td>
+<td><code>sudo netplan apply</code></td>
+<td>applique la configuration</td>
+</tr>
+<tr>
+<td><code>sudo netplan --debug apply</code></td>
+<td>applique avec logs détaillés</td>
+</tr>
+<tr>
+<td><code>sudo netplan get</code></td>
+<td>affiche la config active</td>
+</tr>
+<tr>
+<td><code>sudo netplan try</code></td>
+<td>applique temporairement (annulation auto si pas confirmé)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-systemd-networkd">4. systemd-networkd</h2>
+<p><strong>Backend léger</strong> intégré à systemd. Idéal pour les serveurs et systèmes sans interface graphique. Géré via des fichiers <code>.network</code> dans <code>/etc/systemd/network/</code>.</p>
+<h3 id="fichier-de-configuration">Fichier de configuration</h3>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># /etc/systemd/network/10-eth0.network</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">[Match]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="na">Name</span><span class="o">=</span><span class="s">eth0</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">[Network]</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="na">Address</span><span class="o">=</span><span class="s">192.168.1.100/24</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="na">Gateway</span><span class="o">=</span><span class="s">192.168.1.1</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="na">DNS</span><span class="o">=</span><span class="s">8.8.8.8</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="na">DNS</span><span class="o">=</span><span class="s">8.8.4.4</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># DHCP à la place :</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># DHCP=yes</span>
+</span></code></pre></div>
+<h3 id="commandes_1">Commandes</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systemctl enable systemd-networkd</code></td>
+<td>active au démarrage</td>
+</tr>
+<tr>
+<td><code>systemctl start systemd-networkd</code></td>
+<td>démarre le service</td>
+</tr>
+<tr>
+<td><code>systemctl restart systemd-networkd</code></td>
+<td>redémarre / recharge la config</td>
+</tr>
+<tr>
+<td><code>networkctl list</code></td>
+<td>liste les interfaces</td>
+</tr>
+<tr>
+<td><code>networkctl status</code></td>
+<td>état global</td>
+</tr>
+<tr>
+<td><code>networkctl status enp0s3</code></td>
+<td>détails d'une interface</td>
+</tr>
+<tr>
+<td><code>networkctl up enp0s3</code></td>
+<td>active une interface</td>
+</tr>
+<tr>
+<td><code>networkctl down enp0s3</code></td>
+<td>désactive une interface</td>
+</tr>
+<tr>
+<td><code>resolvectl status</code></td>
+<td>voir les DNS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-networkmanager-nmcli">5. NetworkManager (<code>nmcli</code>)</h2>
+<p><strong>Backend avancé</strong> pour les connexions dynamiques (Wi-Fi, VPN, bonds, VLANs). Utilisé par défaut sur les distributions Desktop.</p>
+<h3 id="commandes_2">Commandes</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nmcli d</code></td>
+<td>liste les interfaces (raccourci)</td>
+</tr>
+<tr>
+<td><code>nmcli device status</code></td>
+<td>état des interfaces</td>
+</tr>
+<tr>
+<td><code>nmcli device show enp0s3</code></td>
+<td>détails d'une interface</td>
+</tr>
+<tr>
+<td><code>nmcli device connect enp0s3</code></td>
+<td>active une interface</td>
+</tr>
+<tr>
+<td><code>nmcli device disconnect enp0s3</code></td>
+<td>désactive une interface</td>
+</tr>
+<tr>
+<td><code>nmcli device reapply enp0s3</code></td>
+<td>recharge la config sans déconnecter</td>
+</tr>
+<tr>
+<td><code>nmcli g</code></td>
+<td>état global NetworkManager</td>
+</tr>
+<tr>
+<td><code>nmcli connection show</code></td>
+<td>liste les connexions configurées</td>
+</tr>
+<tr>
+<td><code>nmcli connection up &lt;nom&gt;</code></td>
+<td>active une connexion</td>
+</tr>
+<tr>
+<td><code>nmcli connection down &lt;nom&gt;</code></td>
+<td>désactive une connexion</td>
+</tr>
+<tr>
+<td><code>nmcli connection modify &lt;nom&gt; ipv4.dns "8.8.8.8"</code></td>
+<td>modifie les DNS</td>
+</tr>
+<tr>
+<td><code>nmcli connection modify &lt;nom&gt; ipv4.method auto</code></td>
+<td>passe en DHCP</td>
+</tr>
+<tr>
+<td><code>nmcli connection add type ethernet ifname eth0 con-name "lan" ip4 192.168.1.100/24 gw4 192.168.1.1</code></td>
+<td>crée une connexion statique</td>
+</tr>
+<tr>
+<td><code>nmcli dev wifi list</code></td>
+<td>liste les réseaux Wi-Fi</td>
+</tr>
+<tr>
+<td><code>nmcli dev wifi connect &lt;SSID&gt; password &lt;mdp&gt;</code></td>
+<td>connexion Wi-Fi</td>
+</tr>
+<tr>
+<td><code>nmcli d show \| grep DNS</code></td>
+<td>voir les DNS</td>
+</tr>
+<tr>
+<td><code>nmcli d show \| grep ROUTE</code></td>
+<td>voir les routes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-outil-bas-niveau-ip">6. Outil bas niveau : <code>ip</code></h2>
+<p>Parle directement au noyau. Les changements sont <strong>non persistants</strong> (perdus au redémarrage).</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ip link</code></td>
+<td>liste les interfaces</td>
+</tr>
+<tr>
+<td><code>ip -br a</code></td>
+<td>état résumé des interfaces</td>
+</tr>
+<tr>
+<td><code>ip a</code></td>
+<td>voir les IPs</td>
+</tr>
+<tr>
+<td><code>ip a show enp0s3</code></td>
+<td>détails d'une interface</td>
+</tr>
+<tr>
+<td><code>ip r</code></td>
+<td>voir les routes</td>
+</tr>
+<tr>
+<td><code>ip link set enp0s3 up</code></td>
+<td>active une interface</td>
+</tr>
+<tr>
+<td><code>ip link set enp0s3 down</code></td>
+<td>désactive une interface</td>
+</tr>
+<tr>
+<td><code>ip addr add 192.168.1.20/24 dev enp0s3</code></td>
+<td>ajoute une IP temporaire</td>
+</tr>
+<tr>
+<td><code>ip addr del 192.168.1.20/24 dev enp0s3</code></td>
+<td>supprime une IP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-tableau-comparatif-par-action">7. Tableau comparatif par action</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>nmcli</th>
+<th>networkctl</th>
+<th>ip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lister interfaces</td>
 <td><code>nmcli d</code></td>
 <td><code>networkctl list</code></td>
 <td><code>ip link</code></td>
 </tr>
 <tr>
-<td>📡 Statut global</td>
+<td>Statut global</td>
 <td><code>nmcli g</code></td>
 <td><code>networkctl status</code></td>
 <td><code>ip -br a</code></td>
 </tr>
 <tr>
-<td>🔎 Détails interface</td>
+<td>Détails interface</td>
 <td><code>nmcli d show enp0s3</code></td>
 <td><code>networkctl status enp0s3</code></td>
 <td><code>ip a show enp0s3</code></td>
 </tr>
 <tr>
-<td>🌐 Voir IP</td>
+<td>Voir IP</td>
 <td><code>nmcli -p d show</code></td>
 <td><code>networkctl status</code></td>
 <td><code>ip a</code></td>
 </tr>
 <tr>
-<td>🧭 Voir routes</td>
+<td>Voir routes</td>
 <td><code>nmcli d show \| grep ROUTE</code></td>
 <td><code>networkctl status</code></td>
 <td><code>ip r</code></td>
 </tr>
 <tr>
-<td>🧠 Voir DNS</td>
+<td>Voir DNS</td>
 <td><code>nmcli d show \| grep DNS</code></td>
 <td><code>resolvectl status</code></td>
 <td><code>resolvectl status</code></td>
 </tr>
 <tr>
-<td>🔌 Activer interface</td>
+<td>Activer interface</td>
 <td><code>nmcli d connect enp0s3</code></td>
 <td><code>networkctl up enp0s3</code></td>
 <td><code>ip link set enp0s3 up</code></td>
 </tr>
 <tr>
-<td>🔕 Désactiver interface</td>
+<td>Désactiver interface</td>
 <td><code>nmcli d disconnect enp0s3</code></td>
 <td><code>networkctl down enp0s3</code></td>
 <td><code>ip link set enp0s3 down</code></td>
 </tr>
 <tr>
-<td>🔄 Recharger config</td>
+<td>Recharger config</td>
 <td><code>nmcli d reapply enp0s3</code></td>
 <td><code>systemctl restart systemd-networkd</code></td>
 <td>❌</td>
 </tr>
 <tr>
-<td>✏️ IP temporaire</td>
-<td><code>nmcli d set enp0s3 ipv4.addresses …</code></td>
+<td>IP temporaire</td>
+<td>❌</td>
 <td>❌</td>
 <td><code>ip addr add 192.168.1.20/24 dev enp0s3</code></td>
 </tr>
 <tr>
-<td>🧪 Supprimer IP</td>
-<td><code>nmcli d set … ""</code></td>
-<td>❌</td>
-<td><code>ip addr del 192.168.1.20/24 dev enp0s3</code></td>
-</tr>
-<tr>
-<td>🏠 IP statique persistante</td>
+<td>IP statique persistante</td>
 <td><code>nmcli c mod</code></td>
 <td>fichier <code>.network</code></td>
 <td>❌</td>
 </tr>
 <tr>
-<td>🌍 DHCP</td>
+<td>DHCP</td>
 <td><code>nmcli c mod ipv4.method auto</code></td>
-<td><code>DHCP=yes</code></td>
+<td><code>DHCP=yes</code> dans <code>.network</code></td>
 <td>❌</td>
 </tr>
 <tr>
-<td>🧠 DNS persistant</td>
+<td>DNS persistant</td>
 <td><code>nmcli c mod ipv4.dns</code></td>
 <td><code>DNS=</code> dans <code>.network</code></td>
 <td>❌</td>
 </tr>
 <tr>
-<td>📂 Fichiers config</td>
+<td>Fichiers config</td>
 <td><code>/etc/NetworkManager/</code></td>
 <td><code>/etc/systemd/network/</code></td>
 <td>❌</td>
 </tr>
 <tr>
-<td>🧪 Test sans couper</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>📶 Scan Wi-Fi</td>
+<td>Scan Wi-Fi</td>
 <td><code>nmcli dev wifi list</code></td>
 <td>❌</td>
 <td><code>iw dev wlan0 scan</code></td>
 </tr>
 <tr>
-<td>🔐 Connexion Wi-Fi</td>
+<td>Connexion Wi-Fi</td>
 <td><code>nmcli dev wifi connect</code></td>
 <td>wpa_supplicant</td>
 <td>wpa_supplicant</td>
 </tr>
 <tr>
-<td>🔁 Auto-connect Wi-Fi</td>
-<td>oui</td>
-<td>service systemd</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>🔧 VPN</td>
-<td>oui</td>
+<td>VPN</td>
+<td>✅</td>
 <td>❌</td>
 <td>❌</td>
 </tr>
 <tr>
-<td>🔎 Diagnostic rapide</td>
-<td><code>nmcli d status</code></td>
-<td><code>networkctl list</code></td>
-<td><code>ip -br a</code></td>
-</tr>
-<tr>
-<td>🧠 Source de vérité</td>
-<td>NetworkManager</td>
-<td>systemd</td>
-<td>kernel</td>
-</tr>
-<tr>
-<td>⚡ Changements dynamiques</td>
-<td>excellent</td>
-<td>limité</td>
-<td>oui (non persistant)</td>
-</tr>
-<tr>
-<td>🧩 Persistance</td>
+<td>Persistance</td>
 <td>profils</td>
 <td>fichiers</td>
-<td>non</td>
+<td>❌ non persistant</td>
 </tr>
 </tbody>
 </table>
-<h3 id="remarque">💡 Remarque</h3>
+<hr />
+<h2 id="8-comparaison-systemd-networkd-vs-networkmanager-en-production">8. Comparaison systemd-networkd vs NetworkManager en production</h2>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>systemd-networkd</th>
+<th>NetworkManager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type d'environnement</strong></td>
+<td>Serveurs statiques (web, DB, cache)</td>
+<td>Serveurs dynamiques (VPN, Wi-Fi, bonds)</td>
+</tr>
+<tr>
+<td><strong>Complexité réseau</strong></td>
+<td>Faible (IP statique, routes)</td>
+<td>Élevée (Wi-Fi, VPN, basculement)</td>
+</tr>
+<tr>
+<td><strong>Outils</strong></td>
+<td>Fichiers <code>.network</code> + <code>networkctl</code></td>
+<td><code>nmcli</code>, <code>nmtui</code>, Netplan</td>
+</tr>
+<tr>
+<td><strong>Stabilité</strong></td>
+<td>Très stable, peu de dépendances</td>
+<td>Stable mais plus complexe</td>
+</tr>
+<tr>
+<td><strong>Automatisation</strong></td>
+<td>Idéal pour Ansible/Puppet/Chef</td>
+<td>Possible via <code>nmcli</code></td>
+</tr>
+<tr>
+<td><strong>Cloud/Conteneurs</strong></td>
+<td>Intégration native <code>cloud-init</code></td>
+<td>Supporté mais moins léger</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommandations">Recommandations</h3>
 <ul>
-<li>Les trois outils peuvent coexister <strong>mais ne doivent pas gérer la même interface simultanément</strong>.
-* ip parle qu noyau</li>
-<li>nmcli parle à NetworkManager</li>
-<li>networkctl parle à systemd</li>
+<li><strong>80% des cas (serveurs statiques)</strong> → <code>systemd-networkd</code> + Netplan : simplicité, stabilité.</li>
+<li><strong>20% des cas (besoins dynamiques)</strong> → <code>NetworkManager</code> + <code>nmcli</code> : Wi-Fi, VPN, VLANs, bonds.</li>
 </ul>
+<hr />
+<h2 id="10-bonding-agregation-dinterfaces">10. Bonding (agrégation d'interfaces)</h2>
+<p>Un <strong>bond</strong> = regroupement de plusieurs interfaces réseau en une seule interface logique.</p>
+<p><strong>Objectifs :</strong>
+- <strong>Haute disponibilité</strong> → si une interface tombe, l'autre prend le relais
+- <strong>Agrégation de bande passante</strong> → cumul des débits</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>eth0 ──┐
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        ├── bond0 (192.168.1.100)  → switch
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>eth1 ──┘
+</span></code></pre></div>
+<h3 id="modes-courants">Modes courants</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Nom</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>balance-rr</code></td>
+<td>round-robin, agrégation de bande passante</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>active-backup</code></td>
+<td>une seule active, l'autre en secours ✅ le plus utilisé</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>balance-xor</code></td>
+<td>répartition par hash MAC</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>802.3ad</code></td>
+<td>LACP, agrégation standard (switch doit supporter)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>balance-alb</code></td>
+<td>équilibrage adaptatif</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration-netplan">Configuration Netplan</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">network</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">bonds</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">bond0</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="nt">interfaces</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">eth0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eth1</span><span class="p p-Indicator">]</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="nt">parameters</span><span class="p">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active-backup</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">192.168.1.100/24</span><span class="p p-Indicator">]</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.1</span>
+</span></code></pre></div>
+<h3 id="configuration-nmcli">Configuration nmcli</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Créer le bond</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bond<span class="w"> </span>con-name<span class="w"> </span>bond0<span class="w"> </span>ifname<span class="w"> </span>bond0<span class="w"> </span>bond.options<span class="w"> </span><span class="s2">&quot;mode=active-backup&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Ajouter les interfaces esclaves</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span>con-name<span class="w"> </span>bond0-eth0<span class="w"> </span>ifname<span class="w"> </span>eth0<span class="w"> </span>master<span class="w"> </span>bond0
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span>con-name<span class="w"> </span>bond0-eth1<span class="w"> </span>ifname<span class="w"> </span>eth1<span class="w"> </span>master<span class="w"> </span>bond0
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Configurer l&#39;IP</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span>bond0<span class="w"> </span>ipv4.addresses<span class="w"> </span><span class="m">192</span>.168.1.100/24<span class="w"> </span>ipv4.gateway<span class="w"> </span><span class="m">192</span>.168.1.1<span class="w"> </span>ipv4.method<span class="w"> </span>manual
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># Activer</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span>bond0
+</span></code></pre></div>
+<blockquote>
+<p>Très utilisé en production sur les serveurs critiques pour la redondance réseau.</p>
+</blockquote>
+<h3 id="vers-networkmanager">Vers NetworkManager</h3>
+<p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># /etc/netplan/01-config.yaml</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">network</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkManager</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+</span></code></pre></div></p>
+<h3 id="vers-systemd-networkd">Vers systemd-networkd</h3>
+<p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># /etc/netplan/01-config.yaml</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">network</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkd</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>dev<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>managed<span class="w"> </span>no<span class="w">   </span><span class="c1"># libérer l&#39;interface de NM</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+</span></code></pre></div></p>
 
 
 
