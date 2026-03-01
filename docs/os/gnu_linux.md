@@ -11,7 +11,8 @@ hide:
 - [Lister les ports usb utilisés](gnu_linux/list_usb.md)
 - [Analyser les connexions réseaux : la commande `ss` (socket statistics)](gnu_linux/commande_ss.md)
 - [commandes host & dig ](gnu_linux/commandes_host_dig.md)
-- [commandes réseaux ](gnu_linux/commandes_reseaux.md)
+- [Gestion des réseaux ](gnu_linux/gestion_reseaux.md)
+- [Commande ip ](gnu_linux/commandes-ip.md)
 ## Serveurs
 - [Mini Serveur busybox](gnu_linux/mini_serveur_busybox.md)
 - [Apache2](gnu_linux/apache2.md)
