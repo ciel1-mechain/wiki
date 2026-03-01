@@ -1,0 +1,2146 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://USERNAME.github.io/REPO/devops/git/git-commandes-reference.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Commandes Git - Référence - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#commandes-git-reference" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Commandes Git - Référence
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../c.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  C/C++
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../web.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Web (HTML/CSS/JS)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../git.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Git/GitHub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docker.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Docker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../microbit.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Micro:Bit
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reseaux_liaisons/reseaux.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Réseaux TCP/IP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reseaux_liaisons/liaisons.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interfaces et Protocoles de Communication
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../os/windows.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Windows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../os/gnu_linux.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GNU/Linux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C/C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web (HTML/CSS/JS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git/GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microbit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Micro:Bit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reseaux_liaisons/reseaux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux TCP/IP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reseaux_liaisons/liaisons.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces et Protocoles de Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/gnu_linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNU/Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git clone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fork
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git init
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git config
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git add
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git commit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git rm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git mv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git tag
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-revert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git revert
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-cherry-pick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git cherry-pick
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-blame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git blame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-clean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git clean
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git bisect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git fetch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git branch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-checkout-git-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git checkout / git switch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git show
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HEAD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-3-zones-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les 3 zones Git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git pull
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git merge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git rebase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git push
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git remote
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-stash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git stash
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="commandes-git-reference">Commandes Git - Référence</h1>
+<h2 id="git-clone">git clone</h2>
+<p>Crée une copie locale <strong>indépendante</strong> d'un repo distant.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:user/mon-projet.git
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git clone &lt;url&gt;</code></td>
+<td>clone dans un dossier du même nom</td>
+</tr>
+<tr>
+<td><code>git clone &lt;url&gt; mon-dossier</code></td>
+<td>clone dans un dossier personnalisé</td>
+</tr>
+<tr>
+<td><code>git clone --depth 1 &lt;url&gt;</code></td>
+<td>clone uniquement le dernier commit (plus rapide)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>git clone</code> configure automatiquement <code>origin</code> pointant vers le repo cloné.</p>
+</blockquote>
+<hr />
+<h2 id="fork">Fork</h2>
+<p>Le fork n'est <strong>pas une commande git</strong>, c'est une fonctionnalité <strong>GitHub uniquement</strong>.</p>
+<p>Un fork crée une copie du repo sur <strong>ton compte GitHub</strong>, indépendante de l'original.</p>
+<p><strong>Faire un fork :</strong>
+1. Aller sur <code>github.com/prof/mon-projet</code>
+2. Cliquer <strong>Fork</strong> en haut à droite
+3. GitHub crée <code>github.com/eleve1/mon-projet</code>
+4. Cloner ensuite son fork :
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:eleve1/mon-projet.git
+</span></code></pre></div></p>
+<p><strong>Fork vs Clone :</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fork</th>
+<th>Clone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Où</td>
+<td>Sur GitHub</td>
+<td>En local</td>
+</tr>
+<tr>
+<td>Commande</td>
+<td>Bouton GitHub</td>
+<td><code>git clone</code></td>
+</tr>
+<tr>
+<td>Résultat</td>
+<td>Copie sur ton compte GitHub</td>
+<td>Copie sur ta machine</td>
+</tr>
+<tr>
+<td>Lien avec l'original</td>
+<td>Via PR</td>
+<td>Via remote origin</td>
+</tr>
+<tr>
+<td>Usage</td>
+<td>Contribuer sans droits d'écriture</td>
+<td>Travailler en local</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-init">git init</h2>
+<p>Initialise un nouveau repo git dans le dossier courant.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>init
+</span></code></pre></div>
+<p>Crée le dossier <code>.git/</code> qui contient toute l'histoire du repo.</p>
+<hr />
+<h2 id="git-config">git config</h2>
+<p>Configure git (nom, email, éditeur...).</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git config --global user.name "Prénom Nom"</code></td>
+<td>définit le nom pour tous les repos</td>
+</tr>
+<tr>
+<td><code>git config --global user.email "email@example.com"</code></td>
+<td>définit l'email</td>
+</tr>
+<tr>
+<td><code>git config --global core.editor "vim"</code></td>
+<td>définit l'éditeur par défaut</td>
+</tr>
+<tr>
+<td><code>git config --global pull.rebase true</code></td>
+<td>utilise rebase par défaut au lieu de merge</td>
+</tr>
+<tr>
+<td><code>git config --list</code></td>
+<td>liste toute la configuration</td>
+</tr>
+<tr>
+<td><code>git config --global --list</code></td>
+<td>liste la config globale</td>
+</tr>
+<tr>
+<td><code>git config --local --list</code></td>
+<td>liste la config du repo courant</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-add">git add</h2>
+<p>Stage les fichiers pour le prochain commit.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git add fichier.c</code></td>
+<td>stage un fichier précis</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td>stage tous les fichiers modifiés</td>
+</tr>
+<tr>
+<td><code>git add -A</code></td>
+<td>stage tout (modifications + suppressions + nouveaux)</td>
+</tr>
+<tr>
+<td><code>git add -p</code></td>
+<td>stage par morceaux interactif (choisir quoi stager)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>git add -p</code> est très utile pour faire des commits atomiques : on choisit exactement quelles modifications vont dans le commit.</p>
+</blockquote>
+<hr />
+<h2 id="git-commit">git commit</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git commit -m "message"</code></td>
+<td>commit avec message inline</td>
+</tr>
+<tr>
+<td><code>git commit -a -m "message"</code></td>
+<td>stage et commit les fichiers suivis en une commande</td>
+</tr>
+<tr>
+<td><code>git commit --amend</code></td>
+<td>modifie le dernier commit (message ou contenu)</td>
+</tr>
+<tr>
+<td><code>git commit --amend -m "nouveau message"</code></td>
+<td>modifie uniquement le message du dernier commit</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <code>--amend</code> modifie l'historique, ne pas utiliser si le commit est déjà pushé.</p>
+</blockquote>
+<hr />
+<h2 id="git-rm">git rm</h2>
+<p>Supprime un fichier <strong>et</strong> stage la suppression en une seule commande.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm<span class="w"> </span>fichier.c<span class="w">        </span><span class="c1"># supprime le fichier mais git add nécessaire ensuite</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>rm<span class="w"> </span>fichier.c<span class="w">    </span><span class="c1"># supprime + stage en une commande</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git rm fichier.c</code></td>
+<td>supprime et stage la suppression</td>
+</tr>
+<tr>
+<td><code>git rm --cached fichier.c</code></td>
+<td>retire du suivi git sans supprimer le fichier local</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>git rm --cached</code> utile pour retirer un fichier accidentellement commité (ex: <code>.env</code>).</p>
+</blockquote>
+<hr />
+<h2 id="git-mv">git mv</h2>
+<p>Déplace ou renomme un fichier <strong>et</strong> stage le changement.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mv<span class="w"> </span>ancien.c<span class="w"> </span>nouveau.c<span class="w">        </span><span class="c1"># renomme mais git add nécessaire ensuite</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>mv<span class="w"> </span>ancien.c<span class="w"> </span>nouveau.c<span class="w">    </span><span class="c1"># renomme + stage en une commande</span>
+</span></code></pre></div>
+<hr />
+<h2 id="git-tag">git tag</h2>
+<p>Marque un commit précis avec un nom (version, release...).</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git tag v1.0</code></td>
+<td>crée un tag léger sur HEAD</td>
+</tr>
+<tr>
+<td><code>git tag -a v1.0 -m "version 1.0"</code></td>
+<td>crée un tag annoté avec message</td>
+</tr>
+<tr>
+<td><code>git tag</code></td>
+<td>liste tous les tags</td>
+</tr>
+<tr>
+<td><code>git push origin v1.0</code></td>
+<td>pousse un tag vers le remote</td>
+</tr>
+<tr>
+<td><code>git push origin --tags</code></td>
+<td>pousse tous les tags</td>
+</tr>
+<tr>
+<td><code>git tag -d v1.0</code></td>
+<td>supprime un tag local</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-revert">git revert</h2>
+<p>Annule un commit en créant un <strong>nouveau commit</strong> qui inverse les changements. Ne modifie pas l'historique.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>revert<span class="w"> </span>abc123<span class="w">       </span><span class="c1"># annule le commit abc123</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>revert<span class="w"> </span>HEAD<span class="w">         </span><span class="c1"># annule le dernier commit</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>revert<span class="w"> </span>HEAD~1<span class="w">       </span><span class="c1"># annule l&#39;avant-dernier commit</span>
+</span></code></pre></div>
+<p><strong>revert vs reset :</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>revert</th>
+<th>reset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Historique</td>
+<td>conservé</td>
+<td>modifié</td>
+</tr>
+<tr>
+<td>Sûr sur remote</td>
+<td>✅ oui</td>
+<td>⚠️ non</td>
+</tr>
+<tr>
+<td>Usage</td>
+<td>annuler un commit déjà pushé</td>
+<td>annuler un commit local</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-cherry-pick">git cherry-pick</h2>
+<p>Applique un commit précis sur la branche courante.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>cherry-pick<span class="w"> </span>abc123<span class="w">      </span><span class="c1"># applique le commit abc123 sur la branche courante</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>cherry-pick<span class="w"> </span>abc123<span class="w"> </span>def456<span class="w">   </span><span class="c1"># applique plusieurs commits</span>
+</span></code></pre></div>
+<p>Utile pour récupérer un fix d'une branche sans merger toute la branche.</p>
+<hr />
+<h2 id="git-blame">git blame</h2>
+<p>Affiche qui a modifié chaque ligne d'un fichier et dans quel commit.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>blame<span class="w"> </span>fichier.c
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>blame<span class="w"> </span>-L<span class="w"> </span><span class="m">10</span>,20<span class="w"> </span>fichier.c<span class="w">    </span><span class="c1"># uniquement les lignes 10 à 20</span>
+</span></code></pre></div>
+<hr />
+<h2 id="git-clean">git clean</h2>
+<p>Supprime les fichiers <strong>non suivis</strong> (untracked) du répertoire de travail.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git clean -n</code></td>
+<td>aperçu de ce qui sera supprimé (dry run)</td>
+</tr>
+<tr>
+<td><code>git clean -f</code></td>
+<td>supprime les fichiers non suivis</td>
+</tr>
+<tr>
+<td><code>git clean -fd</code></td>
+<td>supprime fichiers et dossiers non suivis</td>
+</tr>
+<tr>
+<td><code>git clean -fx</code></td>
+<td>supprime aussi les fichiers ignorés (.gitignore)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ Toujours faire <code>git clean -n</code> avant <code>git clean -f</code> pour vérifier.</p>
+</blockquote>
+<hr />
+<h2 id="git-bisect">git bisect</h2>
+<p>Trouve quel commit a introduit un bug par dichotomie.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>bisect<span class="w"> </span>start
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git<span class="w"> </span>bisect<span class="w"> </span>bad<span class="w">              </span><span class="c1"># le commit actuel est buggé</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>git<span class="w"> </span>bisect<span class="w"> </span>good<span class="w"> </span>abc123<span class="w">      </span><span class="c1"># abc123 était correct</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># git teste automatiquement les commits entre les deux</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># pour chaque commit testé :</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>git<span class="w"> </span>bisect<span class="w"> </span>good<span class="w">             </span><span class="c1"># si ce commit est ok</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>git<span class="w"> </span>bisect<span class="w"> </span>bad<span class="w">              </span><span class="c1"># si ce commit est buggé</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># git trouve le commit fautif</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>git<span class="w"> </span>bisect<span class="w"> </span>reset<span class="w">            </span><span class="c1"># fin du bisect</span>
+</span></code></pre></div>
+<hr />
+<h2 id="git-fetch">git fetch</h2>
+<p>Télécharge les commits du remote <strong>sans modifier les fichiers locaux</strong>.
+Stocké dans <code>.git/refs/remotes/</code> sous forme de branches fantômes.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git fetch origin</code></td>
+<td>télécharge depuis origin</td>
+</tr>
+<tr>
+<td><code>git fetch upstream</code></td>
+<td>télécharge depuis le repo référence</td>
+</tr>
+<tr>
+<td><code>git fetch --all</code></td>
+<td>télécharge depuis tous les remotes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-branch">git branch</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git branch</code></td>
+<td>liste les branches locales</td>
+</tr>
+<tr>
+<td><code>git branch -r</code></td>
+<td>liste les branches remote (fantômes)</td>
+</tr>
+<tr>
+<td><code>git branch -a</code></td>
+<td>liste toutes les branches (locales + remote)</td>
+</tr>
+<tr>
+<td><code>git branch ma-branche</code></td>
+<td>crée une branche sans basculer</td>
+</tr>
+<tr>
+<td><code>git branch -d ma-branche</code></td>
+<td>supprime une branche locale (si mergée)</td>
+</tr>
+<tr>
+<td><code>git branch -D ma-branche</code></td>
+<td>supprime une branche locale (force)</td>
+</tr>
+<tr>
+<td><code>git branch -m nouveau-nom</code></td>
+<td>renomme la branche courante</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-checkout-git-switch">git checkout / git switch</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git checkout main</code></td>
+<td>bascule sur une branche existante</td>
+</tr>
+<tr>
+<td><code>git checkout -b nouvelle</code></td>
+<td>crée une branche et bascule dessus</td>
+</tr>
+<tr>
+<td><code>git switch main</code></td>
+<td>bascule sur une branche (syntaxe moderne)</td>
+</tr>
+<tr>
+<td><code>git switch -c nouvelle</code></td>
+<td>crée une branche et bascule (syntaxe moderne)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-diff">git diff</h2>
+<p>Compare des états entre eux. Toujours faire <code>git fetch &lt;remote&gt;</code> avant de comparer avec un remote pour avoir une version à jour.</p>
+<blockquote>
+<p>⚠️ <code>git diff</code> ne détecte pas les <strong>nouveaux fichiers</strong> (untracked). Utiliser <code>git status</code> pour les voir.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Modifications</th>
+<th>Fichiers supprimés</th>
+<th>Nouveaux fichiers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git diff</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><code>git diff --staged</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ (si git add fait)</td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Comparer avec ton fork</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git<span class="w"> </span>diff<span class="w"> </span>origin/main
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Comparer avec le repo référence</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>git<span class="w"> </span>diff<span class="w"> </span>upstream/main
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Compare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git diff</code></td>
+<td>working directory vs staging (non stagé)</td>
+</tr>
+<tr>
+<td><code>git diff --staged</code></td>
+<td>staging vs dernier commit (stagé)</td>
+</tr>
+<tr>
+<td><code>git diff HEAD~1</code></td>
+<td>dernier commit vs avant-dernier</td>
+</tr>
+<tr>
+<td><code>git diff HEAD~2</code></td>
+<td>dernier commit vs 2 commits en arrière</td>
+</tr>
+<tr>
+<td><code>git diff abc123 def456</code></td>
+<td>entre deux commits précis</td>
+</tr>
+<tr>
+<td><code>git diff main feature/ble</code></td>
+<td>entre deux branches</td>
+</tr>
+<tr>
+<td><code>git diff origin/main</code></td>
+<td>local vs ton fork (après <code>git fetch origin</code>)</td>
+</tr>
+<tr>
+<td><code>git diff upstream/main</code></td>
+<td>local vs repo référence (après <code>git fetch upstream</code>)</td>
+</tr>
+<tr>
+<td><code>git diff --name-only</code></td>
+<td>affiche uniquement les noms de fichiers</td>
+</tr>
+<tr>
+<td><code>git diff --name-only --diff-filter=U</code></td>
+<td>fichiers en conflit uniquement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-log">git log</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git log</code></td>
+<td>historique complet</td>
+</tr>
+<tr>
+<td><code>git log --oneline</code></td>
+<td>une ligne par commit</td>
+</tr>
+<tr>
+<td><code>git log --oneline --graph</code></td>
+<td>graphe de la branche courante</td>
+</tr>
+<tr>
+<td><code>git log --oneline --graph --all</code></td>
+<td>graphe de toutes les branches</td>
+</tr>
+<tr>
+<td><code>git log --author="eleve1"</code></td>
+<td>commits d'un auteur précis</td>
+</tr>
+<tr>
+<td><code>git log fichier.c</code></td>
+<td>historique d'un fichier</td>
+</tr>
+<tr>
+<td><code>git log -n 5</code></td>
+<td>les 5 derniers commits</td>
+</tr>
+<tr>
+<td><code>git log main..feature/ble</code></td>
+<td>commits de feature absents de main</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-status">git status</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status</code></td>
+<td>état complet du repo</td>
+</tr>
+<tr>
+<td><code>git status -s</code></td>
+<td>version courte/compacte</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Légende <code>git status -s</code> :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symbole</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M</code></td>
+<td>modifié</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>ajouté (stagé)</td>
+</tr>
+<tr>
+<td><code>??</code></td>
+<td>non suivi (untracked)</td>
+</tr>
+<tr>
+<td><code>UU</code></td>
+<td>conflit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-show">git show</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git show</code></td>
+<td>détail du dernier commit</td>
+</tr>
+<tr>
+<td><code>git show abc123</code></td>
+<td>détail d'un commit précis</td>
+</tr>
+<tr>
+<td><code>git show HEAD~1</code></td>
+<td>détail de l'avant-dernier commit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="head">HEAD</h2>
+<p><code>HEAD</code> pointe vers le dernier commit de la branche courante.</p>
+<table>
+<thead>
+<tr>
+<th>Référence</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HEAD</code></td>
+<td>dernier commit</td>
+</tr>
+<tr>
+<td><code>HEAD~1</code></td>
+<td>avant-dernier commit</td>
+</tr>
+<tr>
+<td><code>HEAD~2</code></td>
+<td>2 commits en arrière</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="les-3-zones-git">Les 3 zones Git</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Fichiers modifiés        Zone de staging           Repo git
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>(working directory)         (index)                 (.git)
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    fichier.c  ──git add──► fichier.c  ──git commit──► commit
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    non stagé                 stagé                  commité
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Commande pour voir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non stagé</td>
+<td><code>git diff</code></td>
+</tr>
+<tr>
+<td>Stagé</td>
+<td><code>git diff --staged</code></td>
+</tr>
+<tr>
+<td>Commité</td>
+<td><code>git log</code> / <code>git show</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-pull">git pull</h2>
+<p>Équivalent à <code>git fetch</code> + <code>git merge</code> en une seule commande.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git pull upstream main</code></td>
+<td>récupère et fusionne le repo référence dans main local</td>
+</tr>
+<tr>
+<td><code>git pull origin main</code></td>
+<td>récupère et fusionne depuis ton fork</td>
+</tr>
+<tr>
+<td><code>git pull --rebase upstream main</code></td>
+<td>récupère et rebase au lieu de merger (historique plus propre)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-merge">git merge</h2>
+<p>Fusionne une branche dans la branche courante. Crée un <strong>commit de merge</strong>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Fusionner upstream/main dans main local</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git merge upstream/main</code></td>
+<td>fusionne upstream/main dans la branche courante</td>
+</tr>
+<tr>
+<td><code>git merge feature/ble</code></td>
+<td>fusionne une branche locale</td>
+</tr>
+<tr>
+<td><code>git merge --no-ff feature/ble</code></td>
+<td>force un commit de merge même si fast-forward possible</td>
+</tr>
+<tr>
+<td><code>git merge --abort</code></td>
+<td>annule le merge en cours (si conflit)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Résultat visuel :</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>main    : A → B → C ──────────── M   (M = commit de merge)
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>                    \           /
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>feature :            D → E → F
+</span></code></pre></div></p>
+<hr />
+<h2 id="git-rebase">git rebase</h2>
+<p>Réapplique les commits de la branche courante <strong>par dessus</strong> une autre branche. Historique linéaire, pas de commit de merge.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Rebase ma branche feature par dessus main à jour</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>feature/ble
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>git<span class="w"> </span>rebase<span class="w"> </span>upstream/main
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git rebase upstream/main</code></td>
+<td>rebase par dessus upstream/main</td>
+</tr>
+<tr>
+<td><code>git rebase --abort</code></td>
+<td>annule le rebase en cours</td>
+</tr>
+<tr>
+<td><code>git rebase --continue</code></td>
+<td>continue après résolution d'un conflit</td>
+</tr>
+<tr>
+<td><code>git rebase -i HEAD~3</code></td>
+<td>rebase interactif sur les 3 derniers commits</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Résultat visuel :</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>avant rebase :
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>main    : A → B → C → D
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>feature :     B → X → Y
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>après rebase :
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>main    : A → B → C → D
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>feature :             X&#39; → Y&#39;   (X et Y réappliqués après D)
+</span></code></pre></div></p>
+<p><strong>merge vs rebase :</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>merge</th>
+<th>rebase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Historique</td>
+<td>avec commit de merge</td>
+<td>linéaire</td>
+</tr>
+<tr>
+<td>Lisibilité</td>
+<td>moins lisible</td>
+<td>plus lisible</td>
+</tr>
+<tr>
+<td>Usage</td>
+<td>intégrer dans main</td>
+<td>mettre à jour sa branche feature</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ Ne jamais rebase une branche déjà poussée sur un remote partagé.</p>
+</blockquote>
+<hr />
+<h2 id="git-push">git push</h2>
+<p><code>origin</code> = le repo depuis lequel tu as cloné :
+- <strong>projet solo</strong> → origin = repo de départ
+- <strong>projet collaboratif avec fork</strong> → origin = ton fork</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git push origin main</code></td>
+<td>pousse main vers origin</td>
+</tr>
+<tr>
+<td><code>git push origin feature/ble</code></td>
+<td>pousse une branche vers origin</td>
+</tr>
+<tr>
+<td><code>git push -u origin feature/ble</code></td>
+<td>pousse et définit le tracking upstream</td>
+</tr>
+<tr>
+<td><code>git push --force origin feature/ble</code></td>
+<td>force le push (écrase le remote) ⚠️</td>
+</tr>
+<tr>
+<td><code>git push origin --delete feature/ble</code></td>
+<td>supprime une branche remote</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <code>--force</code> écrase l'historique remote, à utiliser avec précaution.</p>
+</blockquote>
+<hr />
+<h2 id="git-remote">git remote</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git remote -v</code></td>
+<td>liste les remotes avec leurs URL</td>
+</tr>
+<tr>
+<td><code>git remote add origin &lt;url&gt;</code></td>
+<td>ajoute un remote origin</td>
+</tr>
+<tr>
+<td><code>git remote add upstream &lt;url&gt;</code></td>
+<td>ajoute le repo référence</td>
+</tr>
+<tr>
+<td><code>git remote set-url origin &lt;url&gt;</code></td>
+<td>change l'URL d'un remote</td>
+</tr>
+<tr>
+<td><code>git remote remove upstream</code></td>
+<td>supprime un remote</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-stash">git stash</h2>
+<p>Met de côté les modifications en cours sans commiter. Utile pour changer de branche rapidement.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git stash</code></td>
+<td>met les modifs de côté</td>
+</tr>
+<tr>
+<td><code>git stash pop</code></td>
+<td>récupère les modifs mises de côté</td>
+</tr>
+<tr>
+<td><code>git stash list</code></td>
+<td>liste les stashs</td>
+</tr>
+<tr>
+<td><code>git stash drop</code></td>
+<td>supprime le dernier stash</td>
+</tr>
+<tr>
+<td><code>git stash apply stash@{1}</code></td>
+<td>applique un stash précis sans le supprimer</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Exemple : changer de branche sans perdre son travail</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>stash
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>main
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>git<span class="w"> </span>checkout<span class="w"> </span>feature/ble
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>git<span class="w"> </span>stash<span class="w"> </span>pop
+</span></code></pre></div>
+<hr />
+<h2 id="git-reset">git reset</h2>
+<p>Annule des commits ou déstagge des fichiers.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git reset HEAD fichier.c</code></td>
+<td>déstagge un fichier (annule git add)</td>
+</tr>
+<tr>
+<td><code>git reset --soft HEAD~1</code></td>
+<td>annule le dernier commit, garde les modifs stagées</td>
+</tr>
+<tr>
+<td><code>git reset --mixed HEAD~1</code></td>
+<td>annule le dernier commit, garde les modifs non stagées</td>
+</tr>
+<tr>
+<td><code>git reset --hard HEAD~1</code></td>
+<td>annule le dernier commit, <strong>supprime les modifs</strong> ⚠️</td>
+</tr>
+<tr>
+<td><code>git reset --hard origin/main</code></td>
+<td>remet à l'état du remote ⚠️</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <code>--hard</code> supprime définitivement les modifications locales.</p>
+</blockquote>
+<hr />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 1. Identifier les fichiers en conflit</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>git<span class="w"> </span>status
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>git<span class="w"> </span>diff<span class="w"> </span>--name-only<span class="w"> </span>--diff-filter<span class="o">=</span>U
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># 2. Dans le fichier, git insère :</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt;<span class="w"> </span>HEAD
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>ton<span class="w"> </span>code<span class="w"> </span><span class="nb">local</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="o">=======</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>code<span class="w"> </span>du<span class="w"> </span>remote
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span>upstream/main
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1"># 3. Éditer le fichier → supprimer les marqueurs → garder le bon code</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1"># 4. Marquer comme résolu</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>git<span class="w"> </span>add<span class="w"> </span>fichier_resolu.c
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;resolve merge conflict&quot;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+    
+  </body>
+</html>
