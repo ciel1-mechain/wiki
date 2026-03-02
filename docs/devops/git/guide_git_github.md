@@ -88,11 +88,11 @@ Un **dépôt** (ou *repo*) est un dossier suivi par Git. Il contient votre code 
 C'est le concept le plus important à comprendre :
 
 ```
-┌──────────────────┐   git add    ┌──────────────────┐   git commit   ┌──────────────────┐
-│  Répertoire de   │ ──────────►  │      Index       │ ─────────────► │   Dépôt local    │
-│   travail        │              │   (Staging)      │                │   (Historique)   │
-│  (vos fichiers)  │              │                  │                │                  │
-└──────────────────┘              └──────────────────┘                └──────────────────┘
+┌──────────────────┐   git add    ┌───────────────┐   git commit  ┌────────────────┐
+│  Répertoire de   │ ──────────►  │      Index    │ ────────────► │  Dépôt local   │
+│   travail        │              │   (Staging)   │               │  (Historique)  │
+│  (vos fichiers)  │              │               │               │                │
+└──────────────────┘              └───────────────┘               └────────────────┘
 ```
 
 | Zone | Rôle |
@@ -115,16 +115,17 @@ Un **commit** est une **photo** de votre projet à un instant T. Chaque commit p
 ```bash
 git init
 ```
-Un dossier caché `.git` est créé : c'est là que Git stocke tout l'historique. Ne le supprimez jamais !
+Un dossier caché `.git` est créé : c'est là que Git stocke tout l'historique.  
+Ne le supprimez jamais !
 
 ### Vérifier l'état du dépôt
 ```bash
 git status
 ```
-Cette commande est votre meilleure amie ! Elle indique :
-- Les fichiers modifiés non encore ajoutés (en rouge)
-- Les fichiers prêts à être commités (en vert)
-- Les fichiers non suivis par Git
+Cette commande est votre meilleure amie ! Elle indique :  
+- Les fichiers modifiés non encore ajoutés (en rouge)  
+- Les fichiers prêts à être commités (en vert)  
+- Les fichiers non suivis par Git  
 
 ### Ajouter des fichiers à l'index
 ```bash
@@ -142,7 +143,7 @@ git commit -m "Message décrivant les changements"
 
 > 💡 **Bonne pratique** : Un message de commit doit être court et descriptif.  
 > ✅ `"Ajout de la fonction calcul_moyenne"`  
-> ❌ `"modif"` ou `"aaaa"` ou `"je sais pas"`
+> ❌ `"modif"` 
 
 ### Voir l'historique
 ```bash
@@ -191,11 +192,19 @@ git log --oneline
 ### Schéma global
 
 ```
-GitHub (distant)
-      │  ▲
- pull │  │ push
-      ▼  │
-Dépôt local  ──git commit──►  Index  ──git add──►  Répertoire de travail
+GitHubDépôt GitHub (distant)
+        │  ▲
+ pull   │  │  push
+        ▼  │
+Dépôt local (git commit)
+        │  ▲
+git add │  │  git restore
+        ▼  │
+     Index (Staging)
+        │  ▲
+édition │  │  git restore
+        ▼  │
+  Répertoire de travail
 ```
 
 ### Cloner un dépôt existant
@@ -502,6 +511,6 @@ git push --force
 ---
 
 > 📚 **Pour aller plus loin :**
-> - Documentation officielle : https://git-scm.com/doc
-> - Visualiser Git interactivement : https://learngitbranching.js.org
-> - GitHub Skills (tutoriels guidés) : https://skills.github.com
+> - Documentation officielle : https://git-scm.com/doc  
+> - Visualiser Git interactivement : https://learngitbranching.js.org  
+> - GitHub Skills (tutoriels guidés) : https://skills.github.com  
