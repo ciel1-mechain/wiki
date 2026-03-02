@@ -842,11 +842,11 @@
 <p>Un <strong>dépôt</strong> (ou <em>repo</em>) est un dossier suivi par Git. Il contient votre code + tout l'historique des modifications, stocké dans un dossier caché <code>.git</code> créé automatiquement.</p>
 <h3 id="les-3-zones-de-git">Les 3 zones de Git</h3>
 <p>C'est le concept le plus important à comprendre :</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>┌──────────────────┐   git add    ┌──────────────────┐   git commit   ┌──────────────────┐
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>│  Répertoire de   │ ──────────►  │      Index       │ ─────────────► │   Dépôt local    │
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>│   travail        │              │   (Staging)      │                │   (Historique)   │
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│  (vos fichiers)  │              │                  │                │                  │
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>└──────────────────┘              └──────────────────┘                └──────────────────┘
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>┌──────────────────┐   git add    ┌───────────────┐   git commit  ┌────────────────┐
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>│  Répertoire de   │ ──────────►  │      Index    │ ────────────► │  Dépôt local   │
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>│   travail        │              │   (Staging)   │               │  (Historique)  │
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│  (vos fichiers)  │              │               │               │                │
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>└──────────────────┘              └───────────────┘               └────────────────┘
 </span></code></pre></div>
 <table>
 <thead>
@@ -880,14 +880,15 @@
 <h3 id="initialiser-un-depot">Initialiser un dépôt</h3>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>init
 </span></code></pre></div>
-Un dossier caché <code>.git</code> est créé : c'est là que Git stocke tout l'historique. Ne le supprimez jamais !</p>
+Un dossier caché <code>.git</code> est créé : c'est là que Git stocke tout l'historique.<br />
+Ne le supprimez jamais !</p>
 <h3 id="verifier-letat-du-depot">Vérifier l'état du dépôt</h3>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>status
 </span></code></pre></div>
-Cette commande est votre meilleure amie ! Elle indique :
-- Les fichiers modifiés non encore ajoutés (en rouge)
-- Les fichiers prêts à être commités (en vert)
-- Les fichiers non suivis par Git</p>
+Cette commande est votre meilleure amie ! Elle indique :<br />
+- Les fichiers modifiés non encore ajoutés (en rouge)<br />
+- Les fichiers prêts à être commités (en vert)<br />
+- Les fichiers non suivis par Git  </p>
 <h3 id="ajouter-des-fichiers-a-lindex">Ajouter des fichiers à l'index</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Ajouter un fichier spécifique</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>add<span class="w"> </span>mon_fichier.c
@@ -901,7 +902,7 @@ Cette commande est votre meilleure amie ! Elle indique :
 <blockquote>
 <p>💡 <strong>Bonne pratique</strong> : Un message de commit doit être court et descriptif.<br />
 ✅ <code>"Ajout de la fonction calcul_moyenne"</code><br />
-❌ <code>"modif"</code> ou <code>"aaaa"</code> ou <code>"je sais pas"</code></p>
+❌ <code>"modif"</code> </p>
 </blockquote>
 <h3 id="voir-lhistorique">Voir l'historique</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Historique complet (auteur, date, message)</span>
@@ -938,11 +939,19 @@ Cette commande est votre meilleure amie ! Elle indique :
 <hr />
 <h2 id="5-github-travailler-en-ligne">5. GitHub : travailler en ligne</h2>
 <h3 id="schema-global">Schéma global</h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>GitHub (distant)
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>      │  ▲
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a> pull │  │ push
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>      ▼  │
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Dépôt local  ──git commit──►  Index  ──git add──►  Répertoire de travail
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>GitHubDépôt GitHub (distant)
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>        │  ▲
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a> pull   │  │  push
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>        ▼  │
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Dépôt local (git commit)
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        │  ▲
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>git add │  │  git restore
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        ▼  │
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>     Index (Staging)
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        │  ▲
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>édition │  │  git restore
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        ▼  │
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>  Répertoire de travail
 </span></code></pre></div>
 <h3 id="cloner-un-depot-existant">Cloner un dépôt existant</h3>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/utilisateur/nom-du-repo.git
@@ -1255,9 +1264,9 @@ Cela télécharge tout le contenu et l'historique dans un nouveau dossier local.
 <hr />
 <blockquote>
 <p>📚 <strong>Pour aller plus loin :</strong>
-- Documentation officielle : https://git-scm.com/doc
-- Visualiser Git interactivement : https://learngitbranching.js.org
-- GitHub Skills (tutoriels guidés) : https://skills.github.com</p>
+- Documentation officielle : https://git-scm.com/doc<br />
+- Visualiser Git interactivement : https://learngitbranching.js.org<br />
+- GitHub Skills (tutoriels guidés) : https://skills.github.com  </p>
 </blockquote>
 
 
