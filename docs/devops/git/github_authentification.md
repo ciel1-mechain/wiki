@@ -30,9 +30,10 @@ Il faut obligatoirement utiliser l'une de ces deux méthodes :
 3. Cliquer sur **Personal access tokens → Tokens (classic)**
 4. Cliquer **"Generate new token (classic)"**
 5. Remplir :
-   - **Note** : un nom pour identifier le token (ex: `laptop-iut`)
-   - **Expiration** : choisir une durée (90 jours recommandé)
-   - **Scopes** : cocher au minimum **`repo`** (accès complet aux dépôts)
+
+    - **Note** : un nom pour identifier le token (ex: `laptop-iut`)
+    - **Expiration** : choisir une durée (90 jours recommandé)
+    - **Scopes** : cocher au minimum **`repo`** (accès complet aux dépôts)
 6. Cliquer **"Generate token"**
 
 > ⚠️ **Copiez le token immédiatement** : il ne sera plus affiché après avoir quitté la page.
@@ -82,7 +83,8 @@ git remote set-url origin https://github.com/pseudo/repo.git
 
 ## 3. SSH : la méthode recommandée
 
-SSH utilise une **paire de clés cryptographiques** :
+SSH utilise une **paire de clés cryptographiques** :  
+
 - une **clé privée** → reste sur votre machine, ne se partage jamais
 - une **clé publique** → déposée sur GitHub
 
