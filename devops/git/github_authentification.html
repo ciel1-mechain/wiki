@@ -943,11 +943,15 @@
 <li>Descendre jusqu'à <strong>Developer settings</strong> (tout en bas du menu)</li>
 <li>Cliquer sur <strong>Personal access tokens → Tokens (classic)</strong></li>
 <li>Cliquer <strong>"Generate new token (classic)"</strong></li>
-<li>Remplir :</li>
+<li>
+<p>Remplir :</p>
+<ul>
 <li><strong>Note</strong> : un nom pour identifier le token (ex: <code>laptop-iut</code>)</li>
 <li><strong>Expiration</strong> : choisir une durée (90 jours recommandé)</li>
 <li><strong>Scopes</strong> : cocher au minimum <strong><code>repo</code></strong> (accès complet aux dépôts)</li>
 <li>Cliquer <strong>"Generate token"</strong></li>
+</ul>
+</li>
 </ol>
 <blockquote>
 <p>⚠️ <strong>Copiez le token immédiatement</strong> : il ne sera plus affiché après avoir quitté la page.</p>
@@ -987,9 +991,11 @@
 </span></code></pre></div>
 <hr />
 <h2 id="3-ssh-la-methode-recommandee">3. SSH : la méthode recommandée</h2>
-<p>SSH utilise une <strong>paire de clés cryptographiques</strong> :
-- une <strong>clé privée</strong> → reste sur votre machine, ne se partage jamais
-- une <strong>clé publique</strong> → déposée sur GitHub</p>
+<p>SSH utilise une <strong>paire de clés cryptographiques</strong> :  </p>
+<ul>
+<li>une <strong>clé privée</strong> → reste sur votre machine, ne se partage jamais</li>
+<li>une <strong>clé publique</strong> → déposée sur GitHub</li>
+</ul>
 <p>Quand vous faites un <code>push</code>, GitHub vérifie que votre clé privée correspond à la clé publique enregistrée. Pas besoin de token ni de mot de passe.</p>
 <h3 id="31-generer-une-paire-de-cles-ssh">3.1 Générer une paire de clés SSH</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;votre@email.com&quot;</span>
