@@ -1,43 +1,22 @@
 # Git et GitHub
 
-## Table des matières
-
-### Partie 1 — Les bases
-1. [Introduction](#1-introduction)
-2. [Installation et configuration](#2-installation-et-configuration)
-3. [Concepts fondamentaux](#3-concepts-fondamentaux)
-4. [Travailler en local](#4-travailler-en-local)
-5. [GitHub : travailler en ligne](#5-github--travailler-en-ligne)
-6. [Les branches (bases)](#6-les-branches-bases)
-
-### Partie 2 — Aller plus loin
-7. [Branches avancées : rebase](#7-branches-avancées--rebase)
-8. [Travailler en équipe](#8-travailler-en-équipe)
-9. [Commandes utiles avancées](#9-commandes-utiles-avancées)
-10. [Résumé des commandes](#10-résumé-des-commandes)
-11. [Erreurs courantes](#11-erreurs-courantes)
-
----
-
-# PARTIE 1 — LES BASES
-
----
-
 ## 1. Introduction
 
 ### Qu'est-ce que Git ?
 
 Git est un **logiciel de gestion de versions distribué**. Il permet de :
 
-- Sauvegarder l'historique complet de votre code  
-- Revenir à une version précédente en cas d'erreur  
-- Travailler à plusieurs sur un même projet sans se marcher dessus  
+- Sauvegarder l'historique complet de votre code
+- Revenir à une version précédente en cas d'erreur
+- Travailler à plusieurs sur un même projet sans se marcher dessus
+
   
 > 💡 **Analogie** : Git c'est comme un "Ctrl+Z" surpuissant qui garde en mémoire *toutes* les modifications depuis le début du projet, avec la possibilité de revenir à n'importe quel point.
 
 ### Qu'est-ce que GitHub ?
 
 GitHub est une **plateforme en ligne** qui héberge des dépôts Git. C'est le réseau social des développeurs. Il permet de :
+
 - Stocker son code en ligne (sauvegarde distante)
 - Collaborer avec d'autres développeurs
 - Partager ses projets et faire de la revue de code
@@ -104,6 +83,7 @@ C'est le concept le plus important à comprendre :
 
 ### Le commit
 Un **commit** est une **photo** de votre projet à un instant T. Chaque commit possède :
+
 - Un identifiant unique (hash SHA-1, ex: `a3f5c2d`)
 - Un message décrivant les changements
 - La date et l'auteur
@@ -123,10 +103,11 @@ Ne le supprimez jamais !
 ```bash
 git status
 ```
-Cette commande est votre meilleure amie ! Elle indique :  
-- Les fichiers modifiés non encore ajoutés (en rouge)  
-- Les fichiers prêts à être commités (en vert)  
-- Les fichiers non suivis par Git  
+Cette commande est votre meilleure amie ! Elle indique :
+
+- Les fichiers modifiés non encore ajoutés (en rouge)
+- Les fichiers prêts à être commités (en vert)
+- Les fichiers non suivis par Git
 
 ### Ajouter des fichiers à l'index
 ```bash
@@ -298,12 +279,6 @@ Pour résoudre : éditez le fichier manuellement, choisissez la bonne version, s
 git add fichier_conflit.c
 git commit -m "Résolution du conflit"
 ```
-
----
-
-# PARTIE 2 — ALLER PLUS LOIN
-
----
 
 ## 7. Branches avancées : rebase
 
