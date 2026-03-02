@@ -1,4 +1,4 @@
-# Cours complet : Git et GitHub
+# Git et GitHub
 
 ## Table des matières
 
@@ -28,10 +28,11 @@
 ### Qu'est-ce que Git ?
 
 Git est un **logiciel de gestion de versions distribué**. Il permet de :
-- Sauvegarder l'historique complet de votre code
-- Revenir à une version précédente en cas d'erreur
-- Travailler à plusieurs sur un même projet sans se marcher dessus
 
+- Sauvegarder l'historique complet de votre code  
+- Revenir à une version précédente en cas d'erreur  
+- Travailler à plusieurs sur un même projet sans se marcher dessus  
+  
 > 💡 **Analogie** : Git c'est comme un "Ctrl+Z" surpuissant qui garde en mémoire *toutes* les modifications depuis le début du projet, avec la possibilité de revenir à n'importe quel point.
 
 ### Qu'est-ce que GitHub ?
