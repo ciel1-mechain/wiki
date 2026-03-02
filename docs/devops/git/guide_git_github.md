@@ -15,7 +15,7 @@ Git est un **logiciel de gestion de versions distribué**. Il permet de :
 
 ### Qu'est-ce que GitHub ?
 
-GitHub est une **plateforme en ligne** qui héberge des dépôts Git. C'est le réseau social des développeurs. Il permet de :
+GitHub est une **plateforme en ligne** qui héberge des dépôts Git. Il permet de :
 
 - Stocker son code en ligne (sauvegarde distante)
 - Collaborer avec d'autres développeurs
@@ -231,13 +231,11 @@ git remote -v
 
 Travailler sur un même dépôt GitHub depuis le lycée **et** votre ordinateur personnel, sans jamais perdre de modifications.
 
----
 
 ### Rappel important
 
 Votre dépôt GitHub est le **point central**. Chaque poste de travail possède une copie locale du dépôt.
 
----
 
 ### Routine à suivre sur chaque poste de travail
 
@@ -249,7 +247,6 @@ Pour récupérer la version la plus récente du dépôt :
 git pull
 ```
 
----
 
 #### 2. Après avoir travaillé (ajouts, modifications…)
 
@@ -260,7 +257,6 @@ git add --all
 git commit -m "Votre message de commit"
 ```
 
----
 
 #### 3. À la fin de la session de travail
 
@@ -270,7 +266,6 @@ Envoyez vos modifications vers GitHub :
 git push
 ```
 
----
 
 #### 4. Quand vous changez de poste
 
@@ -288,7 +283,6 @@ git push
    git push
    ```
 
----
 
 ### Conseils pratiques
 
@@ -297,7 +291,6 @@ git push
 - Ne supprimez **jamais** le dossier `.git` dans le dépôt !
 - Faites régulièrement une sauvegarde de l'ensemble de votre dépôt sur un autre support (clé USB).
 
----
 
 ### Interface graphique
 
