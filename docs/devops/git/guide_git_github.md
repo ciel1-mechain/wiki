@@ -225,9 +225,90 @@ git remote -v
 
 > 💡 **pull = fetch + merge** : `git pull` récupère ET fusionne automatiquement. `git fetch` récupère seulement, vous fusionnez quand vous voulez.
 
+## 6. Utiliser GitHub sur deux postes de travail (ou plus)
+
+### Objectif
+
+Travailler sur un même dépôt GitHub depuis le lycée **et** votre ordinateur personnel, sans jamais perdre de modifications.
+
 ---
 
-## 6. Les branches (bases)
+### Rappel important
+
+Votre dépôt GitHub est le **point central**. Chaque poste de travail possède une copie locale du dépôt.
+
+---
+
+### Routine à suivre sur chaque poste de travail
+
+#### 1. Avant de commencer à travailler
+
+Pour récupérer la version la plus récente du dépôt :
+
+```bash
+git pull
+```
+
+---
+
+#### 2. Après avoir travaillé (ajouts, modifications…)
+
+Enregistrez vos modifications localement :
+
+```bash
+git add --all
+git commit -m "Votre message de commit"
+```
+
+---
+
+#### 3. À la fin de la session de travail
+
+Envoyez vos modifications vers GitHub :
+
+```bash
+git push
+```
+
+---
+
+#### 4. Quand vous changez de poste
+
+1. Sur le nouveau poste, commencez toujours par :
+   
+   ```bash
+   git pull
+   ```
+
+2. Travaillez normalement (modifiez, ajoutez, supprimez, commit…).
+
+3. Terminez par :
+   
+   ```bash
+   git push
+   ```
+
+---
+
+### Conseils pratiques
+
+- En cas de message d’erreur ou de conflit, lisez attentivement l’explication ou demandez de l’aide.
+- Faites des *commits* réguliers avec des messages explicites.
+- Ne supprimez **jamais** le dossier `.git` dans le dépôt !
+- Faites régulièrement une sauvegarde de l'ensemble de votre dépôt sur un autre support (clé USB).
+
+---
+
+### Interface graphique
+
+Pour plus de facilité, vous pourrez ensuite utiliser une interface graphique
+
+- GUI **Git/GitHub**
+  - pour *Windows* : [Github Desktop](https://github.com/apps/desktop)
+  - pour *Linux* : [GitHub Desktop - The Linux Fork](https://github.com/shiftkey/desktop)
+---
+
+## 7. Les branches (bases)
 
 ### Concept
 Une **branche** est une ligne de développement indépendante. Elles permettent de :
@@ -280,7 +361,7 @@ git add fichier_conflit.c
 git commit -m "Résolution du conflit"
 ```
 
-## 7. Branches avancées : rebase
+## 8. Branches avancées : rebase
 
 ### Merge vs Rebase
 
@@ -321,7 +402,7 @@ git rebase --abort
 
 ---
 
-## 8. Travailler en équipe
+## 9. Travailler en équipe
 
 ### Fork et Pull Request (sur GitHub)
 
@@ -367,7 +448,7 @@ git branch --set-upstream-to=origin/main main
 
 ---
 
-## 9. Commandes utiles avancées
+## 10. Commandes utiles avancées
 
 ### git stash : mettre de côté des modifications
 
@@ -412,7 +493,7 @@ git log --oneline mon_fichier.c
 
 ---
 
-## 10. Résumé des commandes
+## 11. Résumé des commandes
 
 ### Commandes de base
 
@@ -448,7 +529,7 @@ git log --oneline mon_fichier.c
 
 ---
 
-## 11. Erreurs courantes
+## 12. Erreurs courantes
 
 ### "fatal: not a git repository"
 Vous n'êtes pas dans un dossier suivi par Git.
