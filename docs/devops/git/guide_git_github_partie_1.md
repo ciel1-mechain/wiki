@@ -77,9 +77,24 @@ C'est le concept le plus important à comprendre :
 
 | Zone | Rôle |
 |------|------|
-| **Répertoire de travail** | Vos fichiers tels que vous les éditez |
-| **Index (Staging Area)** | Zone de préparation : fichiers sélectionnés pour la prochaine sauvegarde |
+| **Répertoire de travail** | Vos fichiers texte/binaires tels que vous les éditez |
+| **Index (Staging Area)** | Zone de préparation : fichiers sélectionnés pour la prochaine sauvegarde. Snapshot intermédiaire, les blobs sont déjà dans `objects/` mais pas encore liés à un commit|
 | **Dépôt local** | L'historique complet des sauvegardes (*commits*) |
+
+> `.git/` → base d'objets compressés zlib + refs
+
+---
+
+**"dépôt" / "repo"** — le terme dépend du contexte :
+- au sens strict = juste `.git/` (les objets, l'historique)
+- au sens large = `.git/` + working dir ensemble
+- un **bare repo** (`git clone --bare`) = `.git/` seul, sans working dir — c'est ce qu'utilisent les serveurs
+
+---
+
+**GitHub** stocke uniquement l'équivalent d'un **bare repo** — les objets compressés zlib, les refs, les pack files. Pas de working dir décompressé sur disque.
+
+Quand tu navigues sur github.com et vois les fichiers, GitHub les **décompresse à la volée** depuis les objets blob pour les afficher dans le navigateur. C'est du rendu dynamique, pas des fichiers stockés en clair quelque part.
 
 ### Le commit
 Un **commit** est une **photo** de votre projet à un instant T. Chaque commit possède :

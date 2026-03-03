@@ -13,6 +13,13 @@ ex: "blob 13\0Hello, World!"
 Le **hash SHA-1** est calculé sur ce contenu brut (avant compression) → garantit l'intégrité.  
 Un hash complet = **40 caractères hexadécimaux**. Git accepte les préfixes courts (7+ chars) tant qu'ils sont non-ambigus.
 
+**Vérifier manuellement :**
+``` bash
+echo -e "blob 6\0Hello, World!" | sha1sum
+# → doit correspondre au hash Git du fichier contenant "Hello, World!"
+```
+`git cat-file` existe pour cela. C'est le moyen propre de lire ces objets sans décompresser manuellement avec zlib.
+
 ```bash
 git rev-parse a3f7c91        # → hash complet 40 chars
 cat .git/objects/a3/f7c91…   # → binaire illisible (zlib)
@@ -235,6 +242,26 @@ git show <commit-avant-suppression>:fichier_supprime.txt
 ```
 
 ---
+
+## 12. Bare repo
+
+Utilisé par les serveurs (GitHub, GitLab, SSH) — pas besoin d'éditer les fichiers, juste recevoir/servir des objets.
+
+```
+repo normal :          bare repo :
+mon-projet/            mon-projet.git/
+├── .git/              ├── objects/
+├── fichier.txt        ├── refs/
+└── src/               └── HEAD
+```
+
+```bash
+git init --bare repo.git
+git clone --bare .
+```
+
+Github stocke des **bare repos** (objets zlib compressés).  
+Les fichiers affichés dans le navigateur sont **décompressés à la volée** — pas stockés en clair sur disque.
 
 ## Résumé visuel
 
