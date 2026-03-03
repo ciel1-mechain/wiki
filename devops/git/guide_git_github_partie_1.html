@@ -1196,11 +1196,11 @@
 <tbody>
 <tr>
 <td><strong>Répertoire de travail</strong></td>
-<td>Vos fichiers tels que vous les éditez</td>
+<td>Vos fichiers texte/binaires tels que vous les éditez</td>
 </tr>
 <tr>
 <td><strong>Index (Staging Area)</strong></td>
-<td>Zone de préparation : fichiers sélectionnés pour la prochaine sauvegarde</td>
+<td>Zone de préparation : fichiers sélectionnés pour la prochaine sauvegarde. Snapshot intermédiaire, les blobs sont déjà dans <code>objects/</code> mais pas encore liés à un commit</td>
 </tr>
 <tr>
 <td><strong>Dépôt local</strong></td>
@@ -1208,6 +1208,17 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><code>.git/</code> → base d'objets compressés zlib + refs</p>
+</blockquote>
+<hr />
+<p><strong>"dépôt" / "repo"</strong> — le terme dépend du contexte :
+- au sens strict = juste <code>.git/</code> (les objets, l'historique)
+- au sens large = <code>.git/</code> + working dir ensemble
+- un <strong>bare repo</strong> (<code>git clone --bare</code>) = <code>.git/</code> seul, sans working dir — c'est ce qu'utilisent les serveurs</p>
+<hr />
+<p><strong>GitHub</strong> stocke uniquement l'équivalent d'un <strong>bare repo</strong> — les objets compressés zlib, les refs, les pack files. Pas de working dir décompressé sur disque.</p>
+<p>Quand tu navigues sur github.com et vois les fichiers, GitHub les <strong>décompresse à la volée</strong> depuis les objets blob pour les afficher dans le navigateur. C'est du rendu dynamique, pas des fichiers stockés en clair quelque part.</p>
 <h3 id="le-commit">Le commit</h3>
 <p>Un <strong>commit</strong> est une <strong>photo</strong> de votre projet à un instant T. Chaque commit possède :</p>
 <ul>
