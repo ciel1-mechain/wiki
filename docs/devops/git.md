@@ -8,4 +8,5 @@ hide:
 - [Guide Git & GitHub partie 2](git/guide_git_github_partie_2.md)
 - [Les principales commandes git](git/git-commandes-reference.md)
 - [Authentification sur github](git/github_authentification.md)
+- [git interne : comprendre .git](git/git-internals.md)
 
