@@ -171,30 +171,6 @@ git log --oneline
 
 ## 5. GitHub : travailler en ligne
 
-### Schéma global
-
-```
-GitHubDépôt GitHub (distant)
-        │  ▲
- pull   │  │  push
-        ▼  │
-Dépôt local (git commit)
-        │  ▲
-git add │  │  git restore
-        ▼  │
-     Index (Staging)
-        │  ▲
-édition │  │  git restore
-        ▼  │
-  Répertoire de travail
-```
-
-### Cloner un dépôt existant
-```bash
-git clone https://github.com/utilisateur/nom-du-repo.git
-```
-Cela télécharge tout le contenu et l'historique dans un nouveau dossier local.
-
 ### Lier un dépôt local à GitHub
 
 ```bash
@@ -206,6 +182,12 @@ git remote add origin https://github.com/votre-pseudo/votre-repo.git
 # 3. Envoyer votre code sur GitHub pour la première fois
 git push -u origin main
 ```
+
+Cloner un dépôt existant
+```bash
+git clone https://github.com/utilisateur/nom-du-repo.git
+```
+Cela télécharge tout le contenu et l'historique dans un nouveau dossier local.
 
 ### Les commandes distantes au quotidien
 
