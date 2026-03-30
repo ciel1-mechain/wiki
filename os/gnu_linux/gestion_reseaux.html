@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -994,7 +994,15 @@
 <h2 id="1-identifier-loutil-actif">1. Identifier l'outil actif</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>NetworkManager<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ nmcli&quot;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-networkd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ networkctl&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-resolved<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ networkctl&quot;</span>
 </span></code></pre></div>
+<p><strong>Remarque</strong> :</p>
+<ul>
+<li>systemd-resolved met à jour sa configuration interne et gère /etc/resolv.conf (qui est souvent un lien symbolique vers /run/systemd/resolve/stub-resolv.conf).</li>
+<li>sur fedora, NetworkManager et systemd-resolved sont utilisés.</li>
+<li>resolvectl est un outil pour interagir avec systemd-resolved, indépendamment de NetworkManager.</li>
+<li>NetworkManager collabore avec systemd-resolved (via D-Bus). Quand NetworkManager configure une connexion, il informe systemd-resolved des serveurs DNS à utiliser. systemd-resolved devient alors le point central pour la résolution DNS, même si NetworkManager a initié la connexion.</li>
+</ul>
 <p>Avec Netplan :
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/etc/netplan/<span class="w">          </span><span class="c1"># existe ? → Netplan actif</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>get<span class="w">             </span><span class="c1"># affiche la config active</span>
