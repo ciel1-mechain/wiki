@@ -7,7 +7,16 @@
 ```bash
 systemctl is-active NetworkManager && echo "→ nmcli"
 systemctl is-active systemd-networkd && echo "→ networkctl"
+systemctl is-active systemd-resolved && echo "→ networkctl"
+
 ```
+
+**Remarque** :
+
+- systemd-resolved met à jour sa configuration interne et gère /etc/resolv.conf (qui est souvent un lien symbolique vers /run/systemd/resolve/stub-resolv.conf).
+- sur fedora, NetworkManager et systemd-resolved sont utilisés.
+- resolvectl est un outil pour interagir avec systemd-resolved, indépendamment de NetworkManager.
+- NetworkManager collabore avec systemd-resolved (via D-Bus). Quand NetworkManager configure une connexion, il informe systemd-resolved des serveurs DNS à utiliser. systemd-resolved devient alors le point central pour la résolution DNS, même si NetworkManager a initié la connexion.
 
 Avec Netplan :
 ```bash
