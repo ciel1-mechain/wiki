@@ -9,4 +9,4 @@ hide:
 - [Les principales commandes git](git/git-commandes-reference.md)
 - [Authentification sur github](git/github_authentification.md)
 - [git interne : comprendre .git](git/git-internals.md)
-
+- [commandes indispensables](git/commandes-indispensables.md)
