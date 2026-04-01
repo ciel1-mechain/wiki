@@ -2,8 +2,8 @@
 
 |                                                  |                                                                                                                                                                |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `git status` ou `git status ---short`            | afficher état du dépôt                                                                                                                                         |
-| `git status --porcelain  \| grep '^??'`          | `??` : untacked, `M` : modifié et non indexé, `A` : index, `D` : supprimé                                                                                      |
+| `git status` ou `git status --short`            | afficher état du dépôt                                                                                                                                         |
+| `git status --porcelain | grep '^??'`            | `??` : untacked, `M` : modifié et non indexé, `A` : index, `D` : supprimé                                                                                      |
 | `git rm --cached`                                | désindexer et marquer comme untrack                                                                                                                            |
 | `git  checkout -- <fichier>`                     | annuler les modifications dans le working directory                                                                                                            |
 | `git  reset HEAD` ou `git  reset HEAD <fichier>` | retirer de l'index (staging area) après git add; modifications conservés dans répertoire de travail (suivi conservé)                                           |
