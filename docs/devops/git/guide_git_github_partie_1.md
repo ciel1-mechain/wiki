@@ -55,7 +55,10 @@ Vérifier la configuration :
 ```bash
 git config --list
 ```
-
+Avec affichage du fichier source de chaque paramètre
+```bash
+git config --list --show-origin
+```
 ---
 
 ## 3. Concepts fondamentaux
@@ -68,24 +71,25 @@ Un **dépôt** (ou *repo*) est un dossier suivi par Git. Il contient votre code 
 C'est le concept le plus important à comprendre :
 
 ```
-┌──────────────────┐   git add    ┌───────────────┐   git commit  ┌────────────────┐
-│  Répertoire de   │ ──────────►  │      Index    │ ────────────► │  Dépôt local   │
-│   travail        │              │   (Staging)   │               │  (Historique)  │
-│  (vos fichiers)  │              │               │               │                │
-└──────────────────┘              └───────────────┘               └────────────────┘
+┌──────────────────┐   git add    ┌───────────────┐  git commit ┌────────────────┐
+│  Répertoire de   │ ──────────►  │      Index    │ ──────────► │  Dépôt local   │
+│   travail        │              │   (Staging)   │             │  (Historique)  │
+│  (vos fichiers)  │              │               │             │                │
+└──────────────────┘              └───────────────┘             └────────────────┘
 ```
 
 | Zone | Rôle |
 |------|------|
 | **Répertoire de travail** | Vos fichiers texte/binaires tels que vous les éditez |
-| **Index (Staging Area)** | Zone de préparation : fichiers sélectionnés pour la prochaine sauvegarde. Snapshot intermédiaire, les blobs sont déjà dans `objects/` mais pas encore liés à un commit|
-| **Dépôt local** | L'historique complet des sauvegardes (*commits*) |
+| **Index (Staging Area)** | Zone de préparation : fichiers sélectionnés pour la prochaine sauvegarde. SLes blobs sont déjà dans `objects/` mais pas encore liés à un commit|
+| **Dépôt local** | Snapshot de l'espace de travail, historique complet des sauvegardes (*commits*) |
 
 > `.git/` → base d'objets compressés zlib + refs
 
 ---
 
 **"dépôt" / "repo"** — le terme dépend du contexte :
+
 - au sens strict = juste `.git/` (les objets, l'historique)
 - au sens large = `.git/` + working dir ensemble
 - un **bare repo** (`git clone --bare`) = `.git/` seul, sans working dir — c'est ce qu'utilisent les serveurs
