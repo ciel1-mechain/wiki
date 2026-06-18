@@ -98,7 +98,7 @@ C'est le concept le plus important à comprendre :
 
 **GitHub** stocke uniquement l'équivalent d'un **bare repo** — les objets compressés zlib, les refs, les pack files. Pas de working dir décompressé sur disque.
 
-Quand tu navigues sur github.com et vois les fichiers, GitHub les **décompresse à la volée** depuis les objets blob pour les afficher dans le navigateur. C'est du rendu dynamique, pas des fichiers stockés en clair quelque part.
+GitHub les **décompresse à la volée** depuis les objets blob pour les afficher dans le navigateur. C'est du rendu dynamique, pas des fichiers stockés en clair quelque part.
 
 ### Le commit
 Un **commit** est une **photo** de votre projet à un instant T. Chaque commit possède :

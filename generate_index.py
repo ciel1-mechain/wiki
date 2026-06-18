@@ -15,6 +15,7 @@ SECTIONS = {
     "DevOps": ["python", "c", "web", "git", "docker", "microbit"],
     "Réseaux & Liaisons": ["reseaux", "liaisons"],
     "Systèmes exploitation": ["windows", "gnu_linux"]
+    "SGBD": ["postgresql", "mysql"]
 }
 
 # Liens statiques avec icônes Material
@@ -29,6 +30,8 @@ LINKS = {
     "liaisons": "[:material-connection: Liaisons numériques](reseaux_liaisons/liaisons.md)",
     "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
     "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)"
+    "postgresql": "[:material-database: PostgreSQL](sgdb/postgresql.md)"
+    "mysql": "[:material-database: PostgreSQL](sgdb/mysql.md)"
 }
 
 def count_md_files(path):
