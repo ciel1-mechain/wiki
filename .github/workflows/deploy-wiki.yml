@@ -5,7 +5,8 @@ on:
     branches:
       - main   # branche où se trouvent tes fichiers .md
   workflow_dispatch:
-
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
