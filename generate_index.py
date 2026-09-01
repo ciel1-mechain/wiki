@@ -29,8 +29,8 @@ LINKS = {
     "reseaux": "[:material-network: Réseaux TCP/IP](reseaux_liaisons/reseaux.md)",
     "liaisons": "[:material-connection: Liaisons numériques](reseaux_liaisons/liaisons.md)",
     "windows": "[:material-microsoft-windows: Windows](os/windows.md)",
-    "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)"
-    "postgresql": "[:material-database: PostgreSQL](sgdb/postgresql.md)"
+    "gnu_linux": "[:material-linux: GNU/Linux](os/gnu_linux.md)",
+    "postgresql": "[:material-database: PostgreSQL](sgdb/postgresql.md)",
     "mysql": "[:material-database: PostgreSQL](sgdb/mysql.md)"
 }
 
