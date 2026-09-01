@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -953,14 +953,14 @@
 <h2 id="1-stockage-interne-des-objets">1. Stockage interne des objets</h2>
 <p>Git stocke tout dans <code>.git/objects/</code> sous forme de <strong>contenu brut compressé zlib</strong>.</p>
 <p>Avant compression, chaque objet a ce format :
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;&lt;type&gt; &lt;taille&gt;\0&lt;contenu&gt;&quot;
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ex: &quot;blob 13\0Hello, World!&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>"&lt;type&gt; &lt;taille&gt;\0&lt;contenu&gt;"
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ex: "blob 13\0Hello, World!"
 </span></code></pre></div></p>
 <p>Le <strong>hash SHA-1</strong> est calculé sur ce contenu brut (avant compression) → garantit l'intégrité.<br />
 Un hash complet = <strong>40 caractères hexadécimaux</strong>. Git accepte les préfixes courts (7+ chars) tant qu'ils sont non-ambigus.</p>
 <p><strong>Vérifier manuellement :</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;blob 6\0Hello, World!&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha1sum
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># → doit correspondre au hash Git du fichier contenant &quot;Hello, World!&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"blob 6\0Hello, World!"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha1sum
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># → doit correspondre au hash Git du fichier contenant "Hello, World!"</span>
 </span></code></pre></div>
 <code>git cat-file</code> existe pour cela. C'est le moyen propre de lire ces objets sans décompresser manuellement avec zlib.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>rev-parse<span class="w"> </span>a3f7c91<span class="w">        </span><span class="c1"># → hash complet 40 chars</span>
@@ -997,7 +997,7 @@ Un hash complet = <strong>40 caractères hexadécimaux</strong>. Git accepte les
 <hr />
 <h2 id="2-references-de-simples-fichiers-texte">2. Références : de simples fichiers texte</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat<span class="w"> </span>.git/refs/heads/main<span class="w">     </span><span class="c1"># → hash du dernier commit de main</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cat<span class="w"> </span>.git/HEAD<span class="w">                </span><span class="c1"># → &quot;ref: refs/heads/main&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cat<span class="w"> </span>.git/HEAD<span class="w">                </span><span class="c1"># → "ref: refs/heads/main"</span>
 </span></code></pre></div>
 <p>Structure :
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.git/
@@ -1022,8 +1022,8 @@ Un hash complet = <strong>40 caractères hexadécimaux</strong>. Git accepte les
 <p>Les objets sont <strong>immutables et dédupliqués par contenu</strong> — même contenu = même hash = même objet partagé.</p>
 <hr />
 <h2 id="4-lire-les-objets-git">4. Lire les objets Git</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>cat-file<span class="w"> </span>-t<span class="w"> </span>&lt;HASH&gt;<span class="w">       </span><span class="c1"># Type de l&#39;objet (blob/tree/commit/tag)</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>cat-file<span class="w"> </span>-p<span class="w"> </span>&lt;HASH&gt;<span class="w">       </span><span class="c1"># Contenu décompressé de l&#39;objet</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>cat-file<span class="w"> </span>-t<span class="w"> </span>&lt;HASH&gt;<span class="w">       </span><span class="c1"># Type de l'objet (blob/tree/commit/tag)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>cat-file<span class="w"> </span>-p<span class="w"> </span>&lt;HASH&gt;<span class="w">       </span><span class="c1"># Contenu décompressé de l'objet</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>git<span class="w"> </span>cat-file<span class="w"> </span>--batch-all-objects<span class="w"> </span>--batch-check<span class="w">  </span><span class="c1"># Tous les objets du repo</span>
 </span></code></pre></div>
 <hr />
@@ -1032,7 +1032,7 @@ Un hash complet = <strong>40 caractères hexadécimaux</strong>. Git accepte les
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>show<span class="w"> </span>HEAD~1:fichier<span class="w">      </span><span class="c1"># Version il y a 1 commit</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>git<span class="w"> </span>show<span class="w"> </span>HEAD~5:fichier<span class="w">      </span><span class="c1"># Version il y a 5 commits</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>git<span class="w"> </span>show<span class="w"> </span>abc123:fichier<span class="w">      </span><span class="c1"># Version à un commit précis</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>git<span class="w"> </span>show<span class="w"> </span><span class="s2">&quot;main@{2024-01-15}&quot;</span>:fichier<span class="w">  </span><span class="c1"># Version à une date donnée</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>git<span class="w"> </span>show<span class="w"> </span><span class="s2">"main@{2024-01-15}"</span>:fichier<span class="w">  </span><span class="c1"># Version à une date donnée</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>git<span class="w"> </span>show<span class="w"> </span>v1.0:fichier<span class="w">        </span><span class="c1"># Version au tag v1.0</span>
 </span></code></pre></div>
 <hr />
@@ -1095,16 +1095,16 @@ Sans <code>--follow</code>, l'historique s'arrête au renommage.</p>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>git<span class="w"> </span>log<span class="w"> </span>-p<span class="w"> </span>--<span class="w"> </span>fichier<span class="w">        </span><span class="c1"># Diff complet de chaque commit</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>git<span class="w"> </span>log<span class="w"> </span>--stat<span class="w">               </span><span class="c1"># Résumé des fichiers modifiés</span>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>git<span class="w"> </span>log<span class="w"> </span>--name-only<span class="w">          </span><span class="c1"># Noms des fichiers modifiés seulement</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span><span class="s2">&quot;Nom&quot;</span><span class="w">       </span><span class="c1"># Filtrer par auteur</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>git<span class="w"> </span>log<span class="w"> </span>--since<span class="o">=</span><span class="s2">&quot;2 weeks ago&quot;</span><span class="w"> </span>--until<span class="o">=</span><span class="s2">&quot;yesterday&quot;</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>git<span class="w"> </span>log<span class="w"> </span>--grep<span class="o">=</span><span class="s2">&quot;fix&quot;</span><span class="w">         </span><span class="c1"># Filtrer par message de commit</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span><span class="s2">"Nom"</span><span class="w">       </span><span class="c1"># Filtrer par auteur</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>git<span class="w"> </span>log<span class="w"> </span>--since<span class="o">=</span><span class="s2">"2 weeks ago"</span><span class="w"> </span>--until<span class="o">=</span><span class="s2">"yesterday"</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>git<span class="w"> </span>log<span class="w"> </span>--grep<span class="o">=</span><span class="s2">"fix"</span><span class="w">         </span><span class="c1"># Filtrer par message de commit</span>
 </span></code></pre></div>
 <hr />
 <h2 id="7-naviguer-dans-le-temps">7. Naviguer dans le temps</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Commit le plus proche avant une date</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>rev-list<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>--before<span class="o">=</span><span class="s2">&quot;2024-01-15 12:00&quot;</span><span class="w"> </span>main
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>rev-list<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>--before<span class="o">=</span><span class="s2">"2024-01-15 12:00"</span><span class="w"> </span>main
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Voir l&#39;état complet du repo à un commit donné</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Voir l'état complet du repo à un commit donné</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>git<span class="w"> </span>show<span class="w"> </span>abc123:./<span class="w">            </span><span class="c1"># Tree racine à ce commit</span>
 </span></code></pre></div>
 <hr />
@@ -1127,10 +1127,10 @@ Sans <code>--follow</code>, l'historique s'arrête au renommage.</p>
 - <code>read-tree</code> + <code>checkout-index</code> = plomberie : chirurgical, ne touche pas HEAD, utile pour scripts ou extraire des fichiers d'une autre branche sans changer de branche</p>
 <hr />
 <h2 id="9-commandes-de-plomberie-utiles">9. Commandes de plomberie utiles</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>hash-object<span class="w"> </span>fichier.txt<span class="w">         </span><span class="c1"># Hash SHA-1 d&#39;un fichier (sans l&#39;ajouter)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>hash-object<span class="w"> </span>fichier.txt<span class="w">         </span><span class="c1"># Hash SHA-1 d'un fichier (sans l'ajouter)</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>hash-object<span class="w"> </span>-w<span class="w"> </span>fichier.txt<span class="w">      </span><span class="c1"># Hash + stocke dans objects/</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>git<span class="w"> </span>ls-files<span class="w">                        </span><span class="c1"># Fichiers dans l&#39;index</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>git<span class="w"> </span>ls-files<span class="w">                        </span><span class="c1"># Fichiers dans l'index</span>
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>git<span class="w"> </span>ls-files<span class="w"> </span>--stage<span class="w">                </span><span class="c1"># Index avec hashes et modes</span>
 </span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
 </span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>git<span class="w"> </span>ls-tree<span class="w"> </span>HEAD<span class="w">                    </span><span class="c1"># Tree du dernier commit</span>
@@ -1140,20 +1140,20 @@ Sans <code>--follow</code>, l'historique s'arrête au renommage.</p>
 </span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>git<span class="w"> </span>diff-tree<span class="w"> </span>-r<span class="w"> </span>&lt;HASH&gt;<span class="w">             </span><span class="c1"># Fichiers modifiés dans un commit</span>
 </span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>git<span class="w"> </span>diff-index<span class="w"> </span>HEAD<span class="w">                 </span><span class="c1"># Diff entre index et HEAD</span>
 </span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
-</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>git<span class="w"> </span>update-index<span class="w"> </span>--add<span class="w"> </span>fichier.txt<span class="w">  </span><span class="c1"># Ajouter à l&#39;index manuellement</span>
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>git<span class="w"> </span>write-tree<span class="w">                      </span><span class="c1"># Créer un objet tree depuis l&#39;index</span>
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>git<span class="w"> </span>commit-tree<span class="w"> </span>&lt;tree&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;parent&gt;<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;msg&quot;</span><span class="w">  </span><span class="c1"># Créer un commit manuellement</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>git<span class="w"> </span>update-index<span class="w"> </span>--add<span class="w"> </span>fichier.txt<span class="w">  </span><span class="c1"># Ajouter à l'index manuellement</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>git<span class="w"> </span>write-tree<span class="w">                      </span><span class="c1"># Créer un objet tree depuis l'index</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>git<span class="w"> </span>commit-tree<span class="w"> </span>&lt;tree&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;parent&gt;<span class="w"> </span>-m<span class="w"> </span><span class="s2">"msg"</span><span class="w">  </span><span class="c1"># Créer un commit manuellement</span>
 </span></code></pre></div>
 <hr />
 <h2 id="10-inspecter-et-reparer">10. Inspecter et réparer</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>fsck<span class="w">                            </span><span class="c1"># Vérifier l&#39;intégrité du repo</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>fsck<span class="w">                            </span><span class="c1"># Vérifier l'intégrité du repo</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>fsck<span class="w"> </span>--lost-found<span class="w">               </span><span class="c1"># Trouver les objets orphelins</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>git<span class="w"> </span>gc<span class="w">                              </span><span class="c1"># Garbage collect + compresse en pack files</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>git<span class="w"> </span>count-objects<span class="w"> </span>-v<span class="w">                </span><span class="c1"># Nombre d&#39;objets et taille</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>git<span class="w"> </span>count-objects<span class="w"> </span>-v<span class="w">                </span><span class="c1"># Nombre d'objets et taille</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>git<span class="w"> </span>verify-pack<span class="w"> </span>-v<span class="w"> </span>.git/objects/pack/*.idx<span class="w">  </span><span class="c1"># Inspecter un pack file</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>git<span class="w"> </span>reflog<span class="w">                          </span><span class="c1"># Historique de tous les mouvements de HEAD</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>git<span class="w"> </span>reflog<span class="w"> </span>show<span class="w"> </span>main<span class="w">                </span><span class="c1"># Reflog d&#39;une branche spécifique</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>git<span class="w"> </span>reflog<span class="w"> </span>show<span class="w"> </span>main<span class="w">                </span><span class="c1"># Reflog d'une branche spécifique</span>
 </span></code></pre></div>
 <hr />
 <h2 id="11-recuperer-des-donnees-perdues">11. Récupérer des données perdues</h2>
@@ -1246,7 +1246,7 @@ Les fichiers affichés dans le navigateur sont <strong>décompressés à la vol�
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

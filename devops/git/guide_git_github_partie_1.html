@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1168,8 +1168,8 @@
 </span></code></pre></div></p>
 <h3 id="configurer-git">Configurer Git</h3>
 <p>Avant toute chose, il faut dire à Git qui vous êtes. Ces informations apparaîtront dans l'historique de chaque commit.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Prénom Nom&quot;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;votre@email.com&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Prénom Nom"</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"votre@email.com"</span>
 </span></code></pre></div>
 <p>Vérifier la configuration :
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>config<span class="w"> </span>--list
@@ -1223,7 +1223,7 @@ Avec affichage du fichier source de chaque paramètre
 </ul>
 <hr />
 <p><strong>GitHub</strong> stocke uniquement l'équivalent d'un <strong>bare repo</strong> — les objets compressés zlib, les refs, les pack files. Pas de working dir décompressé sur disque.</p>
-<p>Quand tu navigues sur github.com et vois les fichiers, GitHub les <strong>décompresse à la volée</strong> depuis les objets blob pour les afficher dans le navigateur. C'est du rendu dynamique, pas des fichiers stockés en clair quelque part.</p>
+<p>GitHub les <strong>décompresse à la volée</strong> depuis les objets blob pour les afficher dans le navigateur. C'est du rendu dynamique, pas des fichiers stockés en clair quelque part.</p>
 <h3 id="le-commit">Le commit</h3>
 <p>Un <strong>commit</strong> est une <strong>photo</strong> de votre projet à un instant T. Chaque commit possède :</p>
 <ul>
@@ -1255,7 +1255,7 @@ Cette commande est votre meilleure amie ! Elle indique :</p>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>git<span class="w"> </span>add<span class="w"> </span>.
 </span></code></pre></div>
 <h3 id="creer-un-commit">Créer un commit</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Message décrivant les changements&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Message décrivant les changements"</span>
 </span></code></pre></div>
 <blockquote>
 <p>💡 <strong>Bonne pratique</strong> : Un message de commit doit être court et descriptif.<br />
@@ -1270,14 +1270,14 @@ Cette commande est votre meilleure amie ! Elle indique :</p>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </span></code></pre></div>
 <h3 id="voir-les-modifications">Voir les modifications</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Voir les modifications non encore ajoutées à l&#39;index</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Voir les modifications non encore ajoutées à l'index</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git<span class="w"> </span>diff
 </span></code></pre></div>
 <h3 id="revenir-en-arriere">Revenir en arrière</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Annuler les modifications d&#39;un fichier (avant git add)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Annuler les modifications d'un fichier (avant git add)</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>restore<span class="w"> </span>mon_fichier.c
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Retirer un fichier de l&#39;index (après git add, avant git commit)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Retirer un fichier de l'index (après git add, avant git commit)</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>mon_fichier.c
 </span></code></pre></div>
 <h3 id="exemple-de-workflow-complet">Exemple de workflow complet</h3>
@@ -1285,19 +1285,19 @@ Cette commande est votre meilleure amie ! Elle indique :</p>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># 2. Je vérifie ce qui a changé</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>git<span class="w"> </span>status
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 3. J&#39;ajoute mes modifications à l&#39;index</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 3. J'ajoute mes modifications à l'index</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>git<span class="w"> </span>add<span class="w"> </span>main.c
 </span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># 4. Je sauvegarde avec un message</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Ajout de la boucle principale&quot;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Ajout de la boucle principale"</span>
 </span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># 5. Je vérifie l&#39;historique</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># 5. Je vérifie l'historique</span>
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </span></code></pre></div>
 <hr />
 <h2 id="5-github-travailler-en-ligne">5. GitHub : travailler en ligne</h2>
 <h3 id="lier-un-depot-local-a-github">Lier un dépôt local à GitHub</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 1. Créer un dépôt vide sur GitHub (via l&#39;interface web)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 1. Créer un dépôt vide sur GitHub (via l'interface web)</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># 2. Lier votre dépôt local au dépôt distant</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/votre-pseudo/votre-repo.git
@@ -1316,7 +1316,7 @@ Cela télécharge tout le contenu et l'historique dans un nouveau dossier local.
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Récupérer les nouveaux commits depuis GitHub et les fusionner</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>git<span class="w"> </span>pull
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Récupérer les modifications sans fusionner (pour inspecter d&#39;abord)</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Récupérer les modifications sans fusionner (pour inspecter d'abord)</span>
 </span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>git<span class="w"> </span>fetch
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
 </span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1"># Voir les dépôts distants configurés</span>
@@ -1338,7 +1338,7 @@ Cela télécharge tout le contenu et l'historique dans un nouveau dossier local.
 <h4 id="2-apres-avoir-travaille-ajouts-modifications">2. Après avoir travaillé (ajouts, modifications…)</h4>
 <p>Enregistrez vos modifications localement :</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git<span class="w"> </span>add<span class="w"> </span>--all
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Votre message de commit&quot;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Votre message de commit"</span>
 </span></code></pre></div>
 <h4 id="3-a-la-fin-de-la-session-de-travail">3. À la fin de la session de travail</h4>
 <p>Envoyez vos modifications vers GitHub :</p>
@@ -1433,7 +1433,7 @@ Cela télécharge tout le contenu et l'historique dans un nouveau dossier local.
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

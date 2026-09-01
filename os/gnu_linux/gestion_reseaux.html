@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -992,9 +992,9 @@
 <h1 id="gestion-reseau-sous-gnulinux">Gestion réseau sous GNU/Linux</h1>
 <hr />
 <h2 id="1-identifier-loutil-actif">1. Identifier l'outil actif</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>NetworkManager<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ nmcli&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-networkd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ networkctl&quot;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-resolved<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;→ networkctl&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>NetworkManager<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"→ nmcli"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-networkd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"→ networkctl"</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-resolved<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"→ networkctl"</span>
 </span></code></pre></div>
 <p><strong>Remarque</strong> :</p>
 <ul>
@@ -1534,13 +1534,13 @@
 </span></code></pre></div>
 <h3 id="configuration-nmcli">Configuration nmcli</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Créer le bond</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bond<span class="w"> </span>con-name<span class="w"> </span>bond0<span class="w"> </span>ifname<span class="w"> </span>bond0<span class="w"> </span>bond.options<span class="w"> </span><span class="s2">&quot;mode=active-backup&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bond<span class="w"> </span>con-name<span class="w"> </span>bond0<span class="w"> </span>ifname<span class="w"> </span>bond0<span class="w"> </span>bond.options<span class="w"> </span><span class="s2">"mode=active-backup"</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Ajouter les interfaces esclaves</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span>con-name<span class="w"> </span>bond0-eth0<span class="w"> </span>ifname<span class="w"> </span>eth0<span class="w"> </span>master<span class="w"> </span>bond0
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span>con-name<span class="w"> </span>bond0-eth1<span class="w"> </span>ifname<span class="w"> </span>eth1<span class="w"> </span>master<span class="w"> </span>bond0
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Configurer l&#39;IP</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Configurer l'IP</span>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span>bond0<span class="w"> </span>ipv4.addresses<span class="w"> </span><span class="m">192</span>.168.1.100/24<span class="w"> </span>ipv4.gateway<span class="w"> </span><span class="m">192</span>.168.1.1<span class="w"> </span>ipv4.method<span class="w"> </span>manual
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># Activer</span>
@@ -1563,7 +1563,7 @@
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkd</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>dev<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>managed<span class="w"> </span>no<span class="w">   </span><span class="c1"># libérer l&#39;interface de NM</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>dev<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>managed<span class="w"> </span>no<span class="w">   </span><span class="c1"># libérer l'interface de NM</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
 </span></code></pre></div></p>
 
@@ -1624,7 +1624,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy", "navigation.prune", "toc.follow", "navigation.sections", "navigation.expand", "content.icons"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
