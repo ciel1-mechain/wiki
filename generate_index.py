@@ -14,7 +14,7 @@ OUTPUT = os.path.join(ROOT, "index.md")
 SECTIONS = {
     "DevOps": ["python", "c", "web", "git", "docker", "microbit"],
     "Réseaux & Liaisons": ["reseaux", "liaisons"],
-    "Systèmes exploitation": ["windows", "gnu_linux"]
+    "Systèmes exploitation": ["windows", "gnu_linux"],
     "SGBD": ["postgresql", "mysql"]
 }
 
